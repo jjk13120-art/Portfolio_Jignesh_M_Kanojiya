@@ -1,0 +1,5030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Jignesh Kanojiya - Full Stack Developer, AI Developer and Blender 3D Creator">
+
+<title>Jignesh Kanojiya | Developer Portfolio</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+}
+
+body{
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:#07051a;
+    color:#fff;
+
+    line-height:1.5;
+
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+
+    --pink:#ff1493;
+    --purple:#8b5cf6;
+    --violet:#6d28d9;
+    --blue:#2563eb;
+    --cyan:#00d9ff;
+    --green:#00f5a0;
+    --yellow:#ffe600;
+    --orange:#ff7a18;
+    --red:#ff3d71;
+
+    --muted:#aaa6c1;
+    --muted2:#77738c;
+
+    --glass:rgba(255,255,255,.055);
+    --border:rgba(255,255,255,.12);
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-20;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.background-grid{
+
+    position:absolute;
+    inset:0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+}
+
+.blob{
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    opacity:.14;
+
+    animation:
+        blobFloat 18s ease-in-out infinite alternate;
+}
+
+.blob1{
+    background:var(--pink);
+    left:-170px;
+    top:-150px;
+}
+
+.blob2{
+    background:var(--cyan);
+    right:-180px;
+    top:25%;
+    animation-delay:-5s;
+}
+
+.blob3{
+    background:var(--purple);
+    left:30%;
+    bottom:-220px;
+    animation-delay:-10s;
+}
+
+.blob4{
+    background:var(--green);
+    right:20%;
+    bottom:15%;
+
+    width:220px;
+    height:220px;
+
+    opacity:.08;
+
+    animation-delay:-14s;
+}
+
+@keyframes blobFloat{
+
+    0%{
+        transform:translate3d(0,0,0) scale(1);
+    }
+
+    50%{
+        transform:translate3d(50px,-30px,0) scale(1.08);
+    }
+
+    100%{
+        transform:translate3d(-30px,50px,0) scale(.95);
+    }
+}
+
+
+/* =========================================================
+   CUSTOM CURSOR
+========================================================= */
+
+.custom-cursor, .custom-cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.custom-cursor {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    box-shadow: 0 0 10px #fff;
+}
+
+.custom-cursor-glow {
+    width: 35px;
+    height: 35px;
+    background: radial-gradient(circle, rgba(0, 217, 255, 0.4) 0%, rgba(139, 92, 246, 0.1) 60%, transparent 100%);
+    filter: blur(2px);
+    pointer-events: none;
+}
+
+/* Hide default cursor on larger screens */
+@media (min-width: 1024px) {
+    body {
+        cursor: none;
+    }
+    a, button, .filter, .project, .ai-tool, .period, .close-modal {
+        cursor: none;
+    }
+}
+
+
+/* =========================================================
+   GRADIENT TEXT
+========================================================= */
+
+.gradient-text{
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--pink),
+            var(--orange),
+            var(--yellow),
+            var(--green),
+            var(--cyan),
+            var(--purple),
+            var(--pink)
+        );
+
+    background-size:400% 100%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:
+        gradientMove 8s linear infinite;
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    100%{
+        background-position:400% 50%;
+    }
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+
+    position:fixed;
+
+    top:15px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(1150px,94%);
+
+    height:64px;
+
+    z-index:1000;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    border-radius:18px;
+
+    background:
+        rgba(8,5,26,.78);
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.2);
+}
+
+.navbar{
+
+    height:100%;
+
+    padding:0 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+}
+
+.logo{
+
+    font-size:20px;
+
+    font-weight:950;
+
+    letter-spacing:-1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--pink),
+            var(--cyan),
+            var(--purple)
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+}
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:19px;
+
+    list-style:none;
+}
+
+.nav-links a{
+
+    color:#aaa6c1;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    transition:.2s ease;
+}
+
+.nav-links a.active, .nav-links a:hover{
+    color:#fff;
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.4);
+}
+
+.nav-button{
+
+    padding:9px 16px;
+
+    border-radius:10px;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--pink),
+            var(--purple),
+            var(--cyan)
+        );
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    width:100%;
+
+    padding:
+        110px 5vw 50px;
+
+    display:flex;
+
+    align-items:center;
+}
+
+.hero-grid{
+
+    width:min(1250px,100%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:50px;
+
+    align-items:center;
+}
+
+
+/* =========================================================
+   HERO LEFT
+========================================================= */
+
+.hero-left{
+
+    text-align:left;
+
+    padding:
+        30px 10px;
+}
+
+.status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:8px 14px;
+
+    margin-bottom:24px;
+
+    border-radius:30px;
+
+    background:
+        rgba(0,245,160,.06);
+
+    border:
+        1px solid
+        rgba(0,245,160,.2);
+
+    color:#6fffcf;
+
+    font-size:10px;
+
+    font-weight:880;
+}
+
+.status-dot{
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    box-shadow:
+        0 0 12px
+        var(--green);
+
+    animation:
+        pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    50%{
+        opacity:.5;
+        transform:scale(.75);
+    }
+}
+
+.hero-left h1{
+
+    font-size:
+        clamp(52px,6vw,84px);
+
+    line-height:.94;
+
+    letter-spacing:-5px;
+
+    font-weight:950;
+
+    margin-bottom:25px;
+}
+
+.hero-left p{
+
+    max-width:620px;
+
+    color:var(--muted);
+
+    font-size:15px;
+
+    line-height:1.9;
+
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:13px 20px;
+
+    border-radius:11px;
+
+    font-size:11px;
+
+    font-weight:850;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,.3);
+}
+
+.btn-primary{
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--pink),
+            var(--purple),
+            var(--cyan)
+        );
+}
+
+.btn-secondary{
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+}
+
+
+/* =========================================================
+   HERO RIGHT
+========================================================= */
+
+.hero-right{
+
+    min-height:520px;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.hero-right::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--purple),
+            var(--cyan)
+        );
+
+    filter:blur(110px);
+
+    opacity:.12;
+}
+
+
+/* =========================================================
+   HANGING AREA
+========================================================= */
+
+.hanging-area{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:600px;
+
+    height:500px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    overflow:visible;
+    perspective: 1000px;
+}
+
+
+/* =========================================================
+   NAIL
+========================================================= */
+
+.nail{
+
+    position:absolute;
+
+    top:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    z-index:50;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #fff 0%,
+            #e5e7eb 20%,
+            #9ca3af 45%,
+            #374151 75%,
+            #111827 100%
+        );
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,.7),
+        0 0 18px
+        rgba(255,255,255,.15);
+}
+
+.nail::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    left:5px;
+    top:4px;
+
+    background:
+        rgba(255,255,255,.55);
+}
+
+
+/* =========================================================
+   STRINGS
+========================================================= */
+
+.string{
+
+    position:absolute;
+
+    top:35px;
+
+    left:50%;
+
+    width:3px;
+
+    height:225px;
+
+    transform-origin:
+        top center;
+
+    z-index:20;
+
+    border-radius:4px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #f8fafc,
+            #94a3b8,
+            #475569
+        );
+
+    box-shadow:
+        0 1px 2px
+        rgba(0,0,0,.6);
+}
+
+.string-left{
+
+    transform:
+        translateX(-50%)
+        rotate(-20deg);
+}
+
+.string-right{
+
+    transform:
+        translateX(-50%)
+        rotate(20deg);
+}
+
+
+/* =========================================================
+   HANGING CARD
+========================================================= */
+
+.hanging-card{
+
+    position:relative;
+
+    width:min(540px,92%);
+
+    min-height:270px;
+
+    padding:38px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.13),
+            rgba(255,255,255,.035)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 40px 80px
+        rgba(0,0,0,.5),
+        inset 0 1px
+        rgba(255,255,255,.15);
+
+    z-index:30;
+
+    transform-origin:
+        50% 0%;
+
+    animation:
+        naturalHanging 8s
+        ease-in-out
+        infinite;
+    transition: transform 0.15s ease-out;
+}
+
+.hanging-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-1px;
+
+    border-radius:25px;
+
+    padding:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--pink),
+            var(--purple),
+            var(--cyan),
+            var(--green),
+            var(--pink)
+        );
+
+    background-size:300%;
+
+    animation:
+        gradientMove 8s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0)
+        content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    pointer-events:none;
+}
+
+@keyframes naturalHanging{
+
+    0%{
+        transform:rotate(-2deg);
+    }
+
+    25%{
+        transform:rotate(-.8deg);
+    }
+
+    50%{
+        transform:rotate(2deg);
+    }
+
+    75%{
+        transform:rotate(.8deg);
+    }
+
+    100%{
+        transform:rotate(-2deg);
+    }
+}
+
+.card-label{
+
+    color:var(--cyan);
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    font-weight:950;
+
+    margin-bottom:12px;
+}
+
+.hanging-card h2{
+
+    font-size:32px;
+
+    margin-bottom:13px;
+}
+
+.hanging-card p{
+
+    color:#b7b2c9;
+
+    line-height:1.8;
+
+    font-size:13px;
+}
+
+.card-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-top:22px;
+
+    padding-top:15px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+    color:var(--muted2);
+
+    font-size:9px;
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+section{
+
+    padding:100px 0;
+
+    overflow:hidden;
+}
+
+.container{
+
+    width:min(1100px,92%);
+
+    margin:auto;
+}
+
+.section-header{
+
+    text-align:center;
+
+    margin-bottom:45px;
+}
+
+.section-label{
+
+    font-size:9px;
+
+    font-weight:950;
+
+    letter-spacing:3px;
+
+    color:var(--cyan);
+}
+
+.section-header h2{
+
+    margin-top:10px;
+
+    font-size:
+        clamp(35px,5vw,55px);
+
+    letter-spacing:-2px;
+
+    line-height:1;
+}
+
+.section-header p{
+
+    margin-top:12px;
+
+    color:var(--muted2);
+
+    font-size:13px;
+}
+
+.glass{
+
+    background:var(--glass);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:22px;
+
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+}
+
+
+/* =========================================================
+   ANALYTICS METRICS
+========================================================= */
+
+.analytics-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:14px;
+
+    margin-bottom:18px;
+}
+
+.metric{
+
+    padding:22px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+        transform .25s ease;
+}
+
+.metric:hover{
+
+    transform:translateY(-6px);
+}
+
+.metric::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    right:-45px;
+    top:-45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--cyan)
+        );
+
+    filter:blur(30px);
+
+    opacity:.3;
+}
+
+.metric-label{
+
+    color:var(--muted2);
+
+    font-size:9px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+}
+
+.metric-value{
+
+    display:block;
+
+    font-size:31px;
+
+    font-weight:950;
+
+    margin-top:7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--pink),
+            var(--cyan)
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+}
+
+.metric-change{
+
+    margin-top:4px;
+
+    color:var(--green);
+
+    font-size:9px;
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   CHARTS
+========================================================= */
+
+.chart-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1.5fr .8fr;
+
+    gap:18px;
+}
+
+.chart-card{
+
+    padding:25px;
+
+    min-height:390px;
+}
+
+.chart-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:20px;
+}
+
+.chart-title{
+
+    font-size:15px;
+
+    font-weight:900;
+}
+
+.chart-subtitle{
+
+    color:var(--muted2);
+
+    font-size:9px;
+
+    margin-top:3px;
+}
+
+.chart-periods{
+
+    display:flex;
+
+    gap:5px;
+}
+
+.period{
+
+    padding:5px 8px;
+
+    border-radius:6px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.03);
+
+    color:var(--muted2);
+
+    font-size:8px;
+
+    cursor:pointer;
+}
+
+.period.active{
+
+    color:#fff;
+
+    background:
+        rgba(139,92,246,.25);
+
+    border-color:
+        rgba(139,92,246,.4);
+}
+
+
+/* =========================================================
+   LINE CHART
+========================================================= */
+
+.line-chart{
+
+    position:relative;
+
+    height:285px;
+
+    width:100%;
+
+    overflow:hidden;
+
+    border-radius:12px;
+
+    background:
+        rgba(255,255,255,.018);
+}
+
+.chart-grid-lines{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.06) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        100% 20%,
+        10% 100%;
+}
+
+.line-svg{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    overflow:visible;
+}
+
+.chart-line{
+
+    fill:none;
+
+    stroke-width:3;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    stroke-dasharray:1000;
+
+    stroke-dashoffset:1000;
+
+    animation:
+        drawLine 2.5s
+        ease-out
+        forwards;
+    transition: d 0.5s ease-in-out;
+}
+
+@keyframes drawLine{
+
+    to{
+        stroke-dashoffset:0;
+    }
+}
+
+.chart-area{
+
+    opacity:.15;
+    transition: d 0.5s ease-in-out;
+}
+
+.chart-point{
+
+    fill:#fff;
+
+    stroke:
+        var(--cyan);
+
+    stroke-width:2;
+
+    animation:
+        pointPulse 2s
+        ease-in-out infinite;
+    transition: cx 0.5s ease-in-out, cy 0.5s ease-in-out;
+}
+
+@keyframes pointPulse{
+
+    0%,100%{
+        opacity:.75;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
+
+
+/* =========================================================
+   BAR CHART
+========================================================= */
+
+.bar-chart{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-around;
+
+    height:285px;
+
+    padding:
+        20px 5px 10px;
+
+    gap:10px;
+
+    background:
+        rgba(255,255,255,.018);
+
+    border-radius:12px;
+}
+
+.bar-column{
+
+    height:100%;
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    gap:8px;
+}
+
+.bar-value{
+
+    font-size:8px;
+
+    color:var(--muted2);
+}
+
+.bar{
+
+    width:
+        min(34px,70%);
+
+    border-radius:
+        7px 7px 3px 3px;
+
+    background:
+        linear-gradient(
+            to top,
+            var(--purple),
+            var(--pink),
+            var(--cyan)
+        );
+
+    box-shadow:
+        0 0 20px
+        rgba(139,92,246,.15);
+
+    transform-origin:
+        bottom;
+
+    animation:
+        barGrow 1.4s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes barGrow{
+
+    from{
+        transform:scaleY(0);
+    }
+
+    to{
+        transform:scaleY(1);
+    }
+}
+
+.bar-name{
+
+    color:var(--muted2);
+
+    font-size:8px;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   AI ANALYTICS
+========================================================= */
+
+.ai-breakdown{
+
+    margin-top:18px;
+
+    padding:28px;
+
+    overflow:hidden;
+}
+
+.ai-breakdown-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:25px;
+}
+
+.ai-workflow{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+}
+
+.workflow-item{
+
+    display:grid;
+
+    grid-template-columns:
+        48px 1fr 45px;
+
+    gap:15px;
+
+    align-items:center;
+}
+
+.workflow-icon{
+
+    width:42px;
+    height:42px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:12px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    font-size:20px;
+}
+
+.workflow-info{
+    min-width:0;
+}
+
+.workflow-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-bottom:7px;
+
+    font-size:11px;
+
+    font-weight:855;
+}
+
+.workflow-title span{
+
+    color:var(--muted2);
+
+    font-size:8px;
+
+    font-weight:700;
+}
+
+.workflow-item strong{
+
+    text-align:right;
+
+    font-size:11px;
+
+    color:var(--cyan);
+}
+
+.workflow-bar{
+
+    width:100%;
+
+    height:7px;
+
+    border-radius:10px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    overflow:hidden;
+}
+
+.workflow-bar div{
+
+    height:100%;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--pink),
+            var(--purple),
+            var(--cyan)
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(0,217,255,.15);
+
+    animation:
+        workflowGrow 1.5s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes workflowGrow{
+
+    from{
+        width:0 !important;
+    }
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1.2fr .8fr;
+
+    gap:20px;
+}
+
+.about-card{
+
+    padding:32px;
+}
+
+.about-card h3{
+
+    font-size:24px;
+
+    margin-bottom:15px;
+}
+
+.about-card p{
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+    font-size:13px;
+}
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:12px;
+}
+
+.stat{
+
+    padding:24px;
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    transition:
+        transform .25s ease;
+}
+
+.stat:hover{
+
+    transform:translateY(-5px);
+}
+
+.stat strong{
+
+    display:block;
+
+    font-size:30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--pink),
+            var(--cyan)
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+}
+
+.stat span{
+
+    color:var(--muted2);
+
+    font-size:9px;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:9px;
+
+    padding:30px;
+}
+
+.skill{
+
+    padding:10px 14px;
+
+    border-radius:9px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    color:#d7d3e3;
+
+    font-size:10px;
+
+    font-weight:750;
+
+    transition:.25s ease;
+}
+
+.skill:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    border-color:
+        var(--cyan);
+
+    background:
+        rgba(0,217,255,.08);
+    box-shadow: 0 4px 15px rgba(0, 217, 255, 0.25);
+}
+
+
+/* =========================================================
+   AI TOOL CARDS
+========================================================= */
+
+.ai-tools-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:18px;
+}
+
+.ai-tool{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+    padding:28px;
+
+    min-height:235px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.ai-tool:hover{
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(255,255,255,.28);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.35);
+}
+
+.ai-tool-icon{
+
+    flex:0 0 65px;
+
+    width:65px;
+    height:65px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:18px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    font-size:31px;
+}
+
+.ai-tool-content{
+    flex:1;
+}
+
+.ai-tool-number{
+
+    display:block;
+
+    color:var(--cyan);
+
+    font-size:8px;
+
+    font-weight:950;
+
+    letter-spacing:2px;
+
+    margin-bottom:7px;
+}
+
+.ai-tool h3{
+
+    font-size:21px;
+
+    margin-bottom:9px;
+}
+
+.ai-tool p{
+
+    color:#918da7;
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+.ai-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:6px;
+
+    margin-top:14px;
+}
+
+.ai-tags span{
+
+    padding:5px 8px;
+
+    border-radius:6px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:#aaa6bd;
+
+    font-size:8px;
+}
+
+
+/* =========================================================
+   PROJECT FILTER
+========================================================= */
+
+.filters{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin-bottom:35px;
+}
+
+.filter{
+
+    padding:10px 16px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    background:
+        rgba(255,255,255,.04);
+
+    color:var(--muted);
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:10px;
+
+    font-weight:850;
+}
+
+.filter.active{
+
+    color:#fff;
+
+    border-color:transparent;
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--pink),
+            var(--purple),
+            var(--cyan)
+        );
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+.project{
+
+    position:relative;
+
+    padding:28px;
+
+    min-height:350px;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease;
+}
+
+.project:hover{
+
+    border-color:
+        rgba(255,255,255,.25);
+    transform: translateY(-5px);
+}
+
+.project.hidden{
+    display:none;
+}
+
+.project-number{
+
+    color:var(--cyan);
+
+    font-size:9px;
+
+    font-weight:950;
+
+    letter-spacing:1px;
+}
+
+.project-icon{
+
+    width:55px;
+    height:55px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin-top:18px;
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    font-size:27px;
+}
+
+.project h3{
+
+    margin:17px 0 10px;
+
+    font-size:20px;
+}
+
+.project p{
+
+    color:#918da7;
+
+    line-height:1.7;
+
+    font-size:12px;
+}
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:5px;
+
+    margin-top:18px;
+}
+
+.tags span{
+
+    padding:5px 8px;
+
+    border-radius:6px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:#aaa6bd;
+
+    font-size:8px;
+}
+
+.project-footer{
+
+    position:absolute;
+
+    left:28px;
+    right:28px;
+    bottom:22px;
+
+    padding-top:14px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
+
+    color:var(--muted2);
+
+    font-size:9px;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+
+/* =========================================================
+   PROJECT MODAL
+========================================================= */
+
+.project-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(7, 5, 26, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    width: min(650px, 90%);
+    padding: 40px 30px;
+    border-radius: 25px;
+    position: relative;
+    border: 1px solid var(--border);
+    animation: zoomIn 0.3s ease;
+    text-align: left;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--muted);
+    transition: color 0.2s ease;
+}
+
+.close-modal:hover {
+    color: #fff;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.timeline{
+
+    position:relative;
+
+    max-width:800px;
+
+    margin:auto;
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:10px;
+
+    top:0;
+    bottom:0;
+
+    width:2px;
+
+    background:
+        linear-gradient(
+            var(--pink),
+            var(--purple),
+            var(--cyan),
+            transparent
+        );
+}
+
+.timeline-item{
+
+    position:relative;
+
+    padding-left:45px;
+
+    margin-bottom:35px;
+}
+
+.timeline-dot{
+
+    position:absolute;
+
+    left:2px;
+    top:3px;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--cyan)
+        );
+}
+
+.timeline-year{
+
+    color:var(--cyan);
+
+    font-size:9px;
+
+    font-weight:950;
+
+    margin-bottom:7px;
+}
+
+.timeline-item h3{
+    margin-bottom:7px;
+}
+
+.timeline-item p{
+
+    color:#918da7;
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-box{
+
+    padding:70px 25px;
+
+    text-align:center;
+}
+
+.contact-box h2{
+
+    font-size:
+        clamp(40px,6vw,65px);
+
+    line-height:1;
+
+    letter-spacing:-3px;
+
+    margin:
+        12px 0 20px;
+}
+
+.contact-box p{
+
+    max-width:600px;
+
+    margin:
+        auto auto 25px;
+
+    color:#918da7;
+
+    line-height:1.8;
+
+    font-size:13px;
+}
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    color:#625e79;
+
+    font-size:9px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(22px);
+
+    transition:
+        opacity .65s ease,
+        transform .65s ease;
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+        gap:10px;
+    }
+
+    .hero-left{
+
+        text-align:center;
+    }
+
+    .hero-left p{
+
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+    }
+
+    .hero-right{
+
+        min-height:470px;
+    }
+
+    .analytics-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .chart-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .projects{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:750px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .ai-tools-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .projects{
+
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+
+        padding-top:100px;
+    }
+
+    .hero-left h1{
+
+        font-size:
+            clamp(48px,12vw,70px);
+
+        letter-spacing:-3px;
+    }
+}
+
+
+@media(max-width:600px){
+
+    nav{
+
+        top:10px;
+
+        height:58px;
+    }
+
+    .nav-button{
+        display:none;
+    }
+
+    .hero{
+
+        padding:
+            100px 15px 40px;
+    }
+
+    .hero-left{
+
+        padding:20px 0;
+    }
+
+    .hero-left h1{
+        font-size:50px;
+    }
+
+    .hero-left p{
+        font-size:13px;
+    }
+
+    .hero-right{
+
+        min-height:420px;
+    }
+
+    .hanging-area{
+
+        height:420px;
+    }
+
+    .string{
+
+        height:190px;
+    }
+
+    .hanging-card{
+
+        width:94%;
+
+        padding:27px 20px;
+
+        min-height:240px;
+    }
+
+    .hanging-card h2{
+        font-size:26px;
+    }
+
+    .hanging-card p{
+        font-size:12px;
+    }
+
+    .card-info{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    section{
+        padding:75px 0;
+    }
+
+    .analytics-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .metric{
+        padding:18px;
+    }
+
+    .metric-value{
+        font-size:25px;
+    }
+
+    .chart-card{
+        padding:16px;
+    }
+
+    .chart-header{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+
+    .ai-tool{
+
+        padding:22px;
+
+        gap:14px;
+    }
+
+    .ai-tool-icon{
+
+        flex-basis:55px;
+
+        width:55px;
+        height:55px;
+
+        font-size:25px;
+    }
+
+    .stats{
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .ai-breakdown{
+
+        padding:20px;
+    }
+
+    .workflow-item{
+
+        grid-template-columns:
+            40px 1fr 35px;
+
+        gap:10px;
+    }
+
+    .workflow-icon{
+
+        width:38px;
+        height:38px;
+
+        font-size:17px;
+    }
+
+    .workflow-title{
+
+        font-size:9px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- Glowing cursor overlays -->
+<div class="custom-cursor"></div>
+<div class="custom-cursor-glow"></div>
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="background">
+
+    <div class="background-grid"></div>
+
+    <div class="blob blob1"></div>
+
+    <div class="blob blob2"></div>
+
+    <div class="blob blob3"></div>
+
+    <div class="blob blob4"></div>
+
+</div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav>
+
+<div class="navbar">
+
+<a href="#" class="logo">
+JIGNESH.DEV
+</a>
+
+<ul class="nav-links">
+
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#skills">Skills</a>
+</li>
+
+<li>
+<a href="#analytics">Analytics</a>
+</li>
+
+<li>
+<a href="#ai-analytics">AI Analytics</a>
+</li>
+
+<li>
+<a href="#ai-tools">AI Tools</a>
+</li>
+
+<li>
+<a href="#projects">Projects</a>
+</li>
+
+<li>
+<a href="#education">Education</a>
+</li>
+
+<li>
+<a href="#contact">Contact</a>
+</li>
+
+</ul>
+
+<a
+href="#contact"
+class="nav-button"
+>
+Let's Talk
+</a>
+
+</div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+<div class="hero-grid">
+
+
+<div class="hero-left">
+
+<div class="status">
+
+<span class="status-dot"></span>
+
+Available for Internship Opportunities
+
+</div>
+
+
+<h1>
+
+I Build
+
+<br>
+
+<span class="gradient-text">
+Digital Experiences.
+</span>
+
+</h1>
+
+
+<p>
+
+I'm <strong>Jignesh Kanojiya</strong>,
+a fourth-year Information Technology student
+at LJ University passionate about full-stack
+development, artificial intelligence,
+computer vision and Blender 3D animation.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#projects"
+class="btn btn-primary"
+>
+Explore My Work →
+</a>
+
+<a
+href="#contact"
+class="btn btn-secondary"
+>
+Let's Connect
+</a>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     HANGING CARD
+===================================================== -->
+
+<div class="hero-right">
+
+<div class="hanging-area">
+
+<div class="nail"></div>
+
+<div class="string string-left"></div>
+
+<div class="string string-right"></div>
+
+
+<div class="hanging-card">
+
+<div class="card-label">
+DEVELOPER PROFILE
+</div>
+
+<h2>
+
+Hi, I'm
+
+<span class="gradient-text">
+Jignesh
+</span>
+
+👋
+
+</h2>
+
+<p>
+
+I love transforming ideas into
+responsive, scalable and interactive
+applications.
+
+I work with modern web technologies,
+artificial intelligence, computer vision
+and Blender 3D animation.
+
+</p>
+
+<div class="card-info">
+
+<span>
+🎓 B.E. Information Technology
+</span>
+
+<span>
+📍 Ahmedabad, Gujarat
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-header reveal">
+
+<div class="section-label">
+ABOUT ME
+</div>
+
+<h2>
+Developer. Learner. Builder.
+</h2>
+
+<p>
+Turning ideas into real-world projects.
+</p>
+
+</div>
+
+
+<div class="about-grid">
+
+
+<div class="glass about-card reveal">
+
+<h3>
+My Journey 🚀
+</h3>
+
+<p>
+
+I am a fourth-year B.E. Information
+Technology student at LJ University.
+
+<br><br>
+
+I enjoy creating full-stack applications,
+artificial intelligence systems,
+computer vision projects and 3D
+animation experiences.
+
+<br><br>
+
+My development experience includes
+Java, Python, JavaScript, TypeScript,
+React, Angular, Django, Node.js,
+Express, MongoDB, PostgreSQL and .NET.
+
+</p>
+
+</div>
+
+
+<div class="glass about-card reveal">
+
+<div class="stats">
+
+<div class="stat">
+
+<strong>2027</strong>
+
+<span>
+Graduation
+</span>
+
+</div>
+
+<div class="stat">
+
+<strong>15+</strong>
+
+<span>
+Projects
+</span>
+
+</div>
+
+<div class="stat">
+
+<strong>20+</strong>
+
+<span>
+Technologies
+</span>
+
+</div>
+
+<div class="stat">
+
+<strong>6+</strong>
+
+<span>
+Certifications
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+<div class="container">
+
+<div class="section-header reveal">
+
+<div class="section-label">
+TECH STACK
+</div>
+
+<h2>
+Tools I Build With
+</h2>
+
+<p>
+Technologies I use for development.
+</p>
+
+</div>
+
+
+<div class="glass skills reveal">
+
+<span class="skill">Java</span>
+<span class="skill">Python</span>
+<span class="skill">JavaScript</span>
+<span class="skill">TypeScript</span>
+<span class="skill">HTML5</span>
+<span class="skill">CSS3</span>
+<span class="skill">React</span>
+<span class="skill">Angular</span>
+<span class="skill">Django</span>
+<span class="skill">Node.js</span>
+<span class="skill">Express</span>
+<span class="skill">MongoDB</span>
+<span class="skill">PostgreSQL</span>
+<span class="skill">SQL</span>
+<span class="skill">.NET</span>
+<span class="skill">Bootstrap</span>
+<span class="skill">REST APIs</span>
+<span class="skill">OpenCV</span>
+<span class="skill">dlib</span>
+<span class="skill">Blender</span>
+<span class="skill">3D Animation</span>
+<span class="skill">AI</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     DEVELOPMENT ANALYTICS
+===================================================== -->
+
+<section id="analytics">
+
+<div class="container">
+
+<div class="section-header reveal">
+
+<div class="section-label">
+DEVELOPER ANALYTICS
+</div>
+
+<h2>
+My Development Analytics
+</h2>
+
+<p>
+A visual overview of my project and technology activity.
+</p>
+
+</div>
+
+
+<div class="analytics-grid">
+
+
+<div class="glass metric reveal">
+
+<span class="metric-label">
+Projects
+</span>
+
+<span class="metric-value">
+15+
+</span>
+
+<span class="metric-change">
+↗ Growing portfolio
+</span>
+
+</div>
+
+
+<div class="glass metric reveal">
+
+<span class="metric-label">
+Technologies
+</span>
+
+<span class="metric-value">
+20+
+</span>
+
+<span class="metric-change">
+↗ Expanding stack
+</span>
+
+</div>
+
+
+<div class="glass metric reveal">
+
+<span class="metric-label">
+AI Projects
+</span>
+
+<span class="metric-value">
+3+
+</span>
+
+<span class="metric-change">
+↗ AI focused
+</span>
+
+</div>
+
+
+<div class="glass metric reveal">
+
+<span class="metric-label">
+Current Year
+</span>
+
+<span class="metric-value">
+2026
+</span>
+
+<span class="metric-change">
+● Active development
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="chart-grid">
+
+
+<div class="glass chart-card reveal">
+
+<div class="chart-header">
+
+<div>
+
+<div class="chart-title">
+Project Activity
+</div>
+
+<div class="chart-subtitle">
+Development activity over time
+</div>
+
+</div>
+
+<div class="chart-periods">
+
+<span class="period">1M</span>
+<span class="period">3M</span>
+<span class="period active">1Y</span>
+
+</div>
+
+</div>
+
+
+<div class="line-chart">
+
+<div class="chart-grid-lines"></div>
+
+<svg
+class="line-svg"
+viewBox="0 0 1000 500"
+preserveAspectRatio="none"
+>
+
+<defs>
+
+<linearGradient
+id="lineGradient"
+x1="0"
+x2="1"
+>
+
+<stop
+offset="0%"
+stop-color="#ff1493"
+/>
+
+<stop
+offset="50%"
+stop-color="#8b5cf6"
+/>
+
+<stop
+offset="100%"
+stop-color="#00d9ff"
+/>
+
+</linearGradient>
+
+<linearGradient
+id="areaGradient"
+x1="0"
+y1="0"
+x2="0"
+y2="1"
+>
+
+<stop
+offset="0%"
+stop-color="#8b5cf6"
+/>
+
+<stop
+offset="100%"
+stop-color="#8b5cf6"
+stop-opacity="0"
+/>
+
+</linearGradient>
+
+</defs>
+
+
+<path
+class="chart-area"
+fill="url(#areaGradient)"
+d="
+M0,410
+L90,385
+L180,400
+L270,330
+L360,345
+L450,270
+L540,290
+L630,215
+L720,240
+L810,150
+L900,175
+L1000,90
+L1000,500
+L0,500
+Z
+"
+/>
+
+
+<path
+class="chart-line"
+stroke="url(#lineGradient)"
+d="
+M0,410
+L90,385
+L180,400
+L270,330
+L360,345
+L450,270
+L540,290
+L630,215
+L720,240
+L810,150
+L900,175
+L1000,90
+"
+/>
+
+
+<circle
+class="chart-point"
+cx="0"
+cy="410"
+r="5"
+/>
+
+<circle
+class="chart-point"
+cx="180"
+cy="400"
+r="5"
+/>
+
+<circle
+class="chart-point"
+cx="360"
+cy="345"
+r="5"
+/>
+
+<circle
+class="chart-point"
+cx="540"
+cy="290"
+r="5"
+/>
+
+<circle
+class="chart-point"
+cx="720"
+cy="240"
+r="5"
+/>
+
+<circle
+class="chart-point"
+cx="900"
+cy="175"
+r="5"
+/>
+
+<circle
+class="chart-point"
+cx="1000"
+cy="90"
+r="5"
+/>
+
+</svg>
+
+</div>
+
+</div>
+
+
+<div class="glass chart-card reveal">
+
+<div class="chart-header">
+
+<div>
+
+<div class="chart-title">
+Technology Usage
+</div>
+
+<div class="chart-subtitle">
+My development focus
+</div>
+
+</div>
+
+</div>
+
+
+<div class="bar-chart">
+
+
+<div class="bar-column">
+
+<span class="bar-value">92%</span>
+
+<div
+class="bar"
+style="height:92%"
+></div>
+
+<span class="bar-name">JS</span>
+
+</div>
+
+
+<div class="bar-column">
+
+<span class="bar-value">88%</span>
+
+<div
+class="bar"
+style="height:88%"
+></div>
+
+<span class="bar-name">PY</span>
+
+</div>
+
+
+<div class="bar-column">
+
+<span class="bar-value">80%</span>
+
+<div
+class="bar"
+style="height:80%"
+></div>
+
+<span class="bar-name">WEB</span>
+
+</div>
+
+
+<div class="bar-column">
+
+<span class="bar-value">72%</span>
+
+<div
+class="bar"
+style="height:72%"
+></div>
+
+<span class="bar-name">AI</span>
+
+</div>
+
+
+<div class="bar-column">
+
+<span class="bar-value">62%</span>
+
+<div
+class="bar"
+style="height:62%"
+></div>
+
+<span class="bar-name">DB</span>
+
+</div>
+
+
+<div class="bar-column">
+
+<span class="bar-value">55%</span>
+
+<div
+class="bar"
+style="height:55%"
+></div>
+
+<span class="bar-name">3D</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     AI ANALYTICS
+===================================================== -->
+
+<section id="ai-analytics">
+
+<div class="container">
+
+
+<div class="section-header reveal">
+
+<div class="section-label">
+AI WORKFLOW ANALYTICS
+</div>
+
+<h2>
+How I Use AI Tools
+</h2>
+
+<p>
+My AI-assisted development workflow across coding,
+research, models, voice and experimentation.
+</p>
+
+</div>
+
+
+<!-- AI METRICS -->
+
+<div class="analytics-grid">
+
+
+<div class="glass metric reveal">
+
+<span class="metric-label">
+Primary AI Tool
+</span>
+
+<span class="metric-value">
+Antigravity
+</span>
+
+<span class="metric-change">
+⚡ Most frequently used
+</span>
+
+</div>
+
+
+<div class="glass metric reveal">
+
+<span class="metric-label">
+AI Assistant
+</span>
+
+<span class="metric-value">
+ChatGPT
+</span>
+
+<span class="metric-change">
+↗ Development + Learning
+</span>
+
+</div>
+
+
+<div class="glass metric reveal">
+
+<span class="metric-label">
+AI Platforms
+</span>
+
+<span class="metric-value">
+6+
+</span>
+
+<span class="metric-change">
+↗ Growing toolkit
+</span>
+
+</div>
+
+
+<div class="glass metric reveal">
+
+<span class="metric-label">
+AI Workflow
+</span>
+
+<span class="metric-value">
+Active
+</span>
+
+<span class="metric-change">
+● Continuous learning
+</span>
+
+</div>
+
+</div>
+
+
+<!-- AI CHARTS -->
+
+<div class="chart-grid">
+
+
+<!-- AI BAR GRAPH -->
+
+<div class="glass chart-card reveal">
+
+<div class="chart-header">
+
+<div>
+
+<div class="chart-title">
+AI Tool Usage
+</div>
+
+<div class="chart-subtitle">
+Relative workflow usage
+</div>
+
+</div>
+
+</div>
+
+
+<div class="bar-chart">
+
+
+<div class="bar-column">
+
+<span class="bar-value">
+95%
+</span>
+
+<div
+class="bar"
+style="height:95%"
+></div>
+
+<span class="bar-name">
+Anti-
+gravity
+</span>
+
+</div>
+
+
+<div class="bar-column">
+
+<span class="bar-value">
+90%
+</span>
+
+<div
+class="bar"
+style="height:90%"
+></div>
+
+<span class="bar-name">
+ChatGPT
+</span>
+
+</div>
+
+
+<div class="bar-column">
+
+<span class="bar-value">
+75%
+</span>
+
+<div
+class="bar"
+style="height:75%"
+></div>
+
+<span class="bar-name">
+Claude
+</span>
+
+</div>
+
+
+<div class="bar-column">
+
+<span class="bar-value">
+58%
+</span>
+
+<div
+class="bar"
+style="height:58%"
+></div>
+
+<span class="bar-name">
+Hugging
+Face
+</span>
+
+</div>
+
+
+<div class="bar-column">
+
+<span class="bar-value">
+42%
+</span>
+
+<div
+class="bar"
+style="height:42%"
+></div>
+
+<span class="bar-name">
+Eleven
+Labs
+</span>
+
+</div>
+
+
+<div class="bar-column">
+
+<span class="bar-value">
+35%
+</span>
+
+<div
+class="bar"
+style="height:35%"
+></div>
+
+<span class="bar-name">
+Other
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- AI LINE GRAPH -->
+
+<div class="glass chart-card reveal">
+
+<div class="chart-header">
+
+<div>
+
+<div class="chart-title">
+AI Workflow Growth
+</div>
+
+<div class="chart-subtitle">
+Relative AI activity over time
+</div>
+
+</div>
+
+</div>
+
+
+<div class="line-chart">
+
+<div class="chart-grid-lines"></div>
+
+<svg
+class="line-svg"
+viewBox="0 0 1000 500"
+preserveAspectRatio="none"
+>
+
+<defs>
+
+<linearGradient
+id="aiLineGradient"
+x1="0"
+x2="1"
+>
+
+<stop
+offset="0%"
+stop-color="#ff1493"
+/>
+
+<stop
+offset="25%"
+stop-color="#ff7a18"
+/>
+
+<stop
+offset="50%"
+stop-color="#ffe600"
+/>
+
+<stop
+offset="75%"
+stop-color="#00f5a0"
+/>
+
+<stop
+offset="100%"
+stop-color="#00d9ff"
+/>
+
+</linearGradient>
+
+<linearGradient
+id="aiAreaGradient"
+x1="0"
+y1="0"
+x2="0"
+y2="1"
+>
+
+<stop
+offset="0%"
+stop-color="#00d9ff"
+/>
+
+<stop
+offset="100%"
+stop-color="#00d9ff"
+stop-opacity="0"
+/>
+
+</linearGradient>
+
+</defs>
+
+
+<path
+class="chart-area"
+fill="url(#aiAreaGradient)"
+d="
+M0,420
+L100,390
+L200,410
+L300,330
+L400,350
+L500,270
+L600,300
+L700,220
+L800,245
+L900,150
+L1000,80
+L1000,500
+L0,500
+Z
+"
+/>
+
+
+<path
+class="chart-line"
+stroke="url(#aiLineGradient)"
+d="
+M0,420
+L100,390
+L200,410
+L300,330
+L400,350
+L500,270
+L600,300
+L700,220
+L800,245
+L900,150
+L1000,80
+"
+/>
+
+
+<circle
+class="chart-point"
+cx="0"
+cy="420"
+r="5"
+/>
+
+<circle
+class="chart-point"
+cx="200"
+cy="410"
+r="5"
+/>
+
+<circle
+class="chart-point"
+cx="400"
+cy="350"
+r="5"
+/>
+
+<circle
+class="chart-point"
+cx="600"
+cy="300"
+r="5"
+/>
+
+<circle
+class="chart-point"
+cx="800"
+cy="245"
+r="5"
+/>
+
+<circle
+class="chart-point"
+cx="1000"
+cy="80"
+r="5"
+/>
+
+</svg>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- AI DISTRIBUTION -->
+
+<div class="glass ai-breakdown reveal">
+
+<div class="ai-breakdown-header">
+
+<div>
+
+<div class="chart-title">
+AI Workflow Distribution
+</div>
+
+<div class="chart-subtitle">
+Relative use across my workflow
+</div>
+
+</div>
+
+</div>
+
+
+<div class="ai-workflow">
+
+
+<div class="workflow-item">
+
+<div class="workflow-icon">
+⚡
+</div>
+
+<div class="workflow-info">
+
+<div class="workflow-title">
+
+Antigravity IDE
+
+<span>
+Primary
+</span>
+
+</div>
+
+<div class="workflow-bar">
+
+<div style="width:95%"></div>
+
+</div>
+
+</div>
+
+<strong>95%</strong>
+
+</div>
+
+
+<div class="workflow-item">
+
+<div class="workflow-icon">
+🤖
+</div>
+
+<div class="workflow-info">
+
+<div class="workflow-title">
+
+ChatGPT
+
+<span>
+Core AI
+</span>
+
+</div>
+
+<div class="workflow-bar">
+
+<div style="width:90%"></div>
+
+</div>
+
+</div>
+
+<strong>90%</strong>
+
+</div>
+
+
+<div class="workflow-item">
+
+<div class="workflow-icon">
+🧠
+</div>
+
+<div class="workflow-info">
+
+<div class="workflow-title">
+
+Claude AI
+
+<span>
+Reasoning
+</span>
+
+</div>
+
+<div class="workflow-bar">
+
+<div style="width:75%"></div>
+
+</div>
+
+</div>
+
+<strong>75%</strong>
+
+</div>
+
+
+<div class="workflow-item">
+
+<div class="workflow-icon">
+🤗
+</div>
+
+<div class="workflow-info">
+
+<div class="workflow-title">
+
+Hugging Face
+
+<span>
+AI Models
+</span>
+
+</div>
+
+<div class="workflow-bar">
+
+<div style="width:58%"></div>
+
+</div>
+
+</div>
+
+<strong>58%</strong>
+
+</div>
+
+
+<div class="workflow-item">
+
+<div class="workflow-icon">
+🎙️
+</div>
+
+<div class="workflow-info">
+
+<div class="workflow-title">
+
+ElevenLabs
+
+<span>
+Voice AI
+</span>
+
+</div>
+
+<div class="workflow-bar">
+
+<div style="width:42%"></div>
+
+</div>
+
+</div>
+
+<strong>42%</strong>
+
+</div>
+
+
+<div class="workflow-item">
+
+<div class="workflow-icon">
+✨
+</div>
+
+<div class="workflow-info">
+
+<div class="workflow-title">
+
+Other AI Tools
+
+<span>
+Experimentation
+</span>
+
+</div>
+
+<div class="workflow-bar">
+
+<div style="width:35%"></div>
+
+</div>
+
+</div>
+
+<strong>35%</strong>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     AI TOOLS
+===================================================== -->
+
+<section id="ai-tools">
+
+<div class="container">
+
+
+<div class="section-header reveal">
+
+<div class="section-label">
+AI TOOLKIT
+</div>
+
+<h2>
+AI Tools I Use
+</h2>
+
+<p>
+AI tools that help me learn, build and experiment.
+</p>
+
+</div>
+
+
+<div class="ai-tools-grid">
+
+
+<div class="glass ai-tool reveal">
+
+<div class="ai-tool-icon">
+⚡
+</div>
+
+<div class="ai-tool-content">
+
+<span class="ai-tool-number">
+01 · PRIMARY
+</span>
+
+<h3>
+Antigravity IDE
+</h3>
+
+<p>
+My primary AI-assisted development
+environment for building and improving
+projects.
+</p>
+
+<div class="ai-tags">
+
+<span>AI Coding</span>
+<span>IDE</span>
+<span>Projects</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="glass ai-tool reveal">
+
+<div class="ai-tool-icon">
+🤖
+</div>
+
+<div class="ai-tool-content">
+
+<span class="ai-tool-number">
+02 · CORE
+</span>
+
+<h3>
+ChatGPT
+</h3>
+
+<p>
+Used extensively for coding, learning,
+debugging, project planning and
+technical problem solving.
+</p>
+
+<div class="ai-tags">
+
+<span>Coding</span>
+<span>Learning</span>
+<span>Research</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="glass ai-tool reveal">
+
+<div class="ai-tool-icon">
+🧠
+</div>
+
+<div class="ai-tool-content">
+
+<span class="ai-tool-number">
+03 · REASONING
+</span>
+
+<h3>
+Claude AI
+</h3>
+
+<p>
+Used for code understanding, reasoning,
+architecture and development assistance.
+</p>
+
+<div class="ai-tags">
+
+<span>Reasoning</span>
+<span>Code</span>
+<span>Analysis</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="glass ai-tool reveal">
+
+<div class="ai-tool-icon">
+🤗
+</div>
+
+<div class="ai-tool-content">
+
+<span class="ai-tool-number">
+04 · MODELS
+</span>
+
+<h3>
+Hugging Face
+</h3>
+
+<p>
+Used for exploring open-source models,
+datasets and machine learning technologies.
+</p>
+
+<div class="ai-tags">
+
+<span>Models</span>
+<span>ML</span>
+<span>Open Source</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="glass ai-tool reveal">
+
+<div class="ai-tool-icon">
+🎙️
+</div>
+
+<div class="ai-tool-content">
+
+<span class="ai-tool-number">
+05 · AUDIO
+</span>
+
+<h3>
+ElevenLabs
+</h3>
+
+<p>
+Used for AI voice experimentation,
+audio generation and multimedia projects.
+</p>
+
+<div class="ai-tags">
+
+<span>Voice AI</span>
+<span>Audio</span>
+<span>Multimedia</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="glass ai-tool reveal">
+
+<div class="ai-tool-icon">
+✨
+</div>
+
+<div class="ai-tool-content">
+
+<span class="ai-tool-number">
+06 · EXPERIMENTATION
+</span>
+
+<h3>
+Other AI Tools
+</h3>
+
+<p>
+I continuously experiment with new AI
+platforms and tools to discover better
+development workflows.
+</p>
+
+<div class="ai-tags">
+
+<span>Experiment</span>
+<span>Research</span>
+<span>Innovation</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects">
+
+<div class="container">
+
+
+<div class="section-header reveal">
+
+<div class="section-label">
+MY WORK
+</div>
+
+<h2>
+Things I've Built
+</h2>
+
+<p>
+Web applications, AI systems and 3D animation.
+</p>
+
+</div>
+
+
+<div class="filters">
+
+<button
+class="filter active"
+data-filter="all"
+>
+All
+</button>
+
+<button
+class="filter"
+data-filter="web"
+>
+Web Apps
+</button>
+
+<button
+class="filter"
+data-filter="ai"
+>
+AI & ML
+</button>
+
+<button
+class="filter"
+data-filter="3d"
+>
+3D & Animation
+</button>
+
+</div>
+
+
+<div class="projects">
+
+<!-- Project 1 -->
+<div class="glass project reveal" data-category="ai">
+<div class="project-number">01</div>
+<div class="project-icon">📷</div>
+<h3>Smart AI Face Attendance</h3>
+<p>
+An AI-powered attendance system featuring real-time face recognition, live camera feed scanning, and local network database syncing.
+</p>
+<div class="tags">
+<span>Python</span>
+<span>OpenCV</span>
+<span>Flask</span>
+<span>SQLite</span>
+</div>
+<div class="project-footer">
+<span>AI & ML</span>
+<span>2026</span>
+</div>
+</div>
+
+<!-- Project 2 -->
+<div class="glass project reveal" data-category="3d">
+<div class="project-number">02</div>
+<div class="project-icon">🎨</div>
+<h3>Space Exploration (3D Animation)</h3>
+<p>
+3D character models and dynamic environment designs built using Blender and automated with Blender Python scripting.
+</p>
+<div class="tags">
+<span>Blender</span>
+<span>Python</span>
+<span>3D Art</span>
+</div>
+<div class="project-footer">
+<span>3D Design</span>
+<span>2025</span>
+</div>
+</div>
+
+<!-- Project 3 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">03</div>
+<div class="project-icon">💼</div>
+<h3>Employee Management System</h3>
+<p>
+Robust backend application with database operations, CRUD functions, and secure role-based user access controls.
+</p>
+<div class="tags">
+<span>Java</span>
+<span>JDBC</span>
+<span>OOP</span>
+</div>
+<div class="project-footer">
+<span>Backend</span>
+<span>2024</span>
+</div>
+</div>
+
+<!-- Project 4 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">04</div>
+<div class="project-icon">📝</div>
+<h3>Task Management System</h3>
+<p>
+Command-line interface application designed to track tasks, log deadlines, and save files locally.
+</p>
+<div class="tags">
+<span>Python</span>
+<span>CLI</span>
+<span>File Handling</span>
+</div>
+<div class="project-footer">
+<span>Console App</span>
+<span>2024</span>
+</div>
+</div>
+
+<!-- Project 5 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">05</div>
+<div class="project-icon">🏺</div>
+<h3>Antique Shop Website</h3>
+<p>
+A responsive store interface allowing collectors to browse rare items using smart search features and tags.
+</p>
+<div class="tags">
+<span>HTML5</span>
+<span>CSS3</span>
+<span>JavaScript</span>
+</div>
+<div class="project-footer">
+<span>Frontend</span>
+<span>2024</span>
+</div>
+</div>
+
+<!-- Project 6 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">06</div>
+<div class="project-icon">🔍</div>
+<h3>Lost & Found Spot</h3>
+<p>
+A security portal designed for users to post missing valuables, register accounts, and browse local listings.
+</p>
+<div class="tags">
+<span>Django</span>
+<span>Python</span>
+<span>SQLite</span>
+</div>
+<div class="project-footer">
+<span>Web App</span>
+<span>2024</span>
+</div>
+</div>
+
+<!-- Project 7 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">07</div>
+<div class="project-icon">🏬</div>
+<h3>Smart-Biz Hub</h3>
+<p>
+A modern merchant platform tracking custom orders, active stocks, and issuing digital receipts via QR billing.
+</p>
+<div class="tags">
+<span>React</span>
+<span>Node.js</span>
+<span>MongoDB</span>
+</div>
+<div class="project-footer">
+<span>Full Stack</span>
+<span>2025</span>
+</div>
+</div>
+
+<!-- Project 8 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">08</div>
+<div class="project-icon">🍎</div>
+<h3>MealRescue</h3>
+<p>
+Food waste reduction platform connecting restaurants, NGOs, and volunteers with live updates and dashboards.
+</p>
+<div class="tags">
+<span>Angular</span>
+<span>Node.js</span>
+<span>MongoDB</span>
+</div>
+<div class="project-footer">
+<span>Full Stack</span>
+<span>2025</span>
+</div>
+</div>
+
+<!-- Project 9 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">09</div>
+<div class="project-icon">🛒</div>
+<h3>Smart Shopping Assistant</h3>
+<p>
+Optimized shopping app helper utilizing Subset Sum Dynamic Programming algorithms to maximize utility.
+</p>
+<div class="tags">
+<span>React</span>
+<span>JavaScript</span>
+<span>DP Heuristics</span>
+</div>
+<div class="project-footer">
+<span>Algorithms</span>
+<span>2025</span>
+</div>
+</div>
+
+<!-- Project 10 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">10</div>
+<div class="project-icon">🏪</div>
+<h3>Shop Management System</h3>
+<p>
+Core Java store management portal tracking register logs, stock records, and generating customer billing lists.
+</p>
+<div class="tags">
+<span>Java</span>
+<span>Console CLI</span>
+<span>OOP</span>
+</div>
+<div class="project-footer">
+<span>Group Project</span>
+<span>2024</span>
+</div>
+</div>
+
+<!-- Project 11 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">11</div>
+<div class="project-icon">🏦</div>
+<h3>Bank Management (Java)</h3>
+<p>
+Secure transaction platform tracking savings balance, loan approval rules, and active account logging.
+</p>
+<div class="tags">
+<span>Java</span>
+<span>JDBC</span>
+<span>SQL</span>
+</div>
+<div class="project-footer">
+<span>Group Project</span>
+<span>2024</span>
+</div>
+</div>
+
+<!-- Project 12 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">12</div>
+<div class="project-icon">🛡️</div>
+<h3>Bank Management (Python)</h3>
+<p>
+A Python console application validating user authorization through secure OTP authentication.
+</p>
+<div class="tags">
+<span>Python</span>
+<span>Security</span>
+<span>OTP Logic</span>
+</div>
+<div class="project-footer">
+<span>Group Project</span>
+<span>2024</span>
+</div>
+</div>
+
+<!-- Project 13 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">13</div>
+<div class="project-icon">🍽️</div>
+<h3>Restaurant Management</h3>
+<p>
+A restaurant site showcasing menus, booking dates, and compiling digital PDF bills dynamically.
+</p>
+<div class="tags">
+<span>HTML5</span>
+<span>CSS3</span>
+<span>JS PDF</span>
+</div>
+<div class="project-footer">
+<span>Group Project</span>
+<span>2024</span>
+</div>
+</div>
+
+<!-- Project 14 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">14</div>
+<div class="project-icon">⏳</div>
+<h3>Virtual Queue Manager</h3>
+<p>
+A digital waiting room tracking ticket tokens, live queue queues, and estimated customer wait times.
+</p>
+<div class="tags">
+<span>React.js</span>
+<span>MongoDB</span>
+<span>WebSockets</span>
+</div>
+<div class="project-footer">
+<span>Group Project</span>
+<span>2025</span>
+</div>
+</div>
+
+<!-- Project 15 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">15</div>
+<div class="project-icon">🏥</div>
+<h3>Patient Monitoring System</h3>
+<p>
+A web dashboard plotting health metrics, logs, and sending warnings for patient tracking.
+</p>
+<div class="tags">
+<span>Django</span>
+<span>Python</span>
+<span>SQLite</span>
+</div>
+<div class="project-footer">
+<span>Group Project</span>
+<span>2025</span>
+</div>
+</div>
+
+<!-- Project 16 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">16</div>
+<div class="project-icon">🏫</div>
+<h3>EduSched</h3>
+<p>
+Faculty scheduling panel optimizing class hours and slot distribution using job scheduling algorithms.
+</p>
+<div class="tags">
+<span>Angular</span>
+<span>Java</span>
+<span>Algorithms</span>
+</div>
+<div class="project-footer">
+<span>Group Project</span>
+<span>2025</span>
+</div>
+</div>
+
+<!-- Project 17 -->
+<div class="glass project reveal" data-category="web">
+<div class="project-number">17</div>
+<div class="project-icon">🌐</div>
+<h3>RouteWise</h3>
+<p>
+Interactive dashboard visualizing static routing metrics, node configurations, and traceroute hops.
+</p>
+<div class="tags">
+<span>Cisco Packet</span>
+<span>Python</span>
+<span>Web</span>
+</div>
+<div class="project-footer">
+<span>Group Project</span>
+<span>2025</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section id="education">
+
+<div class="container">
+
+<div class="section-header reveal">
+
+<div class="section-label">
+MY EDUCATION
+</div>
+
+<h2>
+Academic Timeline
+</h2>
+
+<p>
+My educational background and learning path.
+</p>
+
+</div>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-year">2023 - 2027</div>
+
+<h3>B.E. Information Technology</h3>
+
+<p>LJ University, Ahmedabad</p>
+
+<p>Focusing on software development, database management systems, artificial intelligence, and web technologies.</p>
+
+</div>
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-year">2021 - 2023</div>
+
+<h3>Higher Secondary Education</h3>
+
+<p>Science Stream (HSC)</p>
+
+<p>Strong foundation in Mathematics, Physics, and Computer Science.</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="glass contact-box reveal">
+
+<div class="section-label">
+GET IN TOUCH
+</div>
+
+<h2>
+Let's Create Something Great
+</h2>
+
+<p>
+I'm currently looking for internship opportunities. Whether you have a project idea, a question, or just want to connect, feel free to reach out!
+</p>
+
+<div class="buttons">
+
+<a
+href="mailto:jigneshkanojiya@gmail.com"
+class="btn btn-primary"
+>
+Email Me
+</a>
+
+<a
+href="https://linkedin.com"
+target="_blank"
+class="btn btn-secondary"
+>
+LinkedIn
+</a>
+
+<a
+href="https://github.com/jjk13120-art"
+target="_blank"
+class="btn btn-secondary"
+>
+GitHub
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+&copy; 2026 Jignesh Kanojiya. Built with passion & AI assistance.
+</footer>
+
+
+<!-- =====================================================
+     MODAL FOR DETAILS
+===================================================== -->
+<div id="projectModal" class="project-modal">
+    <div class="glass modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body">
+            <!-- Content will be injected dynamically -->
+        </div>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     SCRIPTS
+===================================================== -->
+
+<script>
+// Glowing Custom Cursor
+const cursor = document.querySelector('.custom-cursor');
+const cursorGlow = document.querySelector('.custom-cursor-glow');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    cursor.style.opacity = '1';
+    
+    cursorGlow.style.left = e.clientX + 'px';
+    cursorGlow.style.top = e.clientY + 'px';
+    cursorGlow.style.opacity = '1';
+});
+
+document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+    cursorGlow.style.opacity = '0';
+});
+
+
+// Reveal Animation on Scroll
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealOnScroll = () => {
+    revealElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (elementTop < windowHeight - 50) {
+            element.classList.add('visible');
+        }
+    });
+};
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
+
+// Hanging Card 3D Tilt Parallax Effect
+const card = document.querySelector('.hanging-card');
+const area = document.querySelector('.hanging-area');
+
+area.addEventListener('mousemove', (e) => {
+    const rect = area.getBoundingClientRect();
+    const x = e.clientX - rect.left - (rect.width / 2);
+    const y = e.clientY - rect.top - (rect.height / 2);
+    
+    // Temporarily halt idle sway animation
+    card.style.animation = 'none';
+    
+    const rotateX = -y / 12;
+    const rotateY = x / 12;
+    
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+});
+
+area.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    // Restore default CSS keyframe sway animation
+    card.style.animation = 'naturalHanging 8s ease-in-out infinite';
+});
+
+
+// Project Details Modal Implementation
+const modal = document.getElementById('projectModal');
+const modalBody = modal.querySelector('.modal-body');
+const closeModal = modal.querySelector('.close-modal');
+const projectsList = document.querySelectorAll('.project');
+
+const projectDetails = {
+    '01': {
+        title: 'Smart AI Face Attendance',
+        desc: 'A full-scale biometric attendance management platform integrating modern computer vision, database logging, and automated LLM report summaries. Features a mobile camera stream, liveness checking (anti-spoof), and Microsoft voice assistance.',
+        features: ['Real-time face encodings extraction via dlib', 'Liveness verification preventing presentation photo/video attacks', 'Background multi-threaded model retrainings', 'Automated email warning dispatch for low attendance'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '02': {
+        title: 'Space Exploration (3D Animation)',
+        desc: 'Advanced Blender 3D rendering and environmental assets creation. Incorporates Python programming scripts inside Blender to automate complex keyframe physics, texture mappings, and custom procedural object configurations.',
+        features: ['Procedural landscape rendering with Python', 'Custom physics and keyframe sequence automation', 'High-fidelity lighting maps and rendering configuration'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '03': {
+        title: 'Employee Management System',
+        desc: 'Java backend enterprise-style database client application supporting secure employee records editing, department assignments, role auditing, and strict user security rules.',
+        features: ['Full database CRUD (Create, Read, Update, Delete) architecture', 'Secure role-based views limiting edits to administrator roles', 'Data validation algorithms filtering string/number inputs', 'Integrated SQL transactions ensuring database integrity'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '04': {
+        title: 'Task Management System',
+        desc: 'Python-based command line manager parsing local files to track project schedules, deadline prioritization, status updates, and logging history.',
+        features: ['File storage and local serialization operations', 'CLI query processing and input commands validation', 'Dynamic sorting algorithms by task deadlines', 'Detailed logs tracker monitoring task histories'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '05': {
+        title: 'Antique Shop Website',
+        desc: 'Responsive web frontend showcasing vintage collectibles and antiques. Employs client-side sorting and text index matches to filter products on the fly.',
+        features: ['Fully responsive layouts mapping perfectly to all screens', 'Advanced JS search and filters on tag arrays', 'CSS transition and hover card animation effects', 'Interactive user shopping cart preview logic'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '06': {
+        title: 'Lost & Found Spot',
+        desc: 'A community bulletin board web application where registered users report lost items, verify owner identities, and browse listings categorized by geographic locations.',
+        features: ['Built-in Django authentication and user profiles', 'Relational database schema managing listings and categories', 'Geographic search filtering items by city zones', 'Clean upload forms supporting image compression'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '07': {
+        title: 'Smart-Biz Hub',
+        desc: 'Enterprise business assistant tracking custom merchant shops, inventory items stock changes, customer invoice checkout logs, and instant QR bill generation.',
+        features: ['Dynamic MongoDB schema handling inventory items', 'Integrated QR Code billing generation on checkout', 'Interactive inventory alerts for low stock levels', 'Merchant revenue statistics line graphs'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '08': {
+        title: 'MealRescue',
+        desc: 'An Angular and Node.js logistics portal designed to reduce municipal food waste. Streamlines donations from restaurants and matches them directly with local charity distribution pipelines.',
+        features: ['Real-time notification socket alerts for nearby NGOs', 'Interactive mapping plotting donor drop-off locations', 'Volunteer dashboard tracking delivery assignment milestones', 'Admin portal monitoring donor metrics and metrics logs'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '09': {
+        title: 'Smart Shopping Assistant',
+        desc: 'A dynamic budget optimization application that implements Subset Sum Dynamic Programming algorithms to maximize purchased items utility under a hard budget ceiling.',
+        features: ['Custom Subset Sum DP optimization script', 'Interactive item selection inventory lists', 'Direct export pipeline generating digital PDF receipt reports', 'Real-time list price changes alerts'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '10': {
+        title: 'Shop Management System',
+        desc: 'A Core Java terminal utility designed for store administrators to handle point-of-sale invoicing, stock catalog updates, and transaction details logs.',
+        features: ['Console CLI routing menu loops', 'Stock catalog tracking logic in OOP structures', 'Formatted invoice printing outputs', 'Auto-saving database states in text files'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '11': {
+        title: 'Bank Management System (Java)',
+        desc: 'Bi-directional bank operations tracker integrating JDBC database connectors, monitoring checks account balances, loan approval checks, and user activity auditing.',
+        features: ['JDBC SQL connection pool configuration', 'Transaction logging schema protecting account balances', 'Rule-based loan eligibility evaluation algorithms', 'Multi-user query operations optimization'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '12': {
+        title: 'Bank Management System (Python)',
+        desc: 'Security-centric bank console app routing OTP validations for withdrawals, checking account records, and verifying secure transaction keys.',
+        features: ['Secure OTP (One-Time Password) generation routines', 'Simulated SMS/Email transmission logs', 'Transaction security verification hash codes', 'Database balance lookup operations'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '13': {
+        title: 'Restaurant Management System',
+        desc: 'A web portal presenting restaurant menu listings, automated booking schedules, and dynamically compiling printable digital PDF bills.',
+        features: ['Responsive CSS menu layouts and pricing lists', 'Interactive calendar booking form widgets', 'JavaScript-driven dynamic billing list summaries', 'PDF download compile library integration'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '14': {
+        title: 'Virtual Queue Manager',
+        desc: 'A real-time socket dashboard enabling customers to request queue tokens, view live queue lists, and monitor estimated waiting indicators.',
+        features: ['Real-time socket communication of queue lengths', 'Token number print generator logic', 'Admin console mapping teller active windows', 'Visual analytics charts mapping peak visitor hours'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '15': {
+        title: 'Remote Patient Monitoring System',
+        desc: 'Django healthcare monitoring portal tracking critical patient biometrics, logging medication dates, and mapping warning flags on health fluctuations.',
+        features: ['Patient biometrics tracker graphs dashboard', 'Dynamic medication schedule warning tickers', 'Secure role views separating Doctors and Patients', 'Emergency alert trigger thresholds logic'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '16': {
+        title: 'EduSched',
+        desc: 'Academic faculty schedule optimizer utilizing scheduling algorithms to minimize classroom lecture slots overlap and balance weekly faculty hour loads.',
+        features: ['Job scheduling resource allocation algorithms', 'Department course catalogs and faculty lists tracking', 'Timetable slot assignment matrix view', 'Conflict flag markers warning of class overlap'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    },
+    '17': {
+        title: 'RouteWise',
+        desc: 'Computer networks static routing visual mapping tool, tracing logical IP paths, routing hops counts, and highlighting offline nodes configurations.',
+        features: ['Logical network topology nodes mapper', 'Interactive traceroute simulation path highlights', 'Cisco configuration script compiler assistant', 'Routing tables path calculation logic'],
+        links: { github: 'https://github.com/jjk13120-art' }
+    }
+};
+
+projectsList.forEach(project => {
+    project.addEventListener('click', () => {
+        const num = project.querySelector('.project-number').textContent;
+        const details = projectDetails[num];
+        if (details) {
+            modalBody.innerHTML = `
+                <h3 style="font-size: 24px; margin-bottom: 15px;" class="gradient-text">${details.title}</h3>
+                <p style="color: var(--muted); margin-bottom: 20px; line-height: 1.8; font-size: 14px;">${details.desc}</p>
+                <h4 style="font-size: 14px; color: var(--cyan); margin-bottom: 10px;">Key Features</h4>
+                <ul style="list-style: none; margin-bottom: 25px; font-size: 13px;">
+                    ${details.features.map(f => `<li style="margin-bottom: 8px; color: #d7d3e3;">🔹 ${f}</li>`).join('')}
+                </ul>
+                <div class="buttons" style="justify-content: flex-start;">
+                    <a href="${details.links.github}" target="_blank" class="btn btn-primary" style="padding: 10px 18px;">View Source Code</a>
+                </div>
+            `;
+            modal.style.display = 'flex';
+        }
+    });
+});
+
+closeModal.addEventListener('click', () => modal.style.display = 'none');
+modal.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+
+
+// Scrollspy active section navigation links
+const sections = document.querySelectorAll('section, header');
+const navAnchorTags = document.querySelectorAll('.nav-links a');
+
+const scrollSpyHandler = () => {
+    let currentId = '';
+    sections.forEach(sec => {
+        const top = sec.offsetTop - 85;
+        const height = sec.offsetHeight;
+        if (window.scrollY >= top && window.scrollY < top + height) {
+            currentId = sec.getAttribute('id') || '';
+        }
+    });
+
+    navAnchorTags.forEach(anchor => {
+        anchor.classList.remove('active');
+        if (anchor.getAttribute('href') === `#${currentId}` || (currentId === '' && anchor.getAttribute('href') === '#')) {
+            anchor.classList.add('active');
+        }
+    });
+};
+window.addEventListener('scroll', scrollSpyHandler);
+
+
+// Period Selector & Dynamic SVG Line Chart data binding
+const periods = document.querySelectorAll('.period');
+const chartPoints = document.querySelectorAll('.chart-point');
+const chartLine = document.querySelector('.chart-line');
+const chartArea = document.querySelector('.chart-area');
+
+const chartData = {
+    '1M': {
+        line: 'M0,450 L90,440 L180,430 L270,410 L360,395 L450,380 L540,360 L630,350 L720,330 L810,320 L900,310 L1000,290',
+        area: 'M0,450 L90,440 L180,430 L270,410 L360,395 L450,380 L540,360 L630,350 L720,330 L810,320 L900,310 L1000,290 L1000,500 L0,500 Z',
+        points: [[0,450], [180,430], [360,395], [540,360], [720,330], [900,310], [1000,290]]
+    },
+    '3M': {
+        line: 'M0,430 L90,410 L180,425 L270,370 L360,385 L450,320 L540,340 L630,275 L720,300 L810,210 L900,235 L1000,160',
+        area: 'M0,430 L90,410 L180,425 L270,370 L360,385 L450,320 L540,340 L630,275 L720,300 L810,210 L900,235 L1000,160 L1000,500 L0,500 Z',
+        points: [[0,430], [180,425], [360,385], [540,340], [720,300], [900,235], [1000,160]]
+    },
+    '1Y': {
+        line: 'M0,410 L90,385 L180,400 L270,330 L360,345 L450,270 L540,290 L630,215 L720,240 L810,150 L900,175 L1000,90',
+        area: 'M0,410 L90,385 L180,400 L270,330 L360,345 L450,270 L540,290 L630,215 L720,240 L810,150 L900,175 L1000,90 L1000,500 L0,500 Z',
+        points: [[0,410], [180,400], [360,345], [540,290], [720,240], [900,175], [1000,90]]
+    }
+};
+
+periods.forEach(period => {
+    period.addEventListener('click', () => {
+        periods.forEach(p => p.classList.remove('active'));
+        period.classList.add('active');
+        
+        const key = period.textContent;
+        const data = chartData[key];
+        
+        if (data) {
+            chartLine.setAttribute('d', data.line);
+            chartArea.setAttribute('d', data.area);
+            
+            chartPoints.forEach((point, index) => {
+                if (data.points[index]) {
+                    point.setAttribute('cx', data.points[index][0]);
+                    point.setAttribute('cy', data.points[index][1]);
+                }
+            });
+        }
+    });
+});
+
+
+// Project Filtering
+const filterButtons = document.querySelectorAll('.filter');
+const projects = document.querySelectorAll('.project');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.stopPropagation(); // Avoid triggering modal opens on container clicks
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const category = button.getAttribute('data-filter');
+
+        projects.forEach(project => {
+            const projectCategory = project.getAttribute('data-category');
+            if (category === 'all' || projectCategory === category) {
+                project.classList.remove('hidden');
+                setTimeout(() => {
+                    project.style.opacity = '1';
+                    project.style.transform = 'translateY(0)';
+                }, 50);
+            } else {
+                project.style.opacity = '0';
+                project.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    project.classList.add('hidden');
+                }, 300);
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
