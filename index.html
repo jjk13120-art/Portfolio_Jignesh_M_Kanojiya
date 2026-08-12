@@ -126,6 +126,9 @@ button{
 
     opacity:.14;
 
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+
     animation:
         blobFloat 18s ease-in-out infinite alternate;
 }
@@ -190,9 +193,9 @@ button{
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
-    transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.3s ease;
+    will-change: transform;
 }
 
 .custom-cursor {
@@ -4730,12 +4733,10 @@ const cursor = document.querySelector('.custom-cursor');
 const cursorGlow = document.querySelector('.custom-cursor-glow');
 
 document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
+    cursor.style.transform = `translate3d(${e.clientX - 3}px, ${e.clientY - 3}px, 0)`;
     cursor.style.opacity = '1';
     
-    cursorGlow.style.left = e.clientX + 'px';
-    cursorGlow.style.top = e.clientY + 'px';
+    cursorGlow.style.transform = `translate3d(${e.clientX - 17.5}px, ${e.clientY - 17.5}px, 0)`;
     cursorGlow.style.opacity = '1';
 });
 
