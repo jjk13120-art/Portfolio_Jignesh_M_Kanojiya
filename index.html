@@ -176,6 +176,151 @@
 
 
         /* =========================================================
+   FLOATING BUBBLES
+========================================================= */
+
+        .bubble {
+            position: absolute;
+            bottom: -150px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -15;
+            animation: floatUp 25s linear infinite;
+            will-change: transform, opacity;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(0.8);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.35;
+            }
+
+            90% {
+                opacity: 0.35;
+            }
+
+            100% {
+                transform: translateY(-120vh) rotate(360deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        .bubble-1 {
+            width: 80px;
+            height: 80px;
+            left: 10%;
+            animation-duration: 20s;
+            animation-delay: 0s;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 20, 147, 0.25), rgba(255, 20, 147, 0.05));
+            border: 1px solid rgba(255, 20, 147, 0.3);
+            box-shadow: 0 0 15px rgba(255, 20, 147, 0.2), inset 0 5px 15px rgba(255, 20, 147, 0.4);
+        }
+
+        .bubble-2 {
+            width: 120px;
+            height: 120px;
+            left: 25%;
+            animation-duration: 28s;
+            animation-delay: -3s;
+            background: radial-gradient(circle at 30% 30%, rgba(0, 217, 255, 0.25), rgba(0, 217, 255, 0.05));
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.2), inset 0 8px 20px rgba(0, 217, 255, 0.4);
+        }
+
+        .bubble-3 {
+            width: 60px;
+            height: 60px;
+            left: 40%;
+            animation-duration: 18s;
+            animation-delay: -7s;
+            background: radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.25), rgba(139, 92, 246, 0.05));
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            box-shadow: 0 0 12px rgba(139, 92, 246, 0.15), inset 0 4px 12px rgba(139, 92, 246, 0.35);
+        }
+
+        .bubble-4 {
+            width: 100px;
+            height: 100px;
+            left: 55%;
+            animation-duration: 32s;
+            animation-delay: -11s;
+            background: radial-gradient(circle at 30% 30%, rgba(0, 245, 160, 0.25), rgba(0, 245, 160, 0.05));
+            border: 1px solid rgba(0, 245, 160, 0.3);
+            box-shadow: 0 0 18px rgba(0, 245, 160, 0.2), inset 0 6px 18px rgba(0, 245, 160, 0.4);
+        }
+
+        .bubble-5 {
+            width: 70px;
+            height: 70px;
+            left: 70%;
+            animation-duration: 22s;
+            animation-delay: -4s;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 230, 0, 0.25), rgba(255, 230, 0, 0.05));
+            border: 1px solid rgba(255, 230, 0, 0.3);
+            box-shadow: 0 0 14px rgba(255, 230, 0, 0.15), inset 0 5px 14px rgba(255, 230, 0, 0.35);
+        }
+
+        .bubble-6 {
+            width: 110px;
+            height: 110px;
+            left: 85%;
+            animation-duration: 30s;
+            animation-delay: -15s;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 122, 24, 0.25), rgba(255, 122, 24, 0.05));
+            border: 1px solid rgba(255, 122, 24, 0.3);
+            box-shadow: 0 0 20px rgba(255, 122, 24, 0.2), inset 0 8px 20px rgba(255, 122, 24, 0.4);
+        }
+
+        .bubble-7 {
+            width: 50px;
+            height: 50px;
+            left: 15%;
+            animation-duration: 16s;
+            animation-delay: -10s;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 61, 113, 0.25), rgba(255, 61, 113, 0.05));
+            border: 1px solid rgba(255, 61, 113, 0.3);
+            box-shadow: 0 0 10px rgba(255, 61, 113, 0.15), inset 0 3px 10px rgba(255, 61, 113, 0.35);
+        }
+
+        .bubble-8 {
+            width: 90px;
+            height: 90px;
+            left: 48%;
+            animation-duration: 25s;
+            animation-delay: -18s;
+            background: radial-gradient(circle at 30% 30%, rgba(0, 217, 255, 0.25), rgba(0, 217, 255, 0.05));
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            box-shadow: 0 0 16px rgba(0, 217, 255, 0.2), inset 0 6px 16px rgba(0, 217, 255, 0.4);
+        }
+
+        .bubble-9 {
+            width: 75px;
+            height: 75px;
+            left: 78%;
+            animation-duration: 24s;
+            animation-delay: -2s;
+            background: radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.25), rgba(139, 92, 246, 0.05));
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.15), inset 0 5px 15px rgba(139, 92, 246, 0.35);
+        }
+
+        .bubble-10 {
+            width: 130px;
+            height: 130px;
+            left: 92%;
+            animation-duration: 35s;
+            animation-delay: -8s;
+            background: radial-gradient(circle at 30% 30%, rgba(0, 245, 160, 0.25), rgba(0, 245, 160, 0.05));
+            border: 1px solid rgba(0, 245, 160, 0.3);
+            box-shadow: 0 0 25px rgba(0, 245, 160, 0.2), inset 0 10px 25px rgba(0, 245, 160, 0.4);
+        }
+
+
+        /* =========================================================
    CUSTOM CURSOR
 ========================================================= */
 
@@ -1828,52 +1973,100 @@
    PROJECTS
 ========================================================= */
 
-        .projects {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 18px;
+        /* Carousel containers */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            margin-top: 30px;
         }
 
-        .projects-toggle-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-            z-index: 10;
+        .carousel-viewport {
+            overflow: hidden;
+            width: 100%;
+            padding: 15px 0;
             position: relative;
         }
 
-        .mobile-hidden {
-            display: none !important;
+        .projects {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: 20px;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
         }
 
         .project {
-
             position: relative;
-
             padding: 28px;
-
-            min-height: 350px;
-
+            min-height: 480px;
             cursor: pointer;
-
-            transition:
-                transform .25s ease,
-                border-color .25s ease;
+            transition: transform .25s ease, border-color .25s ease;
+            flex: 0 0 calc(33.333% - 14px);
+            max-width: calc(33.333% - 14px);
+            display: flex;
+            flex-direction: column;
         }
 
         .project:hover {
-
-            border-color:
-                rgba(255, 255, 255, .25);
+            border-color: rgba(255, 255, 255, .25);
             transform: translateY(-5px);
         }
 
         .project.hidden {
             display: none;
+        }
+
+        /* Navigation Buttons */
+        .carousel-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(7, 5, 26, 0.65);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #fff;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .carousel-nav-btn:hover {
+            background: var(--purple);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        .carousel-nav-btn:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .prev-btn {
+            left: -24px;
+        }
+
+        .next-btn {
+            right: -24px;
+        }
+
+        @media(max-width: 1200px) {
+            .prev-btn {
+                left: 8px;
+            }
+
+            .next-btn {
+                right: 8px;
+            }
         }
 
         .project-number {
@@ -1888,26 +2081,28 @@
         }
 
         .project-icon {
-
-            width: 55px;
-            height: 55px;
-
-            display: grid;
-
-            place-items: center;
-
+            width: 100%;
+            height: 160px;
+            display: block;
             margin-top: 18px;
-
-            border-radius: 15px;
-
-            background:
-                rgba(255, 255, 255, .05);
-
-            border:
-                1px solid rgba(255, 255, 255, .08);
-
-            font-size: 27px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, .02);
+            border: 1px solid rgba(255, 255, 255, .05);
+            overflow: hidden;
         }
+
+        .project-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .project:hover .project-icon img {
+            transform: scale(1.05);
+        }
+
 
         .project h3 {
 
@@ -1951,24 +2146,12 @@
         }
 
         .project-footer {
-
-            position: absolute;
-
-            left: 28px;
-            right: 28px;
-            bottom: 22px;
-
+            margin-top: auto;
             padding-top: 14px;
-
-            border-top:
-                1px solid rgba(255, 255, 255, .07);
-
+            border-top: 1px solid rgba(255, 255, 255, .07);
             color: var(--muted2);
-
             font-size: 9px;
-
             display: flex;
-
             justify-content: space-between;
         }
 
@@ -2347,10 +2530,9 @@
                 grid-template-columns: 1fr;
             }
 
-            .projects {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
+            .project {
+                flex: 0 0 calc(50% - 10px);
+                max-width: calc(50% - 10px);
             }
         }
 
@@ -2464,9 +2646,9 @@
                 grid-template-columns: 1fr;
             }
 
-            .projects {
-
-                grid-template-columns: 1fr;
+            .project {
+                flex: 0 0 100%;
+                max-width: 100%;
             }
 
             .hero {
@@ -2655,6 +2837,96 @@
                     .01ms !important;
             }
         }
+        /* =====================================================
+         PROJECT VIDEOS SECTION
+        ===================================================== */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .video-card {
+            cursor: pointer;
+            padding: 20px;
+            border-radius: 24px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .video-preview-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .video-preview-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            border: 0;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.4) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            z-index: 2;
+        }
+
+        .video-overlay::before {
+            content: '▶';
+            font-size: 24px;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            background: rgba(139, 92, 246, 0.85);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 4px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            opacity: 0.8;
+        }
+
+        .video-card:hover .video-overlay::before {
+            transform: scale(1.15);
+            background: var(--purple);
+            opacity: 1;
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.8);
+        }
+
+        .video-card h3 {
+            margin: 15px 0 0;
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            font-weight: 600;
+        }
     </style>
 </head>
 
@@ -2680,6 +2952,18 @@
         <div class="blob blob3"></div>
 
         <div class="blob blob4"></div>
+
+        <!-- Colorful Floating Bubbles -->
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="bubble bubble-5"></div>
+        <div class="bubble bubble-6"></div>
+        <div class="bubble bubble-7"></div>
+        <div class="bubble bubble-8"></div>
+        <div class="bubble bubble-9"></div>
+        <div class="bubble bubble-10"></div>
 
     </div>
 
@@ -4232,7 +4516,8 @@ L1000,80
                         </h3>
 
                         <p>
-                            Used for general research, code optimization, brainstorming, and complex multimodal processing.
+                            Used for general research, code optimization, brainstorming, and complex multimodal
+                            processing.
                         </p>
 
                         <div class="ai-tags">
@@ -4265,7 +4550,8 @@ L1000,80
                         </h3>
 
                         <p>
-                            Used for fast visual assets creation, custom presentation layouts, mockups, and image generation.
+                            Used for fast visual assets creation, custom presentation layouts, mockups, and image
+                            generation.
                         </p>
 
                         <div class="ai-tags">
@@ -4298,7 +4584,8 @@ L1000,80
                         </h3>
 
                         <p>
-                            Used for generating beautiful, interactive presentations and documents using natural language.
+                            Used for generating beautiful, interactive presentations and documents using natural
+                            language.
                         </p>
 
                         <div class="ai-tags">
@@ -4437,355 +4724,500 @@ L1000,80
             </div>
 
 
-            <div class="projects">
+            <div class="carousel-container">
 
-                <!-- Project 1 -->
-                <div class="glass project reveal" data-category="ai">
-                    <div class="project-number">01</div>
-                    <div class="project-icon">📷</div>
-                    <h3>Smart AI Face Attendance</h3>
-                    <p>
-                        An AI-powered attendance system featuring real-time face recognition, live camera feed scanning,
-                        and local network database syncing.
-                    </p>
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>OpenCV</span>
-                        <span>Flask</span>
-                        <span>SQLite</span>
+                <button class="carousel-nav-btn prev-btn" aria-label="Previous Project">←</button>
+
+                <div class="carousel-viewport">
+
+                    <div class="projects">
+
+                        <!-- Project 1 -->
+                        <div class="glass project reveal" data-category="ai">
+                            <div class="project-number">01</div>
+                            <div class="project-icon"><img src="Smart Ai Face Attendance system.png"
+                                    alt="Smart AI Face Attendance"></div>
+                            <h3>Smart AI Face Attendance</h3>
+                            <p>
+                                An AI-powered attendance system featuring real-time face recognition, live camera feed
+                                scanning,
+                                and local network database syncing.
+                            </p>
+                            <div class="tags">
+                                <span>Python</span>
+                                <span>OpenCV</span>
+                                <span>Flask</span>
+                                <span>SQLite</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>AI & ML</span>
+                                <span>2026</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="glass project reveal" data-category="3d">
+                            <div class="project-number">02</div>
+                            <div class="project-icon"><img src="Space exploration.jpg"
+                                    alt="Space Exploration (3D Animation)"></div>
+                            <h3>Space Exploration (3D Animation)</h3>
+                            <p>
+                                3D character models and dynamic environment designs built using Blender and automated
+                                with
+                                Blender Python scripting.
+                            </p>
+                            <div class="tags">
+                                <span>Blender</span>
+                                <span>Python</span>
+                                <span>3D Art</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>3D Design</span>
+                                <span>2026</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">03</div>
+                            <div class="project-icon"><img src="Employee Management system (java).png"
+                                    alt="Employee Management System"></div>
+                            <h3>Employee Management System</h3>
+                            <p>
+                                Robust backend application with database operations, CRUD functions, and secure
+                                role-based user
+                                access controls.
+                            </p>
+                            <div class="tags">
+                                <span>Java</span>
+                                <span>JDBC</span>
+                                <span>OOP</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Backend</span>
+                                <span>2024</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">04</div>
+                            <div class="project-icon"><img src="Task management system (python).png"
+                                    alt="Task Management System"></div>
+                            <h3>Task Management System</h3>
+                            <p>
+                                Command-line interface application designed to track tasks, log deadlines, and save
+                                files
+                                locally.
+                            </p>
+                            <div class="tags">
+                                <span>Python</span>
+                                <span>CLI</span>
+                                <span>File Handling</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Console App</span>
+                                <span>2024</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">05</div>
+                            <div class="project-icon"><img src="Antique Shop.png" alt="Antique Shop Website"></div>
+                            <h3>Antique Shop Website</h3>
+                            <p>
+                                A responsive store interface allowing collectors to browse rare items using smart search
+                                features and tags.
+                            </p>
+                            <div class="tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Frontend</span>
+                                <span>2024</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 6 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">06</div>
+                            <div class="project-icon"><img src="Lost and found spot.jpg" alt="Lost & Found Spot"></div>
+                            <h3>Lost & Found Spot</h3>
+                            <p>
+                                A security portal designed for users to post missing valuables, register accounts, and
+                                browse
+                                local listings.
+                            </p>
+                            <div class="tags">
+                                <span>Django</span>
+                                <span>Python</span>
+                                <span>SQLite</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Web App</span>
+                                <span>2024</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 7 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">07</div>
+                            <div class="project-icon"><img src="smartbizhub.jpg" alt="Smart-Biz Hub"></div>
+                            <h3>Smart-Biz Hub</h3>
+                            <p>
+                                A modern merchant platform tracking custom orders, active stocks, and issuing digital
+                                receipts
+                                via QR billing.
+                            </p>
+                            <div class="tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Full Stack</span>
+                                <span>2025</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 8 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">08</div>
+                            <div class="project-icon"><img src="mealrescue.jpg" alt="MealRescue"></div>
+                            <h3>MealRescue</h3>
+                            <p>
+                                Food waste reduction platform connecting restaurants, NGOs, and volunteers with live
+                                updates and
+                                dashboards.
+                            </p>
+                            <div class="tags">
+                                <span>Angular</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Full Stack</span>
+                                <span>2025</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 9 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">09</div>
+                            <div class="project-icon"><img src="Smart Shopping assistant.png"
+                                    alt="Smart Shopping Assistant"></div>
+                            <h3>Smart Shopping Assistant</h3>
+                            <p>
+                                Optimized shopping app helper utilizing Subset Sum Dynamic Programming algorithms to
+                                maximize
+                                utility.
+                            </p>
+                            <div class="tags">
+                                <span>React</span>
+                                <span>JavaScript</span>
+                                <span>DP Heuristics</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Algorithms</span>
+                                <span>2025</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 10 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">10</div>
+                            <div class="project-icon"><img src="Shop Management system (core java).png"
+                                    alt="Shop Management System"></div>
+                            <h3>Shop Management System</h3>
+                            <p>
+                                Core Java store management portal tracking register logs, stock records, and generating
+                                customer
+                                billing lists.
+                            </p>
+                            <div class="tags">
+                                <span>Java</span>
+                                <span>Console CLI</span>
+                                <span>OOP</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Group Project</span>
+                                <span>2024</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 11 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">11</div>
+                            <div class="project-icon"><img src="Bank management system(java,jdbc).png"
+                                    alt="Bank Management (Java)"></div>
+                            <h3>Bank Management (Java)</h3>
+                            <p>
+                                Secure transaction platform tracking savings balance, loan approval rules, and active
+                                account
+                                logging.
+                            </p>
+                            <div class="tags">
+                                <span>Java</span>
+                                <span>JDBC</span>
+                                <span>SQL</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Group Project</span>
+                                <span>2024</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 12 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">12</div>
+                            <div class="project-icon"><img src="Bank Management system (python).png"
+                                    alt="Bank Management (Python)"></div>
+                            <h3>Bank Management (Python)</h3>
+                            <p>
+                                A Python console application validating user authorization through secure OTP
+                                authentication.
+                            </p>
+                            <div class="tags">
+                                <span>Python</span>
+                                <span>Security</span>
+                                <span>OTP Logic</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Group Project</span>
+                                <span>2024</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 13 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">13</div>
+                            <div class="project-icon"><img src="Restaurant management System.png"
+                                    alt="Restaurant Management"></div>
+                            <h3>Restaurant Management</h3>
+                            <p>
+                                A restaurant site showcasing menus, booking dates, and compiling digital PDF bills
+                                dynamically.
+                            </p>
+                            <div class="tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JS PDF</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Group Project</span>
+                                <span>2024</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 14 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">14</div>
+                            <div class="project-icon"><img src="virtual queue manager.png" alt="Virtual Queue Manager">
+                            </div>
+                            <h3>Virtual Queue Manager</h3>
+                            <p>
+                                A digital waiting room tracking ticket tokens, live queue queues, and estimated customer
+                                wait
+                                times.
+                            </p>
+                            <div class="tags">
+                                <span>React.js</span>
+                                <span>MongoDB</span>
+                                <span>WebSockets</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Group Project</span>
+                                <span>2025</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 15 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">15</div>
+                            <div class="project-icon"><img src="Remote Patient Monitoring System.png"
+                                    alt="Patient Monitoring System"></div>
+                            <h3>Patient Monitoring System</h3>
+                            <p>
+                                A web dashboard plotting health metrics, logs, and sending warnings for patient
+                                tracking.
+                            </p>
+                            <div class="tags">
+                                <span>Django</span>
+                                <span>Python</span>
+                                <span>SQLite</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Group Project</span>
+                                <span>2025</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 16 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">16</div>
+                            <div class="project-icon"><img src="EduSched.png" alt="EduSched"></div>
+                            <h3>EduSched</h3>
+                            <p>
+                                Faculty scheduling panel optimizing class hours and slot distribution using job
+                                scheduling
+                                algorithms.
+                            </p>
+                            <div class="tags">
+                                <span>Angular</span>
+                                <span>Java</span>
+                                <span>Algorithms</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Group Project</span>
+                                <span>2025</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 17 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">17</div>
+                            <div class="project-icon"><img src="Routewise.png" alt="RouteWise"></div>
+                            <h3>RouteWise</h3>
+                            <p>
+                                Interactive dashboard visualizing static routing metrics, node configurations, and
+                                traceroute
+                                hops.
+                            </p>
+                            <div class="tags">
+                                <span>Cisco Packet</span>
+                                <span>Python</span>
+                                <span>Web</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Group Project</span>
+                                <span>2025</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 18 -->
+                        <div class="glass project reveal" data-category="web">
+                            <div class="project-number">18</div>
+                            <div class="project-icon"><img src="securelink.png" alt="SecureLink Firewall"></div>
+                            <h3>SecureLink Firewall</h3>
+                            <p>
+                                Firewall network topology configured in Cisco Packet Tracer, setting up security access control lists (ACLs) to protect subnets.
+                            </p>
+                            <div class="tags">
+                                <span>Cisco Packet</span>
+                                <span>Security</span>
+                                <span>Firewall</span>
+                            </div>
+                            <div class="project-footer">
+                                <span>Network System</span>
+                                <span>2025</span>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="project-footer">
-                        <span>AI & ML</span>
-                        <span>2026</span>
-                    </div>
+
                 </div>
 
-                <!-- Project 2 -->
-                <div class="glass project reveal" data-category="3d">
-                    <div class="project-number">02</div>
-                    <div class="project-icon">🎨</div>
-                    <h3>Space Exploration (3D Animation)</h3>
-                    <p>
-                        3D character models and dynamic environment designs built using Blender and automated with
-                        Blender Python scripting.
-                    </p>
-                    <div class="tags">
-                        <span>Blender</span>
-                        <span>Python</span>
-                        <span>3D Art</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>3D Design</span>
-                        <span>2025</span>
-                    </div>
-                </div>
+                <button class="carousel-nav-btn next-btn" aria-label="Next Project">→</button>
 
-                <!-- Project 3 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">03</div>
-                    <div class="project-icon">💼</div>
-                    <h3>Employee Management System</h3>
-                    <p>
-                        Robust backend application with database operations, CRUD functions, and secure role-based user
-                        access controls.
-                    </p>
-                    <div class="tags">
-                        <span>Java</span>
-                        <span>JDBC</span>
-                        <span>OOP</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Backend</span>
-                        <span>2024</span>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">04</div>
-                    <div class="project-icon">📝</div>
-                    <h3>Task Management System</h3>
-                    <p>
-                        Command-line interface application designed to track tasks, log deadlines, and save files
-                        locally.
-                    </p>
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>CLI</span>
-                        <span>File Handling</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Console App</span>
-                        <span>2024</span>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">05</div>
-                    <div class="project-icon">🏺</div>
-                    <h3>Antique Shop Website</h3>
-                    <p>
-                        A responsive store interface allowing collectors to browse rare items using smart search
-                        features and tags.
-                    </p>
-                    <div class="tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Frontend</span>
-                        <span>2024</span>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">06</div>
-                    <div class="project-icon">🔍</div>
-                    <h3>Lost & Found Spot</h3>
-                    <p>
-                        A security portal designed for users to post missing valuables, register accounts, and browse
-                        local listings.
-                    </p>
-                    <div class="tags">
-                        <span>Django</span>
-                        <span>Python</span>
-                        <span>SQLite</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Web App</span>
-                        <span>2024</span>
-                    </div>
-                </div>
-
-                <!-- Project 7 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">07</div>
-                    <div class="project-icon">🏬</div>
-                    <h3>Smart-Biz Hub</h3>
-                    <p>
-                        A modern merchant platform tracking custom orders, active stocks, and issuing digital receipts
-                        via QR billing.
-                    </p>
-                    <div class="tags">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Full Stack</span>
-                        <span>2025</span>
-                    </div>
-                </div>
-
-                <!-- Project 8 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">08</div>
-                    <div class="project-icon">🍎</div>
-                    <h3>MealRescue</h3>
-                    <p>
-                        Food waste reduction platform connecting restaurants, NGOs, and volunteers with live updates and
-                        dashboards.
-                    </p>
-                    <div class="tags">
-                        <span>Angular</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Full Stack</span>
-                        <span>2025</span>
-                    </div>
-                </div>
-
-                <!-- Project 9 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">09</div>
-                    <div class="project-icon">🛒</div>
-                    <h3>Smart Shopping Assistant</h3>
-                    <p>
-                        Optimized shopping app helper utilizing Subset Sum Dynamic Programming algorithms to maximize
-                        utility.
-                    </p>
-                    <div class="tags">
-                        <span>React</span>
-                        <span>JavaScript</span>
-                        <span>DP Heuristics</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Algorithms</span>
-                        <span>2025</span>
-                    </div>
-                </div>
-
-                <!-- Project 10 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">10</div>
-                    <div class="project-icon">🏪</div>
-                    <h3>Shop Management System</h3>
-                    <p>
-                        Core Java store management portal tracking register logs, stock records, and generating customer
-                        billing lists.
-                    </p>
-                    <div class="tags">
-                        <span>Java</span>
-                        <span>Console CLI</span>
-                        <span>OOP</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Group Project</span>
-                        <span>2024</span>
-                    </div>
-                </div>
-
-                <!-- Project 11 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">11</div>
-                    <div class="project-icon">🏦</div>
-                    <h3>Bank Management (Java)</h3>
-                    <p>
-                        Secure transaction platform tracking savings balance, loan approval rules, and active account
-                        logging.
-                    </p>
-                    <div class="tags">
-                        <span>Java</span>
-                        <span>JDBC</span>
-                        <span>SQL</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Group Project</span>
-                        <span>2024</span>
-                    </div>
-                </div>
-
-                <!-- Project 12 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">12</div>
-                    <div class="project-icon">🛡️</div>
-                    <h3>Bank Management (Python)</h3>
-                    <p>
-                        A Python console application validating user authorization through secure OTP authentication.
-                    </p>
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>Security</span>
-                        <span>OTP Logic</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Group Project</span>
-                        <span>2024</span>
-                    </div>
-                </div>
-
-                <!-- Project 13 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">13</div>
-                    <div class="project-icon">🍽️</div>
-                    <h3>Restaurant Management</h3>
-                    <p>
-                        A restaurant site showcasing menus, booking dates, and compiling digital PDF bills dynamically.
-                    </p>
-                    <div class="tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JS PDF</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Group Project</span>
-                        <span>2024</span>
-                    </div>
-                </div>
-
-                <!-- Project 14 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">14</div>
-                    <div class="project-icon">⏳</div>
-                    <h3>Virtual Queue Manager</h3>
-                    <p>
-                        A digital waiting room tracking ticket tokens, live queue queues, and estimated customer wait
-                        times.
-                    </p>
-                    <div class="tags">
-                        <span>React.js</span>
-                        <span>MongoDB</span>
-                        <span>WebSockets</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Group Project</span>
-                        <span>2025</span>
-                    </div>
-                </div>
-
-                <!-- Project 15 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">15</div>
-                    <div class="project-icon">🏥</div>
-                    <h3>Patient Monitoring System</h3>
-                    <p>
-                        A web dashboard plotting health metrics, logs, and sending warnings for patient tracking.
-                    </p>
-                    <div class="tags">
-                        <span>Django</span>
-                        <span>Python</span>
-                        <span>SQLite</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Group Project</span>
-                        <span>2025</span>
-                    </div>
-                </div>
-
-                <!-- Project 16 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">16</div>
-                    <div class="project-icon">🏫</div>
-                    <h3>EduSched</h3>
-                    <p>
-                        Faculty scheduling panel optimizing class hours and slot distribution using job scheduling
-                        algorithms.
-                    </p>
-                    <div class="tags">
-                        <span>Angular</span>
-                        <span>Java</span>
-                        <span>Algorithms</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Group Project</span>
-                        <span>2025</span>
-                    </div>
-                </div>
-
-                <!-- Project 17 -->
-                <div class="glass project reveal" data-category="web">
-                    <div class="project-number">17</div>
-                    <div class="project-icon">🌐</div>
-                    <h3>RouteWise</h3>
-                    <p>
-                        Interactive dashboard visualizing static routing metrics, node configurations, and traceroute
-                        hops.
-                    </p>
-                    <div class="tags">
-                        <span>Cisco Packet</span>
-                        <span>Python</span>
-                        <span>Web</span>
-                    </div>
-                    <div class="project-footer">
-                        <span>Group Project</span>
-                        <span>2025</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="projects-toggle-container" id="projectsToggleContainer" style="display: none;">
-                <button class="btn btn-secondary" id="projectsToggleBtn">Show More Projects</button>
             </div>
 
         </div>
 
     </section>
+
+    <!-- =====================================================
+     PROJECT VIDEOS
+    ===================================================== -->
+    <section id="project-videos" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">DEMO VIDEOS</div>
+                <h2 class="section-title">Project Demos</h2>
+                <p class="section-subtitle">Watch walk-throughs and demonstrations of key systems in action.</p>
+            </div>
+            
+            <div class="video-grid reveal">
+                <!-- Card 1: Lost and Found Spot -->
+                <div class="glass video-card" data-video-id="iCa4PIHiZ_A" data-title="Lost & Found Spot">
+                    <div class="video-preview-wrapper">
+                        <iframe src="https://www.youtube.com/embed/iCa4PIHiZ_A?autoplay=1&mute=1&loop=1&playlist=iCa4PIHiZ_A&controls=0&playsinline=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <h3>Lost & Found Spot</h3>
+                </div>
+                
+                <!-- Card 2: MealRescue -->
+                <div class="glass video-card" data-video-id="mXwEMlrBcKU" data-title="MealRescue">
+                    <div class="video-preview-wrapper">
+                        <iframe src="https://www.youtube.com/embed/mXwEMlrBcKU?autoplay=1&mute=1&loop=1&playlist=mXwEMlrBcKU&controls=0&playsinline=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <h3>MealRescue</h3>
+                </div>
+                
+                <!-- Card 3: Securlink -->
+                <div class="glass video-card" data-video-id="bmFb_yTDrOU" data-title="Securlink Firewall">
+                    <div class="video-preview-wrapper">
+                        <iframe src="https://www.youtube.com/embed/bmFb_yTDrOU?autoplay=1&mute=1&loop=1&playlist=bmFb_yTDrOU&controls=0&playsinline=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <h3>Securlink Firewall</h3>
+                </div>
+                
+                <!-- Card 4: RouteWise -->
+                <div class="glass video-card" data-video-id="WzzT1Xp4CNw" data-title="RouteWise">
+                    <div class="video-preview-wrapper">
+                        <iframe src="https://www.youtube.com/embed/WzzT1Xp4CNw?autoplay=1&mute=1&loop=1&playlist=WzzT1Xp4CNw&controls=0&playsinline=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <h3>RouteWise</h3>
+                </div>
+                
+                <!-- Card 5: Smart Shopping Assistance -->
+                <div class="glass video-card" data-video-id="EvwBJ9c190E" data-title="Smart Shopping Assistant">
+                    <div class="video-preview-wrapper">
+                        <iframe src="https://www.youtube.com/embed/EvwBJ9c190E?autoplay=1&mute=1&loop=1&playlist=EvwBJ9c190E&controls=0&playsinline=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <h3>Smart Shopping Assistant</h3>
+                </div>
+                
+                <!-- Card 6: SmartBiz Hub -->
+                <div class="glass video-card" data-video-id="XXw4V1a4lqU" data-title="Smart-Biz Hub">
+                    <div class="video-preview-wrapper">
+                        <iframe src="https://www.youtube.com/embed/XXw4V1a4lqU?autoplay=1&mute=1&loop=1&playlist=XXw4V1a4lqU&controls=0&playsinline=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <h3>Smart-Biz Hub</h3>
+                </div>
+                
+                <!-- Card 7: Space Exploration -->
+                <div class="glass video-card" data-video-id="zXsbrbprgsM" data-title="Space Exploration">
+                    <div class="video-preview-wrapper">
+                        <iframe src="https://www.youtube.com/embed/zXsbrbprgsM?autoplay=1&mute=1&loop=1&playlist=zXsbrbprgsM&controls=0&playsinline=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <h3>Space Exploration</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Popup Modal -->
+    <div id="videoModal" class="project-modal">
+        <div class="modal-content glass" style="max-width: 800px; padding: 20px; width: 90%;">
+            <span class="close-modal" id="closeVideoModal">&times;</span>
+            <div class="modal-body" style="padding-top: 15px;">
+                <h3 id="videoModalTitle" style="font-size: 22px; margin-bottom: 15px;" class="gradient-text">Project Demo</h3>
+                <div class="iframe-container" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <iframe id="modalVideoIframe" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- =====================================================
@@ -4840,9 +5272,11 @@ L1000,80
 
                     <h3>Higher Secondary Education</h3>
 
+                    <p>Amrut High School, India</p>
+
                     <p>Science Stream (HSC)</p>
 
-                    <p>Strong foundation in Mathematics, Physics, and Computer Science.</p>
+                    <p>Strong foundation in Mathematics, Physics, Chemistry, English, and Computer .</p>
 
                 </div>
 
@@ -4857,7 +5291,8 @@ L1000,80
 
                     <p>Earth English School, India</p>
 
-                    <p>Completed 10th grade (SSC) GSEB board with a strong academic foundation in Science, Mathematics, and English.</p>
+                    <p>Completed 10th grade (SSC) GSEB board with a strong academic foundation in Science, Mathematics,
+                        and English.</p>
 
                 </div>
 
@@ -5003,7 +5438,8 @@ L1000,80
                 </h2>
 
                 <p>
-                    I'm currently looking for internship and Full-Time Job opportunities. Whether you have a project idea, a
+                    I'm currently looking for internship and Full-Time Job opportunities. Whether you have a project
+                    idea, a
                     question, or just want to connect, feel free to reach out!
                 </p>
 
@@ -5133,7 +5569,9 @@ L1000,80
         const modal = document.getElementById('projectModal');
         const modalBody = modal.querySelector('.modal-body');
         const closeModal = modal.querySelector('.close-modal');
-        const projectsList = document.querySelectorAll('.project');
+        const carouselTrack = document.querySelector('.projects');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
 
         const projectDetails = {
             '01': {
@@ -5237,12 +5675,20 @@ L1000,80
                 desc: 'Computer networks static routing visual mapping tool, tracing logical IP paths, routing hops counts, and highlighting offline nodes configurations.',
                 features: ['Logical network topology nodes mapper', 'Interactive traceroute simulation path highlights', 'Cisco configuration script compiler assistant', 'Routing tables path calculation logic'],
                 links: { github: 'https://github.com/jjk13120-art' }
+            },
+            '18': {
+                title: 'SecureLink Firewall',
+                desc: 'Firewall network topology configured in Cisco Packet Tracer, setting up security access control lists (ACLs), NAT translations, and firewall rules to protect local enterprise subnets.',
+                features: ['Access Control List (ACL) configurations preventing unauthorized WAN entry', 'Network Address Translation (NAT) masquerading internal private subnets', 'Demilitarized Zone (DMZ) setups isolating public-facing servers', 'VLAN trunking and routing protocol rule policies definition'],
+                links: { github: 'https://github.com/jjk13120-art' }
             }
         };
 
-        projectsList.forEach(project => {
-            project.addEventListener('click', () => {
-                const num = project.querySelector('.project-number').textContent;
+        // Use event delegation on carousel track to handle clicks for original & cloned cards dynamically
+        carouselTrack.addEventListener('click', (e) => {
+            const projectCard = e.target.closest('.project');
+            if (projectCard) {
+                const num = projectCard.querySelector('.project-number').textContent;
                 const details = projectDetails[num];
                 if (details) {
                     modalBody.innerHTML = `
@@ -5258,7 +5704,7 @@ L1000,80
             `;
                     modal.style.display = 'flex';
                 }
-            });
+            }
         });
 
         closeModal.addEventListener('click', () => modal.style.display = 'none');
@@ -5366,94 +5812,381 @@ L1000,80
         });
 
 
-        // Project Filtering & Mobile View Collapsing
+        // Project Carousel & Filtering Implementation
         const filterButtons = document.querySelectorAll('.filter');
-        const projects = document.querySelectorAll('.project');
-        const projectsToggleContainer = document.getElementById('projectsToggleContainer');
-        const projectsToggleBtn = document.getElementById('projectsToggleBtn');
-        let showAllProjects = false;
-
-        const updateProjectsVisibility = () => {
-            const isMobile = window.innerWidth <= 750;
-            const activeFilterButton = document.querySelector('.filter.active');
-            const activeFilter = activeFilterButton ? activeFilterButton.getAttribute('data-filter') : 'all';
-            
-            // Get all projects matching the active filter
-            const filteredProjects = Array.from(projects).filter(project => {
-                const category = project.getAttribute('data-category');
-                return activeFilter === 'all' || category === activeFilter;
-            });
-
-            if (isMobile) {
-                if (filteredProjects.length > 6) {
-                    if (projectsToggleContainer) {
-                        projectsToggleContainer.style.display = 'flex';
-                        projectsToggleBtn.textContent = showAllProjects ? 'Show Less' : 'Show More Projects';
-                    }
-
-                    filteredProjects.forEach((project, index) => {
-                        if (index < 6 || showAllProjects) {
-                            project.classList.remove('mobile-hidden');
-                        } else {
-                            project.classList.add('mobile-hidden');
-                        }
-                    });
-                } else {
-                    if (projectsToggleContainer) projectsToggleContainer.style.display = 'none';
-                    filteredProjects.forEach(project => project.classList.remove('mobile-hidden'));
-                }
-            } else {
-                if (projectsToggleContainer) projectsToggleContainer.style.display = 'none';
-                projects.forEach(project => project.classList.remove('mobile-hidden'));
-            }
-        };
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.stopPropagation(); // Avoid triggering modal opens on container clicks
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                const category = button.getAttribute('data-filter');
-
-                projects.forEach(project => {
-                    const projectCategory = project.getAttribute('data-category');
-                    if (category === 'all' || projectCategory === category) {
-                        project.classList.remove('hidden');
-                        setTimeout(() => {
-                            project.style.opacity = '1';
-                            project.style.transform = 'translateY(0)';
-                        }, 50);
-                    } else {
-                        project.style.opacity = '0';
-                        project.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            project.classList.add('hidden');
-                        }, 300);
-                    }
-                });
-
-                // Reset showAllProjects on filter change
-                showAllProjects = false;
-                setTimeout(updateProjectsVisibility, 310);
-                updateProjectsVisibility();
-            });
+        const originalProjects = Array.from(document.querySelectorAll('.project')).map(p => {
+            // Reset inline styles that might interfere
+            p.removeAttribute('style');
+            p.classList.remove('mobile-hidden', 'hidden');
+            return p;
         });
 
-        if (projectsToggleBtn) {
-            projectsToggleBtn.addEventListener('click', () => {
-                showAllProjects = !showAllProjects;
-                updateProjectsVisibility();
-                if (!showAllProjects) {
-                    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+        let currentIndex = 4;
+        const clonesCount = 4;
+        let isTransitioningToButton = false;
+        let isPaused = false;
+        let currentFilteredList = [];
+        let startX = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        let isDragging = false;
+
+        // Helper to parse translateX offset from transform matrix
+        const getTranslateX = () => {
+            const style = window.getComputedStyle(carouselTrack);
+            const matrix = style.transform || style.webkitTransform;
+            if (!matrix || matrix === 'none') return 0;
+            const parts = matrix.split('(')[1].split(')')[0].split(',');
+            if (parts.length === 6) {
+                return parseFloat(parts[4]); // 2D matrix
+            } else if (parts.length === 16) {
+                return parseFloat(parts[12]); // 3D matrix
+            }
+            return 0;
+        };
+
+        const startCrawl = () => {
+            if (isPaused || isDragging || isTransitioningToButton) return;
+
+            const cards = carouselTrack.querySelectorAll('.project');
+            if (cards.length === 0) return;
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 20;
+            const totalWidth = cardWidth + gap;
+
+            // Slow linear transition (6s per card width)
+            carouselTrack.style.transition = 'transform 6s linear';
+            const offset = -currentIndex * totalWidth;
+            carouselTrack.style.transform = `translate3d(${offset}px, 0, 0)`;
+        };
+
+        const updatePosition = (useTransition = true) => {
+            const cards = carouselTrack.querySelectorAll('.project');
+            if (cards.length === 0) return;
+
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 20; // gap from CSS
+            const targetOffset = -currentIndex * (cardWidth + gap);
+
+            if (useTransition) {
+                const currentX = getTranslateX();
+                // Subpixel snap protection: if already at target offset, skip transition
+                if (Math.abs(currentX - targetOffset) < 1) {
+                    isTransitioningToButton = false;
+                    carouselTrack.style.transition = 'none';
+                    carouselTrack.style.transform = `translate3d(${targetOffset}px, 0, 0)`;
+                    return;
+                }
+                carouselTrack.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            } else {
+                carouselTrack.style.transition = 'none';
+            }
+
+            carouselTrack.style.transform = `translate3d(${targetOffset}px, 0, 0)`;
+        };
+
+        // Transition reset logic for infinite looping
+        carouselTrack.addEventListener('transitionend', (e) => {
+            // Ignore bubbled transitionend events from child .project hover transitions
+            if (e.target !== carouselTrack) return;
+            if (e.propertyName !== 'transform') return;
+
+            const originalLength = currentFilteredList.length;
+            if (originalLength === 0) return;
+
+            if (isTransitioningToButton) {
+                isTransitioningToButton = false;
+            }
+
+            // Check boundary limits for infinite wrap
+            if (currentIndex >= clonesCount + originalLength) {
+                currentIndex = currentIndex - originalLength;
+                updatePosition(false);
+            } else if (currentIndex < clonesCount) {
+                currentIndex = currentIndex + originalLength;
+                updatePosition(false);
+            }
+
+            // Force layout reflow
+            carouselTrack.offsetHeight;
+
+            // Continue crawl if not interrupted
+            if (!isPaused && !isDragging && !isTransitioningToButton) {
+                currentIndex++;
+                requestAnimationFrame(startCrawl);
+            }
+        });
+
+        // Navigation controls
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+
+            const originalLength = currentFilteredList.length;
+            if (originalLength > 0) {
+                if (currentIndex >= clonesCount + originalLength) {
+                    currentIndex = currentIndex - originalLength;
+                    updatePosition(false);
+                    carouselTrack.offsetHeight;
+                }
+            }
+
+            // Halt immediately
+            const currentX = getTranslateX();
+            carouselTrack.style.transition = 'none';
+            carouselTrack.style.transform = `translate3d(${currentX}px, 0, 0)`;
+
+            const cards = carouselTrack.querySelectorAll('.project');
+            if (cards.length === 0) return;
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 20;
+            const totalWidth = cardWidth + gap;
+
+            const approxIndex = -currentX / totalWidth;
+            currentIndex = Math.ceil(approxIndex);
+            
+            // Subpixel check: if extremely close to target index, advance to next card
+            if (Math.abs(currentIndex - approxIndex) < 0.05) {
+                currentIndex++;
+            }
+
+            isTransitioningToButton = true;
+            carouselTrack.offsetHeight; // Reflow
+            updatePosition(true); // Snap to index smoothly
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+
+            const originalLength = currentFilteredList.length;
+            if (originalLength > 0) {
+                if (currentIndex < clonesCount) {
+                    currentIndex = currentIndex + originalLength;
+                    updatePosition(false);
+                    carouselTrack.offsetHeight;
+                }
+            }
+
+            // Halt immediately
+            const currentX = getTranslateX();
+            carouselTrack.style.transition = 'none';
+            carouselTrack.style.transform = `translate3d(${currentX}px, 0, 0)`;
+
+            const cards = carouselTrack.querySelectorAll('.project');
+            if (cards.length === 0) return;
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 20;
+            const totalWidth = cardWidth + gap;
+
+            const approxIndex = -currentX / totalWidth;
+            currentIndex = Math.floor(approxIndex);
+            
+            // Subpixel check: if extremely close to target index, fallback to prev card
+            if (Math.abs(approxIndex - currentIndex) < 0.05) {
+                currentIndex--;
+            }
+
+            isTransitioningToButton = true;
+            carouselTrack.offsetHeight; // Reflow
+            updatePosition(true); // Snap to index smoothly
+        });
+
+        const initCarousel = (filterCategory) => {
+            isTransitioningToButton = false;
+            isPaused = false;
+
+            // Filter projects
+            const filtered = originalProjects.filter(p => {
+                const category = p.getAttribute('data-category');
+                return filterCategory === 'all' || category === filterCategory;
+            });
+
+            // Duplicate items if list is small to ensure seamless loop
+            let listToRender = [...filtered];
+            if (listToRender.length > 0) {
+                while (listToRender.length < 6) {
+                    listToRender = listToRender.concat(filtered);
+                }
+            }
+            currentFilteredList = listToRender;
+
+            // Clear and rebuild track
+            carouselTrack.innerHTML = '';
+
+            const totalFiltered = listToRender.length;
+            if (totalFiltered === 0) return;
+
+            // Create prepended clones (last C elements)
+            const prepended = listToRender.slice(-clonesCount);
+            prepended.forEach(p => {
+                const clone = p.cloneNode(true);
+                clone.classList.add('clone', 'visible');
+                carouselTrack.appendChild(clone);
+            });
+
+            // Create original items
+            listToRender.forEach(p => {
+                const node = p.cloneNode(true);
+                node.classList.add('visible');
+                carouselTrack.appendChild(node);
+            });
+
+            // Create appended clones (first C elements)
+            const appended = listToRender.slice(0, clonesCount);
+            appended.forEach(p => {
+                const clone = p.cloneNode(true);
+                clone.classList.add('clone', 'visible');
+                carouselTrack.appendChild(clone);
+            });
+
+            // Reset current index to start of original elements (index = C)
+            currentIndex = clonesCount;
+            updatePosition(false);
+
+            // Reflow
+            carouselTrack.offsetHeight;
+
+            // Kick off crawl
+            currentIndex++;
+            setTimeout(startCrawl, 100);
+        };
+
+        // Hover pauses autoplay
+        const viewport = document.querySelector('.carousel-viewport');
+        if (viewport) {
+            viewport.addEventListener('mouseenter', () => {
+                isPaused = true;
+                const currentX = getTranslateX();
+                carouselTrack.style.transition = 'none';
+                carouselTrack.style.transform = `translate3d(${currentX}px, 0, 0)`;
+            });
+            viewport.addEventListener('mouseleave', () => {
+                isPaused = false;
+                if (!isDragging && !isTransitioningToButton) {
+                    const currentX = getTranslateX();
+                    const cards = carouselTrack.querySelectorAll('.project');
+                    if (cards.length > 0) {
+                        const cardWidth = cards[0].offsetWidth;
+                        const gap = 20;
+                        const totalWidth = cardWidth + gap;
+                        const targetX = -currentIndex * totalWidth;
+
+                        // Snapped check: if already at targetX offset, advance index so transition triggers
+                        if (Math.abs(currentX - targetX) < 2) {
+                            currentIndex++;
+                        }
+
+                        // Resume crawl transition
+                        carouselTrack.style.transition = 'transform 6s linear';
+                        const offset = -currentIndex * totalWidth;
+                        carouselTrack.style.transform = `translate3d(${offset}px, 0, 0)`;
+                    }
                 }
             });
         }
 
-        // Initialize projects visibility on load and window resize
-        window.addEventListener('resize', updateProjectsVisibility);
-        window.addEventListener('load', updateProjectsVisibility);
-        updateProjectsVisibility();
+        // Window resize support
+        window.addEventListener('resize', () => {
+            updatePosition(false);
+            if (!isPaused && !isDragging && !isTransitioningToButton) {
+                requestAnimationFrame(startCrawl);
+            }
+        });
+
+        // Touch swipe gestures support for mobile devices
+
+
+        carouselTrack.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            carouselTrack.style.transition = 'none';
+
+            const currentX = getTranslateX();
+            prevTranslate = currentX;
+            currentTranslate = prevTranslate;
+            startX = e.touches[0].clientX;
+        }, { passive: true });
+
+        carouselTrack.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const currentX = e.touches[0].clientX;
+            const diffX = currentX - startX;
+            currentTranslate = prevTranslate + diffX;
+            carouselTrack.style.transform = `translate3d(${currentTranslate}px, 0, 0)`;
+        }, { passive: true });
+
+        carouselTrack.addEventListener('touchend', () => {
+            if (!isDragging) return;
+            isDragging = false;
+
+            const cards = carouselTrack.querySelectorAll('.project');
+            if (cards.length > 0) {
+                const cardWidth = cards[0].offsetWidth;
+                const gap = 20;
+                const totalWidth = cardWidth + gap;
+                const movedBy = currentTranslate - prevTranslate;
+
+                const approxIndex = -currentTranslate / totalWidth;
+
+                if (movedBy < -50) {
+                    currentIndex = Math.ceil(approxIndex);
+                } else if (movedBy > 50) {
+                    currentIndex = Math.floor(approxIndex);
+                } else {
+                    currentIndex = Math.round(approxIndex);
+                }
+
+                isTransitioningToButton = true;
+                carouselTrack.offsetHeight;
+                updatePosition(true);
+            }
+        });
+
+        // Filter button clicks
+        filterButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const category = button.getAttribute('data-filter');
+                initCarousel(category);
+            });
+        });
+
+        // Video Popup Modal Implementation
+        const videoModal = document.getElementById('videoModal');
+        const closeVideoModal = document.getElementById('closeVideoModal');
+        const videoModalTitle = document.getElementById('videoModalTitle');
+        const modalVideoIframe = document.getElementById('modalVideoIframe');
+        const videoCards = document.querySelectorAll('.video-card');
+
+        videoCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const videoId = card.getAttribute('data-video-id');
+                const title = card.getAttribute('data-title');
+                
+                if (videoId) {
+                    videoModalTitle.textContent = title;
+                    // Load YouTube embed with sound unmuted, autoplay and controls enabled
+                    modalVideoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&rel=0`;
+                    videoModal.style.display = 'flex';
+                }
+            });
+        });
+
+        const hideVideoModal = () => {
+            videoModal.style.display = 'none';
+            modalVideoIframe.src = ''; // Stops the video immediately!
+        };
+
+        closeVideoModal.addEventListener('click', hideVideoModal);
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                hideVideoModal();
+            }
+        });
+
+        // Initialize Carousel
+        initCarousel('all');
     </script>
 
 </body>

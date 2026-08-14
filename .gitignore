@@ -1,4 +1,10 @@
-# Ignore everything except index.html and .gitignore
+# Ignore everything except index.html, .gitignore, .gitattributes and video files
 *
 !index.html
 !.gitignore
+!.gitattributes
+!*.mp4
+!*.png
+Space exploration.png
+!*.jpg
+!*.jpeg
