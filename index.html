@@ -890,16 +890,24 @@
             justify-content: center;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
             flex-shrink: 0;
-            overflow: hidden; /* Hides zoomed image borders */
+        }
+
+        .profile-avatar-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #08051a;
+            background: #08051a;
         }
 
         .profile-avatar {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #08051a;
-            background: #08051a;
             transform: scale(1.8); /* Zooms in by 80% */
             transition: transform 0.3s ease;
         }
@@ -3059,7 +3067,9 @@
 
                             <div class="profile-card-content">
                                 <div class="profile-avatar-wrapper">
-                                    <img src="profile.webp" alt="Jignesh Profile Picture" class="profile-avatar">
+                                    <div class="profile-avatar-inner">
+                                        <img src="profile.webp" alt="Jignesh Profile Picture" class="profile-avatar">
+                                    </div>
                                 </div>
                                 <div class="profile-text-content">
                                     <div class="card-label">
