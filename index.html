@@ -763,227 +763,109 @@
 
 
         /* =========================================================
-   HANGING AREA
-========================================================= */
-
-        .hanging-area {
-
-            position: relative;
-
-            width: 100%;
-
-            max-width: 600px;
-
-            height: 500px;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: flex-end;
-
-            overflow: visible;
-            perspective: 1000px;
-        }
-
-
-        /* =========================================================
-   NAIL
-========================================================= */
-
-        .nail {
-
-            position: absolute;
-
-            top: 20px;
-
-            left: 50%;
-
-            transform: translateX(-50%);
-
-            width: 22px;
-            height: 22px;
-
-            border-radius: 50%;
-
-            z-index: 50;
-
-            background:
-                radial-gradient(circle at 30% 25%,
-                    #fff 0%,
-                    #e5e7eb 20%,
-                    #9ca3af 45%,
-                    #374151 75%,
-                    #111827 100%);
-
-            box-shadow:
-                0 5px 15px rgba(0, 0, 0, .7),
-                0 0 18px rgba(255, 255, 255, .15);
-        }
-
-        .nail::after {
-
-            content: "";
-
-            position: absolute;
-
-            width: 8px;
-            height: 8px;
-
-            border-radius: 50%;
-
-            left: 5px;
-            top: 4px;
-
-            background:
-                rgba(255, 255, 255, .55);
-        }
-
-
-        /* =========================================================
-   STRINGS
-========================================================= */
-
-        .string {
-
-            position: absolute;
-
-            top: 35px;
-
-            left: 50%;
-
-            width: 3px;
-
-            height: 225px;
-
-            transform-origin:
-                top center;
-
-            z-index: 20;
-
-            border-radius: 4px;
-
-            background:
-                linear-gradient(to bottom,
-                    #f8fafc,
-                    #94a3b8,
-                    #475569);
-
-            box-shadow:
-                0 1px 2px rgba(0, 0, 0, .6);
-        }
-
-        .string-left {
-
-            transform:
-                translateX(-50%) rotate(-20deg);
-        }
-
-        .string-right {
-
-            transform:
-                translateX(-50%) rotate(20deg);
-        }
-
-
-        /* =========================================================
-   HANGING CARD
-========================================================= */
-
-        .hanging-card {
-
-            position: relative;
-
+           PROFILE FLIP CARD
+        ========================================================= */
+        .profile-card-container {
             width: min(540px, 92%);
+            height: 320px;
+            perspective: 1200px;
+            z-index: 30;
+            position: relative;
+        }
 
-            min-height: 270px;
+        .profile-card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
 
-            padding: 38px;
+        .profile-card.flipped {
+            transform: rotateY(180deg);
+        }
 
+        .profile-card-front,
+        .profile-card-back {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
             border-radius: 25px;
-
-            background:
-                linear-gradient(135deg,
-                    rgba(255, 255, 255, .13),
-                    rgba(255, 255, 255, .035));
-
-            border:
-                1px solid rgba(255, 255, 255, .18);
-
+            padding: 38px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, .13), rgba(255, 255, 255, .035));
+            border: 1px solid rgba(255, 255, 255, .18);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
-
-            box-shadow:
-                0 40px 80px rgba(0, 0, 0, .5),
-                inset 0 1px rgba(255, 255, 255, .15);
-
-            z-index: 30;
-
-            transform-origin:
-                50% 0%;
-
-            animation:
-                naturalHanging 8s ease-in-out infinite;
-            transition: transform 0.15s ease-out;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, .5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .hanging-card::before {
-
+        .profile-card-front::before,
+        .profile-card-back::before {
             content: "";
-
             position: absolute;
-
             inset: -1px;
-
             border-radius: 25px;
-
             padding: 1px;
-
-            background:
-                linear-gradient(90deg,
-                    var(--pink),
-                    var(--purple),
-                    var(--cyan),
-                    var(--green),
-                    var(--pink));
-
+            background: linear-gradient(90deg, var(--pink), var(--purple), var(--cyan), var(--green), var(--pink));
             background-size: 300%;
-
-            animation:
-                gradientMove 8s linear infinite;
-
-            -webkit-mask:
-                linear-gradient(#fff 0 0) content-box,
-                linear-gradient(#fff 0 0);
-
+            animation: gradientMove 8s linear infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
-
             mask-composite: exclude;
-
             pointer-events: none;
         }
 
-        @keyframes naturalHanging {
+        .profile-card-back {
+            transform: rotateY(180deg);
+        }
 
-            0% {
-                transform: rotate(-2deg);
-            }
+        /* Card Back Contact Styling */
+        .card-contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 10px 0;
+            align-items: flex-start;
+        }
 
-            25% {
-                transform: rotate(-.8deg);
-            }
+        .card-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #d7d3e3;
+        }
 
-            50% {
-                transform: rotate(2deg);
-            }
+        .card-contact-icon {
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.02);
+        }
 
-            75% {
-                transform: rotate(.8deg);
-            }
+        .card-contact-item a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
 
-            100% {
-                transform: rotate(-2deg);
-            }
+        .card-contact-item a:hover {
+            color: var(--cyan);
+            text-shadow: 0 0 8px rgba(0, 217, 255, 0.4);
+            transform: translateX(3px);
         }
 
         .card-label {
@@ -999,14 +881,16 @@
             margin-bottom: 12px;
         }
 
-        .hanging-card h2 {
+        .profile-card-front h2,
+        .profile-card-back h2 {
 
             font-size: 32px;
 
             margin-bottom: 13px;
         }
 
-        .hanging-card p {
+        .profile-card-front p,
+        .profile-card-back p {
 
             color: #b7b2c9;
 
@@ -2704,25 +2588,23 @@
                 height: 420px;
             }
 
-            .string {
-
-                height: 190px;
-            }
-
-            .hanging-card {
-
+            .profile-card-container {
                 width: 94%;
-
-                padding: 27px 20px;
-
-                min-height: 240px;
+                height: 380px;
             }
 
-            .hanging-card h2 {
+            .profile-card-front,
+            .profile-card-back {
+                padding: 27px 20px;
+            }
+
+            .profile-card-front h2,
+            .profile-card-back h2 {
                 font-size: 26px;
             }
 
-            .hanging-card p {
+            .profile-card-front p,
+            .profile-card-back p {
                 font-size: 12px;
             }
 
@@ -3121,54 +3003,94 @@
 
             <div class="hero-right">
 
-                <div class="hanging-area">
+                <div class="profile-card-container">
 
-                    <div class="nail"></div>
+                    <div class="profile-card" id="profileCard">
 
-                    <div class="string string-left"></div>
+                        <!-- Front Face (Developer Profile) -->
+                        <div class="profile-card-front">
 
-                    <div class="string string-right"></div>
+                            <div>
+                                <div class="card-label">
+                                    DEVELOPER PROFILE
+                                </div>
 
+                                <h2>
+                                    Hi, I'm
+                                    <span class="gradient-text">
+                                        Jignesh
+                                    </span>
+                                    👋
+                                </h2>
 
-                    <div class="hanging-card">
+                                <p>
+                                    I love transforming ideas into
+                                    responsive, scalable and interactive
+                                    applications.
+                                    I work with modern web technologies,
+                                    artificial intelligence, computer vision
+                                    and Blender 3D animation.
+                                </p>
+                            </div>
 
-                        <div class="card-label">
-                            DEVELOPER PROFILE
+                            <div class="card-info">
+
+                                <span>
+                                    🎓 B.E. Information Technology
+                                </span>
+
+                                <span>
+                                    📍 Ahmedabad, Gujarat
+                                </span>
+
+                            </div>
+
                         </div>
 
-                        <h2>
+                        <!-- Back Face (Contact Details) -->
+                        <div class="profile-card-back">
 
-                            Hi, I'm
+                            <div>
+                                <div class="card-label">
+                                    CONTACT DETAILS
+                                </div>
 
-                            <span class="gradient-text">
-                                Jignesh
-                            </span>
+                                <h2>
+                                    Let's
+                                    <span class="gradient-text">
+                                        Connect
+                                    </span>
+                                    🤝
+                                </h2>
 
-                            👋
+                                <div class="card-contact-details">
 
-                        </h2>
+                                    <div class="card-contact-item">
+                                        <span class="card-contact-icon">📧</span>
+                                        <a href="mailto:jigneshkanojiya2@gmail.com">jigneshkanojiya2@gmail.com</a>
+                                    </div>
 
-                        <p>
+                                    <div class="card-contact-item">
+                                        <span class="card-contact-icon">📞</span>
+                                        <a href="tel:+919427028964">+91 94270 28964</a>
+                                    </div>
 
-                            I love transforming ideas into
-                            responsive, scalable and interactive
-                            applications.
+                                    <div class="card-contact-item">
+                                        <span class="card-contact-icon">🔗</span>
+                                        <a href="https://www.linkedin.com/in/jignesh-kanojiya-217262366/" target="_blank">LinkedIn Profile</a>
+                                    </div>
 
-                            I work with modern web technologies,
-                            artificial intelligence, computer vision
-                            and Blender 3D animation.
+                                    <div class="card-contact-item">
+                                        <span class="card-contact-icon">🐙</span>
+                                        <a href="https://github.com/jjk13120-art" target="_blank">GitHub Profile</a>
+                                    </div>
 
-                        </p>
+                                </div>
+                            </div>
 
-                        <div class="card-info">
-
-                            <span>
-                                🎓 B.E. Information Technology
-                            </span>
-
-                            <span>
-                                📍 Ahmedabad, Gujarat
-                            </span>
+                            <div class="card-info">
+                                <span>Click card to flip back</span>
+                            </div>
 
                         </div>
 
@@ -5570,29 +5492,21 @@ L1000,80
         window.addEventListener('load', revealOnScroll);
 
 
-        // Hanging Card 3D Tilt Parallax Effect
-        const card = document.querySelector('.hanging-card');
-        const area = document.querySelector('.hanging-area');
+        // Profile Flip Card Click Flip Handler
+        const profileCard = document.getElementById('profileCard');
+        if (profileCard) {
+            profileCard.addEventListener('click', () => {
+                profileCard.classList.toggle('flipped');
+            });
 
-        area.addEventListener('mousemove', (e) => {
-            const rect = area.getBoundingClientRect();
-            const x = e.clientX - rect.left - (rect.width / 2);
-            const y = e.clientY - rect.top - (rect.height / 2);
-
-            // Temporarily halt idle sway animation
-            card.style.animation = 'none';
-
-            const rotateX = -y / 12;
-            const rotateY = x / 12;
-
-            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
-        });
-
-        area.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-            // Restore default CSS keyframe sway animation
-            card.style.animation = 'naturalHanging 8s ease-in-out infinite';
-        });
+            // Stop event propagation on contact links to allow normal navigation
+            const profileCardLinks = profileCard.querySelectorAll('a');
+            profileCardLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+            });
+        }
 
 
         // Project Details Modal Implementation
