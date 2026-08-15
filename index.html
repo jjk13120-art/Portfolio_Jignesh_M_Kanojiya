@@ -2837,6 +2837,7 @@
                     .01ms !important;
             }
         }
+
         /* =====================================================
          PROJECT VIDEOS SECTION
         ===================================================== */
@@ -2864,12 +2865,28 @@
         .video-preview-wrapper {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
             height: 0;
             border-radius: 16px;
             overflow: hidden;
             background: #000;
             border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .video-preview-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 0;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .video-card:hover .video-preview-wrapper img {
+            transform: scale(1.06);
         }
 
         .video-preview-wrapper iframe {
@@ -2888,7 +2905,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.4) 100%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.4) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -4735,7 +4752,7 @@ L1000,80
                         <!-- Project 1 -->
                         <div class="glass project reveal" data-category="ai">
                             <div class="project-number">01</div>
-                            <div class="project-icon"><img src="Smart Ai Face Attendance system.png"
+                            <div class="project-icon"><img src="Smart Ai Face Attendance system.webp"
                                     alt="Smart AI Face Attendance"></div>
                             <h3>Smart AI Face Attendance</h3>
                             <p>
@@ -4758,7 +4775,7 @@ L1000,80
                         <!-- Project 2 -->
                         <div class="glass project reveal" data-category="3d">
                             <div class="project-number">02</div>
-                            <div class="project-icon"><img src="Space exploration.jpg"
+                            <div class="project-icon"><img src="Space exploration.webp"
                                     alt="Space Exploration (3D Animation)"></div>
                             <h3>Space Exploration (3D Animation)</h3>
                             <p>
@@ -4780,7 +4797,7 @@ L1000,80
                         <!-- Project 3 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">03</div>
-                            <div class="project-icon"><img src="Employee Management system (java).png"
+                            <div class="project-icon"><img src="Employee Management system (java).webp"
                                     alt="Employee Management System"></div>
                             <h3>Employee Management System</h3>
                             <p>
@@ -4802,7 +4819,7 @@ L1000,80
                         <!-- Project 4 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">04</div>
-                            <div class="project-icon"><img src="Task management system (python).png"
+                            <div class="project-icon"><img src="Task management system (python).webp"
                                     alt="Task Management System"></div>
                             <h3>Task Management System</h3>
                             <p>
@@ -4824,7 +4841,7 @@ L1000,80
                         <!-- Project 5 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">05</div>
-                            <div class="project-icon"><img src="Antique Shop.png" alt="Antique Shop Website"></div>
+                            <div class="project-icon"><img src="Antique Shop.webp" alt="Antique Shop Website"></div>
                             <h3>Antique Shop Website</h3>
                             <p>
                                 A responsive store interface allowing collectors to browse rare items using smart search
@@ -4844,7 +4861,7 @@ L1000,80
                         <!-- Project 6 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">06</div>
-                            <div class="project-icon"><img src="Lost and found spot.jpg" alt="Lost & Found Spot"></div>
+                            <div class="project-icon"><img src="Lost and found spot.webp" alt="Lost & Found Spot"></div>
                             <h3>Lost & Found Spot</h3>
                             <p>
                                 A security portal designed for users to post missing valuables, register accounts, and
@@ -4865,7 +4882,7 @@ L1000,80
                         <!-- Project 7 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">07</div>
-                            <div class="project-icon"><img src="smartbizhub.jpg" alt="Smart-Biz Hub"></div>
+                            <div class="project-icon"><img src="smartbizhub.webp" alt="Smart-Biz Hub"></div>
                             <h3>Smart-Biz Hub</h3>
                             <p>
                                 A modern merchant platform tracking custom orders, active stocks, and issuing digital
@@ -4886,7 +4903,7 @@ L1000,80
                         <!-- Project 8 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">08</div>
-                            <div class="project-icon"><img src="mealrescue.jpg" alt="MealRescue"></div>
+                            <div class="project-icon"><img src="mealrescue.webp" alt="MealRescue"></div>
                             <h3>MealRescue</h3>
                             <p>
                                 Food waste reduction platform connecting restaurants, NGOs, and volunteers with live
@@ -4907,7 +4924,7 @@ L1000,80
                         <!-- Project 9 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">09</div>
-                            <div class="project-icon"><img src="Smart Shopping assistant.png"
+                            <div class="project-icon"><img src="Smart Shopping assistant.webp"
                                     alt="Smart Shopping Assistant"></div>
                             <h3>Smart Shopping Assistant</h3>
                             <p>
@@ -4929,7 +4946,7 @@ L1000,80
                         <!-- Project 10 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">10</div>
-                            <div class="project-icon"><img src="Shop Management system (core java).png"
+                            <div class="project-icon"><img src="Shop Management system (core java).webp"
                                     alt="Shop Management System"></div>
                             <h3>Shop Management System</h3>
                             <p>
@@ -4951,7 +4968,7 @@ L1000,80
                         <!-- Project 11 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">11</div>
-                            <div class="project-icon"><img src="Bank management system(java,jdbc).png"
+                            <div class="project-icon"><img src="Bank management system(java,jdbc).webp"
                                     alt="Bank Management (Java)"></div>
                             <h3>Bank Management (Java)</h3>
                             <p>
@@ -4973,7 +4990,7 @@ L1000,80
                         <!-- Project 12 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">12</div>
-                            <div class="project-icon"><img src="Bank Management system (python).png"
+                            <div class="project-icon"><img src="Bank Management system (python).webp"
                                     alt="Bank Management (Python)"></div>
                             <h3>Bank Management (Python)</h3>
                             <p>
@@ -4994,7 +5011,7 @@ L1000,80
                         <!-- Project 13 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">13</div>
-                            <div class="project-icon"><img src="Restaurant management System.png"
+                            <div class="project-icon"><img src="Restaurant management System.webp"
                                     alt="Restaurant Management"></div>
                             <h3>Restaurant Management</h3>
                             <p>
@@ -5015,7 +5032,7 @@ L1000,80
                         <!-- Project 14 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">14</div>
-                            <div class="project-icon"><img src="virtual queue manager.png" alt="Virtual Queue Manager">
+                            <div class="project-icon"><img src="virtual queue manager.webp" alt="Virtual Queue Manager">
                             </div>
                             <h3>Virtual Queue Manager</h3>
                             <p>
@@ -5037,7 +5054,7 @@ L1000,80
                         <!-- Project 15 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">15</div>
-                            <div class="project-icon"><img src="Remote Patient Monitoring System.png"
+                            <div class="project-icon"><img src="Remote Patient Monitoring System.webp"
                                     alt="Patient Monitoring System"></div>
                             <h3>Patient Monitoring System</h3>
                             <p>
@@ -5058,7 +5075,7 @@ L1000,80
                         <!-- Project 16 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">16</div>
-                            <div class="project-icon"><img src="EduSched.png" alt="EduSched"></div>
+                            <div class="project-icon"><img src="EduSched.webp" alt="EduSched"></div>
                             <h3>EduSched</h3>
                             <p>
                                 Faculty scheduling panel optimizing class hours and slot distribution using job
@@ -5079,7 +5096,7 @@ L1000,80
                         <!-- Project 17 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">17</div>
-                            <div class="project-icon"><img src="Routewise.png" alt="RouteWise"></div>
+                            <div class="project-icon"><img src="Routewise.webp" alt="RouteWise"></div>
                             <h3>RouteWise</h3>
                             <p>
                                 Interactive dashboard visualizing static routing metrics, node configurations, and
@@ -5100,10 +5117,11 @@ L1000,80
                         <!-- Project 18 -->
                         <div class="glass project reveal" data-category="web">
                             <div class="project-number">18</div>
-                            <div class="project-icon"><img src="securelink.png" alt="SecureLink Firewall"></div>
+                            <div class="project-icon"><img src="securelink.webp" alt="SecureLink Firewall"></div>
                             <h3>SecureLink Firewall</h3>
                             <p>
-                                Firewall network topology configured in Cisco Packet Tracer, setting up security access control lists (ACLs) to protect subnets.
+                                Firewall network topology configured in Cisco Packet Tracer, setting up security access
+                                control lists (ACLs) to protect subnets.
                             </p>
                             <div class="tags">
                                 <span>Cisco Packet</span>
@@ -5138,66 +5156,74 @@ L1000,80
                 <h2 class="section-title">Project Demos</h2>
                 <p class="section-subtitle">Watch walk-throughs and demonstrations of key systems in action.</p>
             </div>
-            
+
             <div class="video-grid reveal">
                 <!-- Card 1: Lost and Found Spot -->
                 <div class="glass video-card" data-video-id="iCa4PIHiZ_A" data-title="Lost & Found Spot">
                     <div class="video-preview-wrapper">
-                        <iframe src="https://www.youtube.com/embed/iCa4PIHiZ_A?autoplay=1&mute=1&loop=1&playlist=iCa4PIHiZ_A&controls=0&playsinline=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <img src="https://img.youtube.com/vi/iCa4PIHiZ_A/hqdefault.jpg"
+                            alt="Lost & Found Spot Video Thumbnail" class="video-thumbnail">
                         <div class="video-overlay"></div>
                     </div>
                     <h3>Lost & Found Spot</h3>
                 </div>
-                
+
                 <!-- Card 2: MealRescue -->
                 <div class="glass video-card" data-video-id="mXwEMlrBcKU" data-title="MealRescue">
                     <div class="video-preview-wrapper">
-                        <iframe src="https://www.youtube.com/embed/mXwEMlrBcKU?autoplay=1&mute=1&loop=1&playlist=mXwEMlrBcKU&controls=0&playsinline=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <img src="https://img.youtube.com/vi/mXwEMlrBcKU/hqdefault.jpg" alt="MealRescue Video Thumbnail"
+                            class="video-thumbnail">
                         <div class="video-overlay"></div>
                     </div>
                     <h3>MealRescue</h3>
                 </div>
-                
+
                 <!-- Card 3: Securlink -->
                 <div class="glass video-card" data-video-id="bmFb_yTDrOU" data-title="Securlink Firewall">
                     <div class="video-preview-wrapper">
-                        <iframe src="https://www.youtube.com/embed/bmFb_yTDrOU?autoplay=1&mute=1&loop=1&playlist=bmFb_yTDrOU&controls=0&playsinline=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <img src="https://img.youtube.com/vi/bmFb_yTDrOU/hqdefault.jpg"
+                            alt="Securlink Firewall Video Thumbnail" class="video-thumbnail">
                         <div class="video-overlay"></div>
                     </div>
                     <h3>Securlink Firewall</h3>
                 </div>
-                
+
                 <!-- Card 4: RouteWise -->
                 <div class="glass video-card" data-video-id="WzzT1Xp4CNw" data-title="RouteWise">
                     <div class="video-preview-wrapper">
-                        <iframe src="https://www.youtube.com/embed/WzzT1Xp4CNw?autoplay=1&mute=1&loop=1&playlist=WzzT1Xp4CNw&controls=0&playsinline=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <img src="https://img.youtube.com/vi/WzzT1Xp4CNw/hqdefault.jpg" alt="RouteWise Video Thumbnail"
+                            class="video-thumbnail">
                         <div class="video-overlay"></div>
                     </div>
+
                     <h3>RouteWise</h3>
                 </div>
-                
+
                 <!-- Card 5: Smart Shopping Assistance -->
                 <div class="glass video-card" data-video-id="EvwBJ9c190E" data-title="Smart Shopping Assistant">
                     <div class="video-preview-wrapper">
-                        <iframe src="https://www.youtube.com/embed/EvwBJ9c190E?autoplay=1&mute=1&loop=1&playlist=EvwBJ9c190E&controls=0&playsinline=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <img src="https://img.youtube.com/vi/EvwBJ9c190E/hqdefault.jpg"
+                            alt="Smart Shopping Assistant Video Thumbnail" class="video-thumbnail">
                         <div class="video-overlay"></div>
                     </div>
                     <h3>Smart Shopping Assistant</h3>
                 </div>
-                
+
                 <!-- Card 6: SmartBiz Hub -->
                 <div class="glass video-card" data-video-id="XXw4V1a4lqU" data-title="Smart-Biz Hub">
                     <div class="video-preview-wrapper">
-                        <iframe src="https://www.youtube.com/embed/XXw4V1a4lqU?autoplay=1&mute=1&loop=1&playlist=XXw4V1a4lqU&controls=0&playsinline=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <img src="https://img.youtube.com/vi/XXw4V1a4lqU/hqdefault.jpg"
+                            alt="Smart-Biz Hub Video Thumbnail" class="video-thumbnail">
                         <div class="video-overlay"></div>
                     </div>
                     <h3>Smart-Biz Hub</h3>
                 </div>
-                
+
                 <!-- Card 7: Space Exploration -->
                 <div class="glass video-card" data-video-id="zXsbrbprgsM" data-title="Space Exploration">
                     <div class="video-preview-wrapper">
-                        <iframe src="https://www.youtube.com/embed/zXsbrbprgsM?autoplay=1&mute=1&loop=1&playlist=zXsbrbprgsM&controls=0&playsinline=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <img src="https://img.youtube.com/vi/zXsbrbprgsM/hqdefault.jpg"
+                            alt="Space Exploration Video Thumbnail" class="video-thumbnail">
                         <div class="video-overlay"></div>
                     </div>
                     <h3>Space Exploration</h3>
@@ -5211,9 +5237,13 @@ L1000,80
         <div class="modal-content glass" style="max-width: 800px; padding: 20px; width: 90%;">
             <span class="close-modal" id="closeVideoModal">&times;</span>
             <div class="modal-body" style="padding-top: 15px;">
-                <h3 id="videoModalTitle" style="font-size: 22px; margin-bottom: 15px;" class="gradient-text">Project Demo</h3>
-                <div class="iframe-container" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                    <iframe id="modalVideoIframe" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                <h3 id="videoModalTitle" style="font-size: 22px; margin-bottom: 15px;" class="gradient-text">Project
+                    Demo</h3>
+                <div class="iframe-container"
+                    style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <iframe id="modalVideoIframe"
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -5943,7 +5973,7 @@ L1000,80
 
             const approxIndex = -currentX / totalWidth;
             currentIndex = Math.ceil(approxIndex);
-            
+
             // Subpixel check: if extremely close to target index, advance to next card
             if (Math.abs(currentIndex - approxIndex) < 0.05) {
                 currentIndex++;
@@ -5979,7 +6009,7 @@ L1000,80
 
             const approxIndex = -currentX / totalWidth;
             currentIndex = Math.floor(approxIndex);
-            
+
             // Subpixel check: if extremely close to target index, fallback to prev card
             if (Math.abs(approxIndex - currentIndex) < 0.05) {
                 currentIndex--;
@@ -6163,7 +6193,7 @@ L1000,80
             card.addEventListener('click', () => {
                 const videoId = card.getAttribute('data-video-id');
                 const title = card.getAttribute('data-title');
-                
+
                 if (videoId) {
                     videoModalTitle.textContent = title;
                     // Load YouTube embed with sound unmuted, autoplay and controls enabled
