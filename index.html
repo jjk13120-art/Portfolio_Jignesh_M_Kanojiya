@@ -868,6 +868,46 @@
             transform: translateX(3px);
         }
 
+        /* Card Avatar Styling */
+        .profile-card-content {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            width: 100%;
+        }
+
+        .profile-avatar-wrapper {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, var(--pink), var(--purple), var(--cyan), var(--green));
+            background-size: 300%;
+            animation: gradientMove 8s linear infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            flex-shrink: 0;
+            overflow: hidden; /* Hides zoomed image borders */
+        }
+
+        .profile-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #08051a;
+            background: #08051a;
+            transform: scale(1.3); /* Zooms in by 30% */
+            transition: transform 0.3s ease;
+        }
+
+        .profile-avatar:hover {
+            transform: scale(1.4); /* Extra zoom on hover */
+        }
+
         .card-label {
 
             color: var(--cyan);
@@ -2583,19 +2623,26 @@
                 min-height: 420px;
             }
 
-            .hanging-area {
-
-                height: 420px;
-            }
-
             .profile-card-container {
                 width: 94%;
-                height: 380px;
+                height: 440px;
             }
 
             .profile-card-front,
             .profile-card-back {
                 padding: 27px 20px;
+            }
+
+            .profile-card-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+                align-items: center;
+            }
+
+            .profile-avatar-wrapper {
+                width: 110px;
+                height: 110px;
             }
 
             .profile-card-front h2,
@@ -3010,27 +3057,32 @@
                         <!-- Front Face (Developer Profile) -->
                         <div class="profile-card-front">
 
-                            <div>
-                                <div class="card-label">
-                                    DEVELOPER PROFILE
+                            <div class="profile-card-content">
+                                <div class="profile-avatar-wrapper">
+                                    <img src="profile.webp" alt="Jignesh Profile Picture" class="profile-avatar">
                                 </div>
+                                <div class="profile-text-content">
+                                    <div class="card-label">
+                                        DEVELOPER PROFILE
+                                    </div>
 
-                                <h2>
-                                    Hi, I'm
-                                    <span class="gradient-text">
-                                        Jignesh
-                                    </span>
-                                    👋
-                                </h2>
+                                    <h2>
+                                        Hi, I'm
+                                        <span class="gradient-text">
+                                            Jignesh
+                                        </span>
+                                        👋
+                                    </h2>
 
-                                <p>
-                                    I love transforming ideas into
-                                    responsive, scalable and interactive
-                                    applications.
-                                    I work with modern web technologies,
-                                    artificial intelligence, computer vision
-                                    and Blender 3D animation.
-                                </p>
+                                    <p>
+                                        I love transforming ideas into
+                                        responsive, scalable and interactive
+                                        applications.
+                                        I work with modern web technologies,
+                                        artificial intelligence, computer vision
+                                        and Blender 3D animation.
+                                    </p>
+                                </div>
                             </div>
 
                             <div class="card-info">
