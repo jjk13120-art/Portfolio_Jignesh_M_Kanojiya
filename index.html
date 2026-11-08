@@ -9,6 +9,28 @@
 
     <title>Jignesh Kanojiya | Developer Portfolio</title>
 
+    <!-- Custom SVG Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a080d'/%3E%3Ctext x='15' y='23' font-family='sans-serif' font-size='19' font-weight='900' fill='%23ffffff' text-anchor='middle'%3EJ%3C/text%3E%3Ccircle cx='23' cy='9' r='3.5' fill='%23ff1e1e'/%3E%3C/svg%3E">
+
+    <!-- Open Graph / LinkedIn / WhatsApp / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jignesh Kanojiya | Developer Portfolio">
+    <meta property="og:description" content="Full Stack Developer, Artificial Intelligence & Computer Vision Specialist, and Blender 3D Creator.">
+    <meta property="og:image" content="profile.webp">
+    <meta property="og:url" content="https://jigneshkanojiya.github.io/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jignesh Kanojiya | Developer Portfolio">
+    <meta name="twitter:description" content="Full Stack Developer, Artificial Intelligence & Computer Vision Specialist, and Blender 3D Creator.">
+    <meta name="twitter:image" content="profile.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+
     <style>
         /* =========================================================
    RESET
@@ -26,18 +48,17 @@
         }
 
         body {
-            font-family:
-                Inter,
-                "Segoe UI",
-                Arial,
-                sans-serif;
-
-            background: #07051a;
-            color: #fff;
-
-            line-height: 1.5;
-
+            background: #030204;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        code, pre, .mono, .card-spec-badge, .status, .metric-label, .metric-change, .card-label, .section-label, .chart-periods button, .tags span, .project-number, .timeline-year, .contact-card-label {
+            font-family: 'JetBrains Mono', monospace;
         }
 
         a {
@@ -55,27 +76,50 @@
 ========================================================= */
 
         :root {
+            --bg-base: #030204;
+            --bg-surface: #0a080d;
+            --bg-elevated: #110e16;
+            --bg-card: rgba(12, 9, 16, 0.82);
 
-            --pink: #ff1493;
-            --purple: #8b5cf6;
-            --violet: #6d28d9;
-            --blue: #2563eb;
-            --cyan: #00d9ff;
-            --green: #00f5a0;
-            --yellow: #ffe600;
-            --orange: #ff7a18;
-            --red: #ff3d71;
+            --lava-red: #ff1e1e;
+            --lava-orange: #ff5e00;
+            --lava-amber: #ffa600;
+            --solar-amber: #ffb703;
+            --lava-dark: #8c0d05;
 
-            --muted: #aaa6c1;
-            --muted2: #77738c;
+            --border: rgba(255, 255, 255, 0.085);
+            --border-hover: rgba(255, 94, 0, 0.5);
+            --border-accent: rgba(255, 30, 30, 0.4);
 
-            --glass: rgba(255, 255, 255, .055);
-            --border: rgba(255, 255, 255, .12);
+            --accent: #ff5e00;
+            --accent-glow: rgba(255, 94, 0, 0.22);
+            --accent-red-glow: rgba(255, 30, 30, 0.22);
+            --accent-amber-glow: rgba(255, 183, 3, 0.25);
+
+            --text-primary: #ffffff;
+            --text-secondary: #e2deec;
+            --text-muted: #9d96ab;
+            --text-subtle: #756f82;
+
+            --pink: #ff1e1e;
+            --purple: #ff5e00;
+            --violet: #ffa600;
+            --blue: #ff5e00;
+            --cyan: #ffb703;
+            --green: #ff5e00;
+            --yellow: #ffb703;
+            --orange: #ff5e00;
+            --red: #ff1e1e;
+
+            --muted: #e2deec;
+            --muted2: #9d96ab;
+
+            --glass: #0c0911;
         }
 
 
         /* =========================================================
-   BACKGROUND
+   BACKGROUND: ARCHITECTURAL WHITE LINE GRID & LIGHT ILLUMINATION
 ========================================================= */
 
         .background {
@@ -84,298 +128,48 @@
             z-index: -20;
             overflow: hidden;
             pointer-events: none;
+            background: #030204;
         }
 
+        /* Crisp architectural white grid lines showing clearly across the entire page */
         .background-grid {
-
             position: absolute;
             inset: 0;
-
             background-image:
-                linear-gradient(rgba(255, 255, 255, .025) 1px,
-                    transparent 1px),
-                linear-gradient(90deg,
-                    rgba(255, 255, 255, .025) 1px,
-                    transparent 1px);
+                linear-gradient(to right, rgba(255, 255, 255, 0.075) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.075) 1px, transparent 1px);
+            background-size: 48px 48px;
+            background-position: center top;
+        }
 
-            background-size: 55px 55px;
+        /* Pure clean white luminous spotlights that illuminate the architectural white grid lines */
+        .grid-radial-glow {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle 1100px at 50% -120px, rgba(255, 255, 255, 0.09), transparent 70%),
+                radial-gradient(circle 900px at 80% 30%, rgba(255, 255, 255, 0.05), transparent 65%),
+                radial-gradient(circle 900px at 20% 70%, rgba(255, 255, 255, 0.04), transparent 65%),
+                radial-gradient(circle 1000px at 50% 105%, rgba(255, 255, 255, 0.07), transparent 70%);
+            pointer-events: none;
+        }
 
-            mask-image:
-                linear-gradient(to bottom,
-                    black,
-                    transparent 90%);
+        /* Pure white fine dot matrix at the grid intersections */
+        .grid-accent-lights {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.22) 1.2px, transparent 1.2px);
+            background-size: 48px 48px;
+            background-position: center top;
+            opacity: 0.9;
         }
 
         .blob {
-
-            position: absolute;
-
-            width: 350px;
-            height: 350px;
-
-            border-radius: 50%;
-
-            filter: blur(100px);
-
-            opacity: .14;
-
-            transform: translate3d(0, 0, 0);
-            will-change: transform;
-
-            animation:
-                blobFloat 18s ease-in-out infinite alternate;
+            display: none !important;
         }
-
-        .blob1 {
-            background: var(--pink);
-            left: -170px;
-            top: -150px;
-        }
-
-        .blob2 {
-            background: var(--cyan);
-            right: -180px;
-            top: 25%;
-            animation-delay: -5s;
-        }
-
-        .blob3 {
-            background: var(--purple);
-            left: 30%;
-            bottom: -220px;
-            animation-delay: -10s;
-        }
-
-        .blob4 {
-            background: var(--green);
-            right: 20%;
-            bottom: 15%;
-
-            width: 220px;
-            height: 220px;
-
-            opacity: .08;
-
-            animation-delay: -14s;
-        }
-
-        @keyframes blobFloat {
-
-            0% {
-                transform: translate3d(0, 0, 0) scale(1);
-            }
-
-            50% {
-                transform: translate3d(50px, -30px, 0) scale(1.08);
-            }
-
-            100% {
-                transform: translate3d(-30px, 50px, 0) scale(.95);
-            }
-        }
-
-
-        /* =========================================================
-   FLOATING BUBBLES
-========================================================= */
 
         .bubble {
-            position: absolute;
-            bottom: -150px;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: -15;
-            animation: floatUp 25s linear infinite;
-            will-change: transform, opacity;
-        }
-
-        @keyframes floatUp {
-            0% {
-                transform: translateY(0) rotate(0deg) scale(0.8);
-                opacity: 0;
-            }
-
-            10% {
-                opacity: 0.35;
-            }
-
-            90% {
-                opacity: 0.35;
-            }
-
-            100% {
-                transform: translateY(-120vh) rotate(360deg) scale(1.2);
-                opacity: 0;
-            }
-        }
-
-        .bubble-1 {
-            width: 80px;
-            height: 80px;
-            left: 10%;
-            animation-duration: 20s;
-            animation-delay: 0s;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 20, 147, 0.25), rgba(255, 20, 147, 0.05));
-            border: 1px solid rgba(255, 20, 147, 0.3);
-            box-shadow: 0 0 15px rgba(255, 20, 147, 0.2), inset 0 5px 15px rgba(255, 20, 147, 0.4);
-        }
-
-        .bubble-2 {
-            width: 120px;
-            height: 120px;
-            left: 25%;
-            animation-duration: 28s;
-            animation-delay: -3s;
-            background: radial-gradient(circle at 30% 30%, rgba(0, 217, 255, 0.25), rgba(0, 217, 255, 0.05));
-            border: 1px solid rgba(0, 217, 255, 0.3);
-            box-shadow: 0 0 20px rgba(0, 217, 255, 0.2), inset 0 8px 20px rgba(0, 217, 255, 0.4);
-        }
-
-        .bubble-3 {
-            width: 60px;
-            height: 60px;
-            left: 40%;
-            animation-duration: 18s;
-            animation-delay: -7s;
-            background: radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.25), rgba(139, 92, 246, 0.05));
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            box-shadow: 0 0 12px rgba(139, 92, 246, 0.15), inset 0 4px 12px rgba(139, 92, 246, 0.35);
-        }
-
-        .bubble-4 {
-            width: 100px;
-            height: 100px;
-            left: 55%;
-            animation-duration: 32s;
-            animation-delay: -11s;
-            background: radial-gradient(circle at 30% 30%, rgba(0, 245, 160, 0.25), rgba(0, 245, 160, 0.05));
-            border: 1px solid rgba(0, 245, 160, 0.3);
-            box-shadow: 0 0 18px rgba(0, 245, 160, 0.2), inset 0 6px 18px rgba(0, 245, 160, 0.4);
-        }
-
-        .bubble-5 {
-            width: 70px;
-            height: 70px;
-            left: 70%;
-            animation-duration: 22s;
-            animation-delay: -4s;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 230, 0, 0.25), rgba(255, 230, 0, 0.05));
-            border: 1px solid rgba(255, 230, 0, 0.3);
-            box-shadow: 0 0 14px rgba(255, 230, 0, 0.15), inset 0 5px 14px rgba(255, 230, 0, 0.35);
-        }
-
-        .bubble-6 {
-            width: 110px;
-            height: 110px;
-            left: 85%;
-            animation-duration: 30s;
-            animation-delay: -15s;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 122, 24, 0.25), rgba(255, 122, 24, 0.05));
-            border: 1px solid rgba(255, 122, 24, 0.3);
-            box-shadow: 0 0 20px rgba(255, 122, 24, 0.2), inset 0 8px 20px rgba(255, 122, 24, 0.4);
-        }
-
-        .bubble-7 {
-            width: 50px;
-            height: 50px;
-            left: 15%;
-            animation-duration: 16s;
-            animation-delay: -10s;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 61, 113, 0.25), rgba(255, 61, 113, 0.05));
-            border: 1px solid rgba(255, 61, 113, 0.3);
-            box-shadow: 0 0 10px rgba(255, 61, 113, 0.15), inset 0 3px 10px rgba(255, 61, 113, 0.35);
-        }
-
-        .bubble-8 {
-            width: 90px;
-            height: 90px;
-            left: 48%;
-            animation-duration: 25s;
-            animation-delay: -18s;
-            background: radial-gradient(circle at 30% 30%, rgba(0, 217, 255, 0.25), rgba(0, 217, 255, 0.05));
-            border: 1px solid rgba(0, 217, 255, 0.3);
-            box-shadow: 0 0 16px rgba(0, 217, 255, 0.2), inset 0 6px 16px rgba(0, 217, 255, 0.4);
-        }
-
-        .bubble-9 {
-            width: 75px;
-            height: 75px;
-            left: 78%;
-            animation-duration: 24s;
-            animation-delay: -2s;
-            background: radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.25), rgba(139, 92, 246, 0.05));
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            box-shadow: 0 0 15px rgba(139, 92, 246, 0.15), inset 0 5px 15px rgba(139, 92, 246, 0.35);
-        }
-
-        .bubble-10 {
-            width: 130px;
-            height: 130px;
-            left: 92%;
-            animation-duration: 35s;
-            animation-delay: -8s;
-            background: radial-gradient(circle at 30% 30%, rgba(0, 245, 160, 0.25), rgba(0, 245, 160, 0.05));
-            border: 1px solid rgba(0, 245, 160, 0.3);
-            box-shadow: 0 0 25px rgba(0, 245, 160, 0.2), inset 0 10px 25px rgba(0, 245, 160, 0.4);
-        }
-
-
-        /* =========================================================
-   CUSTOM CURSOR
-========================================================= */
-
-        .custom-cursor,
-        .custom-cursor-glow {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            will-change: transform;
-        }
-
-        @media (hover: hover) and (pointer: fine) {
-
-            .custom-cursor,
-            .custom-cursor-glow {
-                display: block;
-            }
-        }
-
-        .custom-cursor {
-            width: 6px;
-            height: 6px;
-            background: #fff;
-            box-shadow: 0 0 10px #fff;
-        }
-
-        .custom-cursor-glow {
-            width: 35px;
-            height: 35px;
-            background: radial-gradient(circle, rgba(0, 217, 255, 0.4) 0%, rgba(139, 92, 246, 0.1) 60%, transparent 100%);
-            filter: blur(2px);
-            pointer-events: none;
-        }
-
-        /* Hide default cursor on larger screens */
-        @media (min-width: 1024px) {
-            body {
-                cursor: none;
-            }
-
-            a,
-            button,
-            .filter,
-            .project,
-            .ai-tool,
-            .period,
-            .close-modal {
-                cursor: none;
-            }
+            display: none !important;
         }
 
 
@@ -384,38 +178,15 @@
 ========================================================= */
 
         .gradient-text {
-
-            background:
-                linear-gradient(90deg,
-                    var(--pink),
-                    var(--orange),
-                    var(--yellow),
-                    var(--green),
-                    var(--cyan),
-                    var(--purple),
-                    var(--pink));
-
-            background-size: 400% 100%;
-
+            color: #ff5e00;
+            background: linear-gradient(135deg, #ffffff 20%, #ffb703 55%, #ff5e00 80%, #ff1e1e 100%);
             -webkit-background-clip: text;
             background-clip: text;
-
-            color: transparent;
-
-            animation:
-                gradientMove 8s linear infinite;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
         }
 
-        @keyframes gradientMove {
-
-            0% {
-                background-position: 0% 50%;
-            }
-
-            100% {
-                background-position: 400% 50%;
-            }
-        }
+        
 
 
         /* =========================================================
@@ -423,33 +194,19 @@
 ========================================================= */
 
         nav {
-
             position: fixed;
-
             top: 15px;
             left: 50%;
-
             transform: translateX(-50%);
-
             width: min(1150px, 94%);
-
             height: 64px;
-
             z-index: 1000;
-
-            border:
-                1px solid rgba(255, 255, 255, .1);
-
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 18px;
-
-            background:
-                rgba(8, 5, 26, .78);
-
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-
-            box-shadow:
-                0 15px 40px rgba(0, 0, 0, .2);
+            background: rgba(10, 8, 14, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .navbar {
@@ -466,67 +223,120 @@
         }
 
         .logo {
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-            font-size: 20px;
+        .logo::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ff6d00;
+            box-shadow: 0 0 10px #ff6d00, 0 0 18px rgba(255, 43, 43, 0.6);
+        }
 
-            font-weight: 950;
-
-            letter-spacing: -1px;
-
-            background:
-                linear-gradient(90deg,
-                    var(--pink),
-                    var(--cyan),
-                    var(--purple));
-
-            -webkit-background-clip: text;
-
-            color: transparent;
+        /* BRIGHT RED HERO TITLE - PURE SOLID BRIGHT RED (NO GLOW, NO WHITE MIXTURE) */
+        .blood-red-title {
+            color: #ff1e1e;
+            font-weight: 850;
+            display: inline-block;
         }
 
         .nav-links {
-
+            position: relative;
             display: flex;
-
             align-items: center;
-
-            gap: 19px;
-
+            gap: 6px;
             list-style: none;
         }
 
-        .nav-links a {
-
-            color: #aaa6c1;
-
-            font-size: 10px;
-
-            font-weight: 700;
-
-            transition: .2s ease;
+        .nav-links li {
+            position: relative;
+            z-index: 2;
         }
 
-        .nav-links a.active,
+        .nav-links a {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            color: #8f8a9a;
+            font-size: 13.5px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 2;
+        }
+
         .nav-links a:hover {
-            color: #fff;
-            text-shadow: 0 0 10px rgba(0, 217, 255, 0.4);
+            color: #ffffff;
+        }
+
+        /* Active nav text changes to bright red above the underline */
+        .nav-links a.active {
+            color: #ff1e1e;
+            font-weight: 700;
+        }
+
+        /* Gliding animated underline indicator in bright red */
+        .nav-indicator {
+            position: absolute;
+            height: 3px;
+            border-radius: 99px;
+            background: #ff1e1e;
+            box-shadow: 0 0 12px rgba(255, 30, 30, 0.8);
+            pointer-events: none;
+            z-index: 3;
+            transition: left 0.36s cubic-bezier(0.22, 1, 0.36, 1), width 0.36s cubic-bezier(0.22, 1, 0.36, 1), top 0.36s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+            opacity: 0;
+        }
+
+        .nav-indicator.active {
+            opacity: 1;
+        }
+
+        /* Switching glow pulse across the entire navbar frame */
+        @keyframes navGlowPulse {
+            0% {
+                border-color: rgba(255, 255, 255, 0.12);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            }
+            45% {
+                border-color: rgba(230, 0, 18, 0.85);
+                box-shadow: 0 15px 45px rgba(0, 0, 0, 0.8), 0 0 32px rgba(230, 0, 18, 0.65), 0 0 60px rgba(255, 94, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            }
+            100% {
+                border-color: rgba(255, 255, 255, 0.12);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        nav.switching {
+            animation: navGlowPulse 0.65s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .nav-button {
-
-            padding: 9px 16px;
-
+            padding: 9px 20px;
             border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff5e00, #ff1e1e);
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 2px 14px rgba(255, 30, 30, 0.4);
+            transition: all 0.25s ease;
+        }
 
-            font-size: 10px;
-
-            font-weight: 900;
-
-            background:
-                linear-gradient(100deg,
-                    var(--pink),
-                    var(--purple),
-                    var(--cyan));
+        .nav-button:hover {
+            background: linear-gradient(135deg, #ffa600, #ff5e00);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 22px rgba(255, 94, 0, 0.6);
+            transform: translateY(-2px);
         }
 
         .mobile-nav-toggle {
@@ -586,191 +396,119 @@
         }
 
         .status {
-
             display: inline-flex;
-
             align-items: center;
-
-            gap: 8px;
-
-            padding: 8px 14px;
-
+            gap: 10px;
+            padding: 7px 16px;
             margin-bottom: 24px;
-
-            border-radius: 30px;
-
-            background:
-                rgba(0, 245, 160, .06);
-
-            border:
-                1px solid rgba(0, 245, 160, .2);
-
-            color: #6fffcf;
-
-            font-size: 10px;
-
-            font-weight: 880;
+            border-radius: 9999px;
+            background: rgba(255, 109, 0, 0.08);
+            border: 1px solid rgba(255, 109, 0, 0.25);
+            color: var(--solar-amber);
+            font-size: 12.5px;
+            font-weight: 600;
+            box-shadow: 0 0 15px rgba(255, 183, 3, 0.12);
+            letter-spacing: 0.3px;
         }
 
         .status-dot {
-
-            width: 7px;
-            height: 7px;
-
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-
-            background: var(--green);
-
-            box-shadow:
-                0 0 12px var(--green);
-
-            animation:
-                pulse 1.8s ease-in-out infinite;
+            background: #ff6d00;
+            box-shadow: 0 0 10px #ff6d00, 0 0 20px #ff2b2b;
+            animation: magmaGlow 2s ease-in-out infinite alternate;
         }
 
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: .5;
-                transform: scale(.75);
-            }
+        @keyframes magmaGlow {
+            0% { transform: scale(0.9); opacity: 0.75; box-shadow: 0 0 6px #ff6d00; }
+            100% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 14px #ff2b2b, 0 0 24px #ff6d00; }
         }
 
         .hero-left h1 {
-
-            font-size:
-                clamp(52px, 6vw, 84px);
-
-            line-height: .94;
-
-            letter-spacing: -5px;
-
-            font-weight: 950;
-
-            margin-bottom: 25px;
+            font-size: clamp(48px, 6vw, 76px);
+            line-height: 1.04;
+            letter-spacing: -0.03em;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 24px;
         }
 
         .hero-left p {
-
-            max-width: 620px;
-
-            color: var(--muted);
-
-            font-size: 15px;
-
-            line-height: 1.9;
-
-            margin-bottom: 30px;
+            max-width: 680px;
+            color: var(--text-secondary);
+            font-size: 17.5px;
+            line-height: 1.75;
+            margin-bottom: 34px;
         }
 
         .hero-buttons {
-
             display: flex;
-
-            gap: 12px;
-
+            gap: 14px;
             flex-wrap: wrap;
         }
 
         .btn {
-
-            display: inline-block;
-
-            padding: 13px 20px;
-
-            border-radius: 11px;
-
-            font-size: 11px;
-
-            font-weight: 850;
-
-            transition:
-                transform .25s ease,
-                box-shadow .25s ease;
-        }
-
-        .btn:hover {
-
-            transform: translateY(-4px);
-
-            box-shadow:
-                0 15px 30px rgba(0, 0, 0, .3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 13.5px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            cursor: pointer;
         }
 
         .btn-primary {
+            background: linear-gradient(135deg, #ff6d00, #ff2b2b);
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 4px 18px rgba(255, 30, 30, 0.35);
+        }
 
-            background:
-                linear-gradient(100deg,
-                    var(--pink),
-                    var(--purple),
-                    var(--cyan));
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #ffa600, #ff6d00);
+            box-shadow: 0 0 25px rgba(255, 109, 0, 0.6), 0 4px 25px rgba(255, 43, 43, 0.4);
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
+            background: rgba(255, 255, 255, 0.03);
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 109, 0, 0.25);
+        }
 
-            background:
-                rgba(255, 255, 255, .05);
-
-            border:
-                1px solid rgba(255, 255, 255, .12);
+        .btn-secondary:hover {
+            background: rgba(255, 109, 0, 0.08);
+            border-color: rgba(255, 109, 0, 0.55);
+            color: #ff9d42 !important;
+            box-shadow: 0 0 15px rgba(255, 109, 0, 0.2);
+            transform: translateY(-2px);
         }
 
 
         /* =========================================================
-   HERO RIGHT
+   HERO 3D FLIP CARD (PERFECT ROTATION & MAGMA BORDER ANIMATION)
 ========================================================= */
 
         .hero-right {
-
-            min-height: 520px;
-
-            position: relative;
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-        }
-
-        .hero-right::before {
-
-            content: "";
-
-            position: absolute;
-
-            width: 430px;
-            height: 430px;
-
-            border-radius: 50%;
-
-            background:
-                linear-gradient(135deg,
-                    var(--pink),
-                    var(--purple),
-                    var(--cyan));
-
-            filter: blur(110px);
-
-            opacity: .12;
-        }
-
-
-        /* =========================================================
-           PROFILE FLIP CARD
-        ========================================================= */
-        .profile-card-container {
-            width: min(540px, 92%);
-            height: 320px;
-            perspective: 1200px;
-            z-index: 30;
+            width: 100%;
             position: relative;
+        }
+
+        .profile-card-container {
+            width: min(560px, 100%);
+            height: 380px;
+            perspective: 1400px;
+            -webkit-perspective: 1400px;
+            position: relative;
+            z-index: 10;
         }
 
         .profile-card {
@@ -778,8 +516,10 @@
             width: 100%;
             height: 100%;
             transform-style: preserve-3d;
-            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            -webkit-transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.2, 0.85, 0.35, 1.2);
             cursor: pointer;
+            border-radius: 24px;
         }
 
         .profile-card.flipped {
@@ -792,185 +532,203 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            border-radius: 25px;
-            padding: 38px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, .13), rgba(255, 255, 255, .035));
-            border: 1px solid rgba(255, 255, 255, .18);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            box-shadow: 0 40px 80px rgba(0, 0, 0, .5);
+            backface-visibility: hidden !important;
+            -webkit-backface-visibility: hidden !important;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            border-radius: 24px;
+            padding: 38px 40px;
+            background: rgba(13, 10, 18, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 94, 0, 0.12);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            overflow: hidden;
         }
 
+        .profile-card-front {
+            z-index: 2;
+            transform: rotateY(0deg);
+        }
+
+        .profile-card-back {
+            z-index: 1;
+            transform: rotateY(180deg);
+        }
+
+        /* Animated Full Magma Lava Border around the card */
         .profile-card-front::before,
         .profile-card-back::before {
             content: "";
             position: absolute;
-            inset: -1px;
-            border-radius: 25px;
-            padding: 1px;
-            background: linear-gradient(90deg, var(--pink), var(--purple), var(--cyan), var(--green), var(--pink));
-            background-size: 300%;
-            animation: gradientMove 8s linear infinite;
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff1e1e, #ff5e00, #ffb703, #ff1e1e);
+            background-size: 300% 100%;
+            animation: lavaGlowMove 3.5s linear infinite;
         }
 
-        .profile-card-back {
-            transform: rotateY(180deg);
+        @keyframes lavaGlowMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
         }
 
-        /* Card Back Contact Styling */
+        .profile-card:hover {
+            box-shadow: 0 0 35px rgba(255, 94, 0, 0.35), 0 0 60px rgba(255, 30, 30, 0.2);
+        }
+
+        /* Card Content & Hierarchy */
+        .card-top-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .card-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--solar-amber);
+            font-size: 11.5px;
+            letter-spacing: 2px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .card-label::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #ff1e1e;
+            box-shadow: 0 0 10px #ff1e1e;
+        }
+
+        .card-tag {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 9999px;
+            background: rgba(255, 183, 3, 0.1);
+            border: 1px solid rgba(255, 183, 3, 0.32);
+            color: var(--solar-amber);
+        }
+
+        .profile-card-front h2,
+        .profile-card-back h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .profile-card-front p,
+        .profile-card-back p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 14.5px;
+            max-width: 480px;
+        }
+
+        /* Specs pill row inside front */
+        .card-specs-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+
+        .card-spec-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 16px;
+            border-radius: 9px;
+            background: rgba(18, 14, 24, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #ffffff;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        }
+
+        .card-spec-badge span {
+            color: var(--solar-amber);
+        }
+
+        /* Card Back Contact Styling (Spacious & Clean) */
         .card-contact-details {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin: 10px 0;
+            margin: 16px 0;
             align-items: flex-start;
+            width: 100%;
         }
 
         .card-contact-item {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             font-size: 14px;
-            color: #d7d3e3;
+            color: #ffffff;
         }
 
         .card-contact-icon {
-            font-size: 18px;
-            background: rgba(255, 255, 255, 0.05);
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
+            font-size: 15px;
+            background: rgba(255, 94, 0, 0.1);
+            border: 1px solid rgba(255, 94, 0, 0.25);
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.02);
+            color: #ff5e00;
+            flex-shrink: 0;
         }
 
         .card-contact-item a {
-            color: var(--muted);
+            color: #e2deec;
             text-decoration: none;
             transition: all 0.2s ease;
             font-weight: 500;
         }
 
         .card-contact-item a:hover {
-            color: var(--cyan);
-            text-shadow: 0 0 8px rgba(0, 217, 255, 0.4);
-            transform: translateX(3px);
-        }
-
-        /* Card Avatar Styling */
-        .profile-card-content {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            width: 100%;
-        }
-
-        .profile-avatar-wrapper {
-            position: relative;
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            padding: 3px;
-            background: linear-gradient(135deg, var(--pink), var(--purple), var(--cyan), var(--green));
-            background-size: 300%;
-            animation: gradientMove 8s linear infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-            flex-shrink: 0;
-        }
-
-        .profile-avatar-inner {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #08051a;
-            background: #08051a;
-        }
-
-        .profile-avatar {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: scale(1.8); /* Zooms in by 80% */
-            transition: transform 0.3s ease;
-        }
-
-        .profile-avatar:hover {
-            transform: scale(1.95); /* Extra zoom on hover */
-        }
-
-        .card-label {
-
-            color: var(--cyan);
-
-            font-size: 9px;
-
-            letter-spacing: 3px;
-
-            font-weight: 950;
-
-            margin-bottom: 12px;
-        }
-
-        .profile-card-front h2,
-        .profile-card-back h2 {
-
-            font-size: 32px;
-
-            margin-bottom: 13px;
-        }
-
-        .profile-card-front p,
-        .profile-card-back p {
-
-            color: #b7b2c9;
-
-            line-height: 1.8;
-
-            font-size: 13px;
+            color: var(--solar-amber);
+            text-shadow: 0 0 10px rgba(255, 183, 3, 0.5);
+            transform: translateX(4px);
         }
 
         .card-info {
-
             display: flex;
-
             justify-content: space-between;
-
+            align-items: center;
             gap: 10px;
-
-            margin-top: 22px;
-
-            padding-top: 15px;
-
-            border-top:
-                1px solid rgba(255, 255, 255, .08);
-
-            color: var(--muted2);
-
-            font-size: 9px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 600;
         }
 
-
-        /* =========================================================
-   GENERAL
-========================================================= */
+        .card-flip-prompt {
+            color: var(--solar-amber);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            font-size: 12px;
+        }
 
         section {
 
@@ -994,48 +752,51 @@
         }
 
         .section-label {
-
-            font-size: 9px;
-
-            font-weight: 950;
-
-            letter-spacing: 3px;
-
-            color: var(--cyan);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            color: var(--solar-amber);
+            text-shadow: 0 0 14px rgba(255, 183, 3, 0.3);
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 8px;
         }
 
         .section-header h2 {
 
             margin-top: 10px;
 
-            font-size:
-                clamp(35px, 5vw, 55px);
-
-            letter-spacing: -2px;
-
-            line-height: 1;
+            font-size: clamp(34px, 4.5vw, 52px);
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            color: #ffffff;
         }
 
         .section-header p {
 
             margin-top: 12px;
 
-            color: var(--muted2);
-
-            font-size: 13px;
+            color: var(--text-secondary);
+            font-size: 15.5px;
+            line-height: 1.65;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .glass {
+            background: rgba(12, 9, 16, 0.82);
+            border: 1px solid rgba(255, 255, 255, 0.085);
+            border-radius: 18px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 16px 40px -10px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-            background: var(--glass);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 22px;
-
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+        .glass:hover {
+            border-color: rgba(255, 94, 0, 0.5);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 20px 45px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 94, 0, 0.18);
         }
 
 
@@ -1098,11 +859,10 @@
 
         .metric-label {
 
-            color: var(--muted2);
-
-            font-size: 9px;
-
-            font-weight: 800;
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
 
             text-transform: uppercase;
 
@@ -1113,18 +873,20 @@
 
             display: block;
 
-            font-size: 31px;
-
-            font-weight: 950;
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
 
             margin-top: 7px;
 
             background:
                 linear-gradient(90deg,
-                    var(--pink),
-                    var(--cyan));
+                    var(--lava-orange),
+                    var(--lava-red));
 
             -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
 
             color: transparent;
         }
@@ -1133,447 +895,368 @@
 
             margin-top: 4px;
 
-            color: var(--green);
-
-            font-size: 9px;
-
-            font-weight: 800;
+            color: var(--solar-amber);
+            font-size: 12px;
+            font-weight: 600;
         }
 
 
         /* =========================================================
-   CHARTS
+   INTERACTIVE DASHBOARD & PROFESSIONAL CHARTS (LAVA CONTRAST)
 ========================================================= */
 
+        .dashboard-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
         .chart-grid {
-
             display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 20px;
+        }
 
-            grid-template-columns:
-                1.5fr .8fr;
-
-            gap: 18px;
+        .chart-grid-equal {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         .chart-card {
+            padding: 26px 28px;
+            min-height: 400px;
+            border-radius: 20px;
+            background: #0a080c;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
 
-            padding: 25px;
+        .chart-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff2b2b, #ff6d00, transparent);
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
 
-            min-height: 390px;
+        .chart-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 109, 0, 0.4);
+            box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 109, 0, 0.12);
+        }
+
+        .chart-card:hover::before {
+            opacity: 1;
         }
 
         .chart-header {
-
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
-            gap: 15px;
-
+            gap: 16px;
             margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .chart-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chart-badge-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            background: rgba(255, 109, 0, 0.08);
+            border: 1px solid rgba(255, 109, 0, 0.2);
+            font-size: 18px;
+            color: #ff6d00;
         }
 
         .chart-title {
-
-            font-size: 15px;
-
-            font-weight: 900;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            color: #ffffff;
+            margin: 0;
         }
 
         .chart-subtitle {
-
-            color: var(--muted2);
-
-            font-size: 9px;
-
+            color: var(--text-muted);
+            font-size: 12px;
             margin-top: 3px;
+            font-weight: 400;
         }
 
         .chart-periods {
-
-            display: flex;
-
-            gap: 5px;
+            display: inline-flex;
+            gap: 4px;
+            padding: 3px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 8px;
         }
 
         .period {
-
-            padding: 5px 8px;
-
+            padding: 6px 12px;
             border-radius: 6px;
-
-            border:
-                1px solid rgba(255, 255, 255, .08);
-
-            background:
-                rgba(255, 255, 255, .03);
-
-            color: var(--muted2);
-
-            font-size: 8px;
-
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .period:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.06);
         }
 
         .period.active {
-
-            color: #fff;
-
-            background:
-                rgba(139, 92, 246, .25);
-
-            border-color:
-                rgba(139, 92, 246, .4);
+            color: #ffffff;
+            background: linear-gradient(135deg, #ff6d00, #ff2b2b);
+            box-shadow: 0 2px 8px rgba(255, 43, 43, 0.4);
         }
 
-
-        /* =========================================================
-   LINE CHART
-========================================================= */
-
-        .line-chart {
-
+        .chart-canvas-wrap {
             position: relative;
-
-            height: 285px;
-
-            width: 100%;
-
-            overflow: hidden;
-
-            border-radius: 12px;
-
-            background:
-                rgba(255, 255, 255, .018);
-        }
-
-        .chart-grid-lines {
-
-            position: absolute;
-
-            inset: 0;
-
-            background-image:
-
-                linear-gradient(rgba(255, 255, 255, .06) 1px,
-                    transparent 1px),
-
-                linear-gradient(90deg,
-                    rgba(255, 255, 255, .035) 1px,
-                    transparent 1px);
-
-            background-size:
-                100% 20%,
-                10% 100%;
-        }
-
-        .line-svg {
-
-            position: absolute;
-
-            inset: 0;
-
-            width: 100%;
-            height: 100%;
-
-            overflow: visible;
-        }
-
-        .chart-line {
-
-            fill: none;
-
-            stroke-width: 3;
-
-            stroke-linecap: round;
-
-            stroke-linejoin: round;
-
-            stroke-dasharray: 1000;
-
-            stroke-dashoffset: 1000;
-
-            animation:
-                drawLine 2.5s ease-out forwards;
-            transition: d 0.5s ease-in-out;
-        }
-
-        @keyframes drawLine {
-
-            to {
-                stroke-dashoffset: 0;
-            }
-        }
-
-        .chart-area {
-
-            opacity: .15;
-            transition: d 0.5s ease-in-out;
-        }
-
-        .chart-point {
-
-            fill: #fff;
-
-            stroke:
-                var(--cyan);
-
-            stroke-width: 2;
-
-            animation:
-                pointPulse 2s ease-in-out infinite;
-            transition: cx 0.5s ease-in-out, cy 0.5s ease-in-out;
-        }
-
-        @keyframes pointPulse {
-
-            0%,
-            100% {
-                opacity: .75;
-            }
-
-            50% {
-                opacity: 1;
-            }
-        }
-
-
-        /* =========================================================
-   BAR CHART
-========================================================= */
-
-        .bar-chart {
-
-            display: flex;
-
-            align-items: flex-end;
-
-            justify-content: space-around;
-
-            height: 285px;
-
-            padding:
-                20px 5px 10px;
-
-            gap: 10px;
-
-            background:
-                rgba(255, 255, 255, .018);
-
-            border-radius: 12px;
-        }
-
-        .bar-column {
-
-            height: 100%;
-
             flex: 1;
+            width: 100%;
+            min-height: 270px;
+        }
 
+        .chart-canvas-wrap canvas {
+            position: absolute;
+            inset: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .chart-footer-stat {
             display: flex;
-
-            flex-direction: column;
-
             align-items: center;
-
-            justify-content: flex-end;
-
-            gap: 8px;
+            justify-content: space-between;
+            padding-top: 14px;
+            margin-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 12px;
+            color: var(--text-muted);
         }
 
-        .bar-value {
-
-            font-size: 8px;
-
-            color: var(--muted2);
+        .chart-footer-stat strong {
+            color: #ff9d42;
+            font-weight: 600;
         }
 
-        .bar {
-
-            width:
-                min(34px, 70%);
-
-            border-radius:
-                7px 7px 3px 3px;
-
-            background:
-                linear-gradient(to top,
-                    var(--purple),
-                    var(--pink),
-                    var(--cyan));
-
-            box-shadow:
-                0 0 20px rgba(139, 92, 246, .15);
-
-            transform-origin:
-                bottom;
-
-            animation:
-                barGrow 1.4s cubic-bezier(.2, .8, .2, 1);
+        .chart-legend-custom {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 11px;
+            color: var(--text-muted);
         }
 
-        @keyframes barGrow {
-
-            from {
-                transform: scaleY(0);
-            }
-
-            to {
-                transform: scaleY(1);
-            }
+        .legend-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .bar-name {
-
-            color: var(--muted2);
-
-            font-size: 8px;
-
-            text-align: center;
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
         }
 
+        /* Modern Dashboard Metric Cards */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
 
-        /* =========================================================
-   AI ANALYTICS
-========================================================= */
-
-        .ai-breakdown {
-
-            margin-top: 18px;
-
-            padding: 28px;
-
+        .metric {
+            padding: 22px 24px;
+            position: relative;
             overflow: hidden;
+            border-radius: 18px;
+            background: #0a080c;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .metric:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 109, 0, 0.4);
+            box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 109, 0, 0.15);
+        }
+
+        .metric-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .metric-label {
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .metric-icon-small {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            background: rgba(255, 109, 0, 0.08);
+            border: 1px solid rgba(255, 109, 0, 0.2);
+            font-size: 15px;
+            color: #ff6d00;
+        }
+
+        .metric-value {
+            display: block;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+            line-height: 1.1;
+        }
+
+        .metric-change {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 8px;
+            color: #ff6d00;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* Modern Workflow Distribution breakdown */
+        .ai-breakdown {
+            margin-top: 24px;
+            padding: 30px;
+            border-radius: 20px;
+            background: #0a080c;
+            border: 1px solid rgba(255, 255, 255, 0.07);
         }
 
         .ai-breakdown-header {
-
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
-            margin-bottom: 25px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .ai-workflow {
+        .ai-workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
 
+        .workflow-item-pro {
             display: flex;
-
-            flex-direction: column;
-
-            gap: 18px;
-        }
-
-        .workflow-item {
-
-            display: grid;
-
-            grid-template-columns:
-                48px 1fr 45px;
-
-            gap: 15px;
-
             align-items: center;
+            gap: 16px;
+            padding: 16px 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.25s ease;
         }
 
-        .workflow-icon {
+        .workflow-item-pro:hover {
+            background: rgba(255, 109, 0, 0.04);
+            border-color: rgba(255, 109, 0, 0.3);
+            transform: translateX(4px);
+        }
 
-            width: 42px;
-            height: 42px;
-
-            display: grid;
-
-            place-items: center;
-
+        .workflow-icon-pro {
+            width: 44px;
+            height: 44px;
             border-radius: 12px;
-
-            background:
-                rgba(255, 255, 255, .05);
-
-            border:
-                1px solid rgba(255, 255, 255, .1);
-
+            display: grid;
+            place-items: center;
             font-size: 20px;
+            background: rgba(255, 43, 43, 0.1);
+            border: 1px solid rgba(255, 43, 43, 0.25);
+            color: #ff6d00;
+            flex-shrink: 0;
         }
 
-        .workflow-info {
+        .workflow-body-pro {
+            flex: 1;
             min-width: 0;
         }
 
-        .workflow-title {
-
+        .workflow-header-pro {
             display: flex;
-
             justify-content: space-between;
-
-            gap: 10px;
-
+            align-items: center;
             margin-bottom: 7px;
-
-            font-size: 11px;
-
-            font-weight: 855;
         }
 
-        .workflow-title span {
-
-            color: var(--muted2);
-
-            font-size: 8px;
-
+        .workflow-title-pro {
+            font-size: 13px;
             font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .workflow-item strong {
-
-            text-align: right;
-
-            font-size: 11px;
-
-            color: var(--cyan);
+        .workflow-tag-pro {
+            font-size: 10px;
+            padding: 2px 7px;
+            border-radius: 6px;
+            background: rgba(255, 109, 0, 0.12);
+            color: #ff9d42;
+            font-weight: 600;
         }
 
-        .workflow-bar {
+        .workflow-percent-pro {
+            font-size: 12px;
+            font-weight: 700;
+            color: #ff6d00;
+        }
 
+        .workflow-bar-pro {
             width: 100%;
-
-            height: 7px;
-
-            border-radius: 10px;
-
-            background:
-                rgba(255, 255, 255, .055);
-
+            height: 6px;
+            border-radius: 99px;
+            background: rgba(255, 255, 255, 0.06);
             overflow: hidden;
         }
 
-        .workflow-bar div {
-
+        .workflow-bar-pro > div {
             height: 100%;
-
-            border-radius: 10px;
-
-            background:
-                linear-gradient(90deg,
-                    var(--pink),
-                    var(--purple),
-                    var(--cyan));
-
-            box-shadow:
-                0 0 15px rgba(0, 217, 255, .15);
-
-            animation:
-                workflowGrow 1.5s cubic-bezier(.2, .8, .2, 1);
-        }
-
-        @keyframes workflowGrow {
-
-            from {
-                width: 0 !important;
-            }
+            border-radius: 99px;
+            background: linear-gradient(90deg, #ff2b2b, #ff6d00, #ffa600);
+            box-shadow: 0 0 10px rgba(255, 109, 0, 0.5);
+            transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
 
@@ -1605,11 +1288,9 @@
 
         .about-card p {
 
-            color: var(--muted);
-
-            line-height: 1.9;
-
-            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 15px;
         }
 
         .stats {
@@ -1641,265 +1322,187 @@
         }
 
         .stat strong {
-
             display: block;
-
-            font-size: 30px;
-
-            background:
-                linear-gradient(90deg,
-                    var(--pink),
-                    var(--cyan));
-
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 20%, #ffb703 55%, #ff5e00 80%, #ff1e1e 100%);
             -webkit-background-clip: text;
-
-            color: transparent;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .stat span {
 
-            color: var(--muted2);
-
-            font-size: 9px;
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
         }
 
 
-        /* =========================================================
-   SKILLS
-========================================================= */
+        /* Scroll Reading Progress Bar */
+        .scroll-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #ff1e1e, #ff5e00, var(--solar-amber));
+            box-shadow: 0 0 10px rgba(255, 30, 30, 0.8), 0 0 20px rgba(255, 94, 0, 0.4);
+            z-index: 9999;
+            pointer-events: none;
+            transition: width 0.1s linear;
+        }
+
+        /* Floating Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(13, 10, 18, 0.92);
+            border: 1px solid rgba(255, 30, 30, 0.4);
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 30, 30, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: #ff1e1e;
+            border-color: #ff1e1e;
+            color: #ffffff;
+            box-shadow: 0 0 25px rgba(255, 30, 30, 0.75), 0 10px 30px rgba(0, 0, 0, 0.8);
+            transform: translateY(-4px) scale(1.05);
+        }
+
+        @media (max-width: 750px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+
+        /* Skills Category Filter */
+        .skills-filter-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .skill-filter-btn {
+            padding: 8px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-muted);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12.5px;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .skill-filter-btn:hover {
+            color: #ffffff;
+            border-color: rgba(255, 30, 30, 0.45);
+            background: rgba(255, 30, 30, 0.08);
+        }
+
+        .skill-filter-btn.active {
+            color: #ffffff;
+            background: #ff1e1e;
+            border-color: #ff1e1e;
+            box-shadow: 0 0 16px rgba(255, 30, 30, 0.6);
+        }
+
+        .skill.hidden-skill {
+            display: none !important;
+        }
 
         .skills {
-
             display: flex;
-
             flex-wrap: wrap;
-
             justify-content: center;
-
-            gap: 9px;
-
+            gap: 10px;
             padding: 30px;
         }
 
         .skill {
-
-            padding: 10px 14px;
-
+            padding: 11px 18px;
             border-radius: 9px;
-
-            background:
-                rgba(255, 255, 255, .045);
-
-            border:
-                1px solid rgba(255, 255, 255, .08);
-
-            color: #d7d3e3;
-
-            font-size: 10px;
-
-            font-weight: 750;
-
-            transition: .25s ease;
+            background: rgba(16, 12, 22, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            color: #e2deec;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s ease;
         }
 
         .skill:hover {
-
-            transform:
-                translateY(-4px) scale(1.03);
-
-            border-color:
-                var(--cyan);
-
-            background:
-                rgba(0, 217, 255, .08);
-            box-shadow: 0 4px 15px rgba(0, 217, 255, 0.25);
+            transform: translateY(-3px);
+            border-color: var(--solar-amber);
+            background: rgba(255, 183, 3, 0.1);
+            color: #ffffff;
+            box-shadow: 0 4px 18px rgba(255, 183, 3, 0.25);
         }
-
-
-        /* =========================================================
-   AI TOOL CARDS
-========================================================= */
-
-        .ai-tools-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 18px;
-        }
-
-        .ai-tool {
-
-            position: relative;
-
-            display: flex;
-
-            align-items: flex-start;
-
-            gap: 20px;
-
-            padding: 28px;
-
-            min-height: 235px;
-
-            overflow: hidden;
-
-            cursor: pointer;
-
-            transition:
-                transform .3s ease,
-                border-color .3s ease,
-                box-shadow .3s ease;
-        }
-
-        .ai-tool:hover {
-
-            transform:
-                translateY(-8px);
-
-            border-color:
-                rgba(255, 255, 255, .28);
-
-            box-shadow:
-                0 25px 60px rgba(0, 0, 0, .35);
-        }
-
-        .ai-tool-icon {
-
-            flex: 0 0 65px;
-
-            width: 65px;
-            height: 65px;
-
-            display: grid;
-
-            place-items: center;
-
-            border-radius: 18px;
-
-            background:
-                rgba(255, 255, 255, .06);
-
-            border:
-                1px solid rgba(255, 255, 255, .1);
-
-            font-size: 31px;
-        }
-
-        .ai-tool-content {
-            flex: 1;
-        }
-
-        .ai-tool-number {
-
-            display: block;
-
-            color: var(--cyan);
-
-            font-size: 8px;
-
-            font-weight: 950;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 7px;
-        }
-
-        .ai-tool h3 {
-
-            font-size: 21px;
-
-            margin-bottom: 9px;
-        }
-
-        .ai-tool p {
-
-            color: #918da7;
-
-            font-size: 12px;
-
-            line-height: 1.7;
-        }
-
-        .ai-tags {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 6px;
-
-            margin-top: 14px;
-        }
-
-        .ai-tags span {
-
-            padding: 5px 8px;
-
-            border-radius: 6px;
-
-            background:
-                rgba(255, 255, 255, .05);
-
-            color: #aaa6bd;
-
-            font-size: 8px;
-        }
-
-
-        /* =========================================================
-   PROJECT FILTER
-========================================================= */
 
         .filters {
-
             display: flex;
-
             justify-content: center;
-
             flex-wrap: wrap;
-
-            gap: 9px;
-
+            gap: 10px;
             margin-bottom: 35px;
         }
 
         .filter {
-
-            padding: 10px 16px;
-
-            border:
-                1px solid rgba(255, 255, 255, .1);
-
-            background:
-                rgba(255, 255, 255, .04);
-
-            color: var(--muted);
-
-            border-radius: 10px;
-
+            padding: 10px 22px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-muted);
+            border-radius: 9px;
             cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
 
-            font-size: 10px;
-
-            font-weight: 850;
+        .filter:hover {
+            color: #ffffff;
+            border-color: rgba(255, 109, 0, 0.4);
+            background: rgba(255, 109, 0, 0.05);
         }
 
         .filter.active {
-
-            color: #fff;
-
+            color: #ffffff;
+            background: linear-gradient(135deg, #ff6d00, #ff2b2b);
             border-color: transparent;
-
-            background:
-                linear-gradient(100deg,
-                    var(--pink),
-                    var(--purple),
-                    var(--cyan));
+            box-shadow: 0 2px 14px rgba(255, 43, 43, 0.35);
         }
-
 
         /* =========================================================
    PROJECTS
@@ -1930,52 +1533,80 @@
 
         .project {
             position: relative;
-            padding: 28px;
+            padding: 24px;
             min-height: 480px;
             cursor: pointer;
-            transition: transform .25s ease, border-color .25s ease;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
             flex: 0 0 calc(33.333% - 14px);
             max-width: calc(33.333% - 14px);
             display: flex;
             flex-direction: column;
+            border-radius: 18px;
+            background: rgba(12, 9, 16, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.085);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 16px 36px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
         }
 
         .project:hover {
-            border-color: rgba(255, 255, 255, .25);
-            transform: translateY(-5px);
+            border-color: rgba(255, 94, 0, 0.55);
+            transform: translateY(-6px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 94, 0, 0.16);
         }
 
-        .project.hidden {
-            display: none;
+        .project-number {
+            color: #ff6d00;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
         }
 
-        /* Navigation Buttons */
+        .tags span {
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(255, 109, 0, 0.08);
+            border: 1px solid rgba(255, 109, 0, 0.2);
+            color: #ff9d42;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .project-footer {
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
         .carousel-nav-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
-            background: rgba(7, 5, 26, 0.65);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #fff;
+            background: #0e0b12;
+            border: 1px solid rgba(255, 109, 0, 0.3);
+            color: #ffffff;
             font-size: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             z-index: 100;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
         }
 
         .carousel-nav-btn:hover {
-            background: var(--purple);
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
+            background: linear-gradient(135deg, #ff6d00, #ff2b2b);
+            border-color: transparent;
+            box-shadow: 0 0 20px rgba(255, 109, 0, 0.6);
             transform: translateY(-50%) scale(1.08);
         }
 
@@ -2001,16 +1632,7 @@
             }
         }
 
-        .project-number {
-
-            color: var(--cyan);
-
-            font-size: 9px;
-
-            font-weight: 950;
-
-            letter-spacing: 1px;
-        }
+        .project-number { color: var(--solar-amber); font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; }
 
         .project-icon {
             width: 100%;
@@ -2043,14 +1665,7 @@
             font-size: 20px;
         }
 
-        .project p {
-
-            color: #918da7;
-
-            line-height: 1.7;
-
-            font-size: 12px;
-        }
+        .project p { color: var(--text-secondary); line-height: 1.65; font-size: 13.5px; }
 
         .tags {
 
@@ -2063,29 +1678,9 @@
             margin-top: 18px;
         }
 
-        .tags span {
+        .tags span { padding: 5px 11px; border-radius: 6px; background: rgba(255, 183, 3, 0.08); border: 1px solid rgba(255, 183, 3, 0.22); color: #ffd166; font-size: 11.5px; font-weight: 600; }
 
-            padding: 5px 8px;
-
-            border-radius: 6px;
-
-            background:
-                rgba(255, 255, 255, .05);
-
-            color: #aaa6bd;
-
-            font-size: 8px;
-        }
-
-        .project-footer {
-            margin-top: auto;
-            padding-top: 14px;
-            border-top: 1px solid rgba(255, 255, 255, .07);
-            color: var(--muted2);
-            font-size: 9px;
-            display: flex;
-            justify-content: space-between;
-        }
+        .project-footer { margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.08); color: var(--text-muted); font-size: 12px; font-weight: 600; display: flex; justify-content: space-between; }
 
 
         /* =========================================================
@@ -2097,7 +1692,7 @@
             position: fixed;
             inset: 0;
             z-index: 2000;
-            background: rgba(7, 5, 26, 0.85);
+            background: rgba(3, 2, 5, 0.88);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             align-items: center;
@@ -2106,10 +1701,12 @@
 
         .modal-content {
             width: min(650px, 90%);
-            padding: 40px 30px;
-            border-radius: 25px;
+            padding: 40px 32px;
+            border-radius: 24px;
             position: relative;
-            border: 1px solid var(--border);
+            background: rgba(13, 10, 18, 0.96);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(255, 94, 0, 0.12);
             animation: zoomIn 0.3s ease;
             text-align: left;
         }
@@ -2155,73 +1752,50 @@
         }
 
         .timeline::before {
-
             content: "";
-
             position: absolute;
-
             left: 10px;
-
             top: 0;
             bottom: 0;
-
             width: 2px;
-
-            background:
-                linear-gradient(var(--pink),
-                    var(--purple),
-                    var(--cyan),
-                    transparent);
+            background: linear-gradient(180deg, #ff1e1e, #ff5e00, var(--solar-amber), transparent);
         }
 
         .timeline-item {
-
             position: relative;
-
             padding-left: 45px;
-
             margin-bottom: 35px;
         }
 
         .timeline-dot {
-
             position: absolute;
-
-            left: 2px;
-            top: 3px;
-
-            width: 18px;
-            height: 18px;
-
+            left: -29px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-
-            background:
-                linear-gradient(135deg,
-                    var(--pink),
-                    var(--cyan));
+            background: #ff5e00;
+            box-shadow: 0 0 10px #ff5e00, 0 0 20px var(--solar-amber);
         }
 
         .timeline-year {
-
-            color: var(--cyan);
-
-            font-size: 9px;
-
-            font-weight: 950;
-
-            margin-bottom: 7px;
+            color: var(--solar-amber);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
         }
 
         .timeline-item h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
             margin-bottom: 7px;
         }
 
         .timeline-item p {
-
-            color: #918da7;
-
-            font-size: 12px;
-
+            color: var(--text-secondary);
+            font-size: 14.5px;
             line-height: 1.7;
         }
 
@@ -2230,91 +1804,125 @@
    CONTACT
 ========================================================= */
 
+        /* =========================================================
+   CONTACT SECTION (SYMMETRIC GRID & CLEAN LOGOS)
+========================================================= */
+
         .contact-box {
-
-            padding: 70px 25px;
-
+            padding: 60px 48px;
             text-align: center;
+            border-radius: 24px;
+            background: rgba(12, 9, 16, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 94, 0, 0.12);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-box h2 {
-
-            font-size:
-                clamp(40px, 6vw, 65px);
-
-            line-height: 1;
-
-            letter-spacing: -3px;
-
-            margin:
-                12px 0 20px;
+        .contact-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff1e1e 20%, #ff5e00 50%, var(--solar-amber) 80%, transparent);
         }
 
         .contact-box p {
-
-            max-width: 600px;
-
-            margin:
-                auto auto 25px;
-
-            color: #918da7;
-
-            line-height: 1.8;
-
-            font-size: 13px;
-        }
-
-        .contact-details {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin: 0 auto 30px;
-            max-width: 600px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 13px;
-            color: #fff;
-        }
-
-        .contact-item a {
-            color: var(--muted);
-            text-decoration: none;
-            transition: color 0.2s ease;
-            font-weight: 500;
-        }
-
-        .contact-item a:hover {
-            color: var(--cyan);
-            text-shadow: 0 0 8px rgba(0, 217, 255, 0.4);
-        }
-
-        .contact-icon {
+            max-width: 620px;
+            margin: 14px auto 36px;
+            color: var(--text-secondary);
             font-size: 16px;
-            background: rgba(255, 255, 255, 0.04);
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            line-height: 1.7;
         }
 
-        .buttons {
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            max-width: 760px;
+            margin: 0 auto 36px;
+            text-align: left;
+        }
 
+        .contact-card-item {
             display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 22px;
+            border-radius: 14px;
+            background: rgba(18, 14, 24, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
 
+        .contact-card-item:hover {
+            border-color: var(--solar-amber);
+            background: rgba(255, 183, 3, 0.06);
+            transform: translateY(-2px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 183, 3, 0.15);
+        }
+
+        .contact-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            background: rgba(255, 94, 0, 0.1);
+            border: 1px solid rgba(255, 94, 0, 0.25);
+            font-size: 18px;
+            color: #ff5e00;
+            flex-shrink: 0;
+        }
+
+        .contact-card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            min-width: 0;
+        }
+
+        .contact-card-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+        }
+
+        .contact-card-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .contact-card-item:hover .contact-card-value {
+            color: var(--solar-amber);
+        }
+
+        .contact-cta-buttons {
+            display: flex;
             justify-content: center;
-
+            gap: 16px;
             flex-wrap: wrap;
+        }
 
-            gap: 10px;
+        @media(max-width: 700px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-box {
+                padding: 40px 20px;
+            }
         }
 
 
@@ -2328,9 +1936,8 @@
 
             text-align: center;
 
-            color: #625e79;
-
-            font-size: 9px;
+            color: var(--text-muted);
+            font-size: 13px;
 
             border-top:
                 1px solid rgba(255, 255, 255, .06);
@@ -2374,25 +1981,28 @@
         .cert-card {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 20px;
+            gap: 16px;
+            padding: 20px 22px;
             border-radius: 16px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(14, 11, 19, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 8px 24px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .cert-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 245, 160, 0.3);
-            background: rgba(255, 255, 255, 0.06);
-            box-shadow: 0 10px 30px rgba(0, 245, 160, 0.05);
+            transform: translateY(-4px);
+            border-color: var(--solar-amber);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 14px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 183, 3, 0.18);
         }
 
         .cert-icon {
-            font-size: 24px;
-            background: rgba(0, 245, 160, 0.1);
-            color: var(--cyan);
+            font-size: 22px;
+            background: rgba(255, 183, 3, 0.1);
+            color: var(--solar-amber);
+            border: 1px solid rgba(255, 183, 3, 0.25);
             width: 48px;
             height: 48px;
             border-radius: 12px;
@@ -2403,7 +2013,7 @@
         }
 
         .cert-info h3 {
-            font-size: 13px;
+            font-size: 14.5px;
             font-weight: 700;
             color: #fff;
             margin-bottom: 4px;
@@ -2411,7 +2021,7 @@
         }
 
         .cert-info .issuer {
-            font-size: 11px;
+            font-size: 12.5px;
             color: var(--muted);
             font-weight: 500;
         }
@@ -2422,6 +2032,20 @@
 ========================================================= */
 
         @media(max-width:1000px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            .hero-left {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
 
             .hero-grid {
 
@@ -2446,10 +2070,7 @@
                 justify-content: center;
             }
 
-            .hero-right {
-
-                min-height: 470px;
-            }
+            
 
             .analytics-grid {
 
@@ -2513,7 +2134,7 @@
                 top: calc(100% + 10px);
                 left: 0;
                 right: 0;
-                background: rgba(8, 5, 26, 0.96);
+                background: rgba(10, 8, 14, 0.96);
                 border: 1px solid rgba(255, 255, 255, .1);
                 border-radius: 18px;
                 padding: 24px;
@@ -2547,6 +2168,10 @@
                 font-size: 13px;
             }
 
+            .nav-indicator {
+                display: none !important;
+            }
+
             .nav-button {
                 display: none;
             }
@@ -2565,7 +2190,7 @@
                 font-weight: 900;
                 text-align: center;
                 color: #fff;
-                background: linear-gradient(100deg, var(--pink), var(--purple), var(--cyan));
+                background: linear-gradient(135deg, #ff5e00, #ff1e1e);
             }
 
             .about-grid {
@@ -2573,10 +2198,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .ai-tools-grid {
-
-                grid-template-columns: 1fr;
-            }
+            
 
             .project {
                 flex: 0 0 100%;
@@ -2626,42 +2248,19 @@
                 font-size: 13px;
             }
 
-            .hero-right {
+            
 
-                min-height: 420px;
-            }
+            
 
-            .profile-card-container {
-                width: 94%;
-                height: 440px;
-            }
+            
 
-            .profile-card-front,
-            .profile-card-back {
-                padding: 27px 20px;
-            }
+            
 
-            .profile-card-content {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-                align-items: center;
-            }
+            
 
-            .profile-avatar-wrapper {
-                width: 110px;
-                height: 110px;
-            }
+            
 
-            .profile-card-front h2,
-            .profile-card-back h2 {
-                font-size: 26px;
-            }
-
-            .profile-card-front p,
-            .profile-card-back p {
-                font-size: 12px;
-            }
+            
 
             .card-info {
 
@@ -2699,22 +2298,9 @@
                 flex-direction: column;
             }
 
-            .ai-tool {
+            
 
-                padding: 22px;
-
-                gap: 14px;
-            }
-
-            .ai-tool-icon {
-
-                flex-basis: 55px;
-
-                width: 55px;
-                height: 55px;
-
-                font-size: 25px;
-            }
+            
 
             .stats {
 
@@ -2856,7 +2442,7 @@
             color: #fff;
             width: 50px;
             height: 50px;
-            background: rgba(139, 92, 246, 0.85);
+            background: linear-gradient(135deg, #ff5e00, #ff1e1e);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -2869,9 +2455,9 @@
 
         .video-card:hover .video-overlay::before {
             transform: scale(1.15);
-            background: var(--purple);
+            background: #ffffff; color: #09090b;
             opacity: 1;
-            box-shadow: 0 0 15px rgba(139, 92, 246, 0.8);
+            box-shadow: 0 0 20px rgba(255, 94, 0, 0.8);
         }
 
         .video-card h3 {
@@ -2882,43 +2468,27 @@
             font-weight: 600;
         }
     </style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 
 <body>
 
+    <!-- Scroll Reading Progress Bar -->
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
     <!-- Glowing cursor overlays -->
-    <div class="custom-cursor"></div>
-    <div class="custom-cursor-glow"></div>
+    
+    
 
     <!-- =====================================================
      BACKGROUND
 ===================================================== -->
 
     <div class="background">
-
         <div class="background-grid"></div>
-
-        <div class="blob blob1"></div>
-
-        <div class="blob blob2"></div>
-
-        <div class="blob blob3"></div>
-
-        <div class="blob blob4"></div>
-
-        <!-- Colorful Floating Bubbles -->
-        <div class="bubble bubble-1"></div>
-        <div class="bubble bubble-2"></div>
-        <div class="bubble bubble-3"></div>
-        <div class="bubble bubble-4"></div>
-        <div class="bubble bubble-5"></div>
-        <div class="bubble bubble-6"></div>
-        <div class="bubble bubble-7"></div>
-        <div class="bubble bubble-8"></div>
-        <div class="bubble bubble-9"></div>
-        <div class="bubble bubble-10"></div>
-
+        <div class="grid-radial-glow"></div>
+        <div class="grid-accent-lights"></div>
     </div>
 
 
@@ -2941,6 +2511,7 @@
             </button>
 
             <ul class="nav-links" id="navLinks">
+                <div class="nav-indicator" id="navIndicator"></div>
 
                 <li>
                     <a href="#about">About</a>
@@ -2956,10 +2527,6 @@
 
                 <li>
                     <a href="#ai-analytics">AI Analytics</a>
-                </li>
-
-                <li>
-                    <a href="#ai-tools">AI Tools</a>
                 </li>
 
                 <li>
@@ -2997,136 +2564,79 @@
      HERO
 ===================================================== -->
 
-    <header class="hero">
-
+            <header class="hero">
         <div class="hero-grid">
-
-
             <div class="hero-left">
-
                 <div class="status">
-
                     <span class="status-dot"></span>
-
                     Available for Internship and Full-Time Job Opportunities
-
                 </div>
 
-
                 <h1>
-
-                    I Build
-
-                    <br>
-
-                    <span class="gradient-text">
-                        Digital Experiences.
-                    </span>
-
+                    <span class="blood-red-title">I Build<br>Digital Experiences.</span>
                 </h1>
 
-
                 <p>
-
-                    I'm <strong>Jignesh.M.Kanojiya</strong>,
-                    a fourth-year Information Technology student
-                    at LJ University passionate about full-stack
-                    development, artificial intelligence,
-                    computer vision and Blender 3D animation.
-
+                    I'm <strong>Jignesh.M.Kanojiya</strong>, a fourth-year Information Technology student at LJ University passionate about full-stack development, artificial intelligence, computer vision, and Blender 3D animation.
                 </p>
 
-
                 <div class="hero-buttons">
-
                     <a href="#projects" class="btn btn-primary">
                         Explore My Work →
                     </a>
-
                     <a href="#contact" class="btn btn-secondary">
                         Let's Connect
                     </a>
-
                 </div>
-
             </div>
 
-
-            <!-- =====================================================
-     HANGING CARD
-===================================================== -->
-
+            <!-- 3D INTERACTIVE FLIP CARD (NO PHOTO) -->
             <div class="hero-right">
-
                 <div class="profile-card-container">
-
                     <div class="profile-card" id="profileCard">
 
-                        <!-- Front Face (Developer Profile) -->
+                        <!-- Front Face (Developer Overview) -->
                         <div class="profile-card-front">
-
-                            <div class="profile-card-content">
-                                <div class="profile-avatar-wrapper">
-                                    <div class="profile-avatar-inner">
-                                        <img src="profile.webp" alt="Jignesh Profile Picture" class="profile-avatar">
-                                    </div>
+                            <div>
+                                <div class="card-top-row">
+                                    <span class="card-label">DEVELOPER PROFILE</span>
+                                    <span class="card-tag">Full-Stack & AI</span>
                                 </div>
-                                <div class="profile-text-content">
-                                    <div class="card-label">
-                                        DEVELOPER PROFILE
-                                    </div>
 
-                                    <h2>
-                                        Hi, I'm
-                                        <span class="gradient-text">
-                                            Jignesh
-                                        </span>
-                                        👋
-                                    </h2>
+                                <h2>
+                                    Hi, I'm <span class="gradient-text">Jignesh</span> 👋
+                                </h2>
 
-                                    <p>
-                                        I love transforming ideas into
-                                        responsive, scalable and interactive
-                                        applications.
-                                        I work with modern web technologies,
-                                        artificial intelligence, computer vision
-                                        and Blender 3D animation.
-                                    </p>
+                                <p>
+                                    I love transforming ideas into responsive, scalable, and interactive applications. I engineer modern software using Java, Python, web architectures, neural vision, and procedural 3D graphics.
+                                </p>
+
+                                <div class="card-specs-row">
+                                    <div class="card-spec-badge"><span>⚡</span> Java & Python</div>
+                                    <div class="card-spec-badge"><span>🧠</span> Computer Vision</div>
+                                    <div class="card-spec-badge"><span>🌐</span> Modern Web Stack</div>
                                 </div>
                             </div>
 
                             <div class="card-info">
-
-                                <span>
-                                    🎓 B.E. Information Technology
-                                </span>
-
-                                <span>
-                                    📍 Ahmedabad, Gujarat
-                                </span>
-
+                                <span>🎓 B.E. Information Technology · LJ University</span>
+                                <span class="card-flip-prompt">Click to Flip ↺</span>
                             </div>
-
                         </div>
 
-                        <!-- Back Face (Contact Details) -->
+                        <!-- Back Face (Contact & Network) -->
                         <div class="profile-card-back">
-
                             <div>
-                                <div class="card-label">
-                                    CONTACT DETAILS
+                                <div class="card-top-row">
+                                    <span class="card-label">GET IN TOUCH</span>
+                                    <span class="card-tag">Ahmedabad, India</span>
                                 </div>
 
                                 <h2>
-                                    Let's
-                                    <span class="gradient-text">
-                                        Connect
-                                    </span>
-                                    🤝
+                                    Let's <span class="gradient-text">Connect</span> 🤝
                                 </h2>
 
                                 <div class="card-contact-details">
-
                                     <div class="card-contact-item">
                                         <span class="card-contact-icon">📧</span>
                                         <a href="mailto:jigneshkanojiya2@gmail.com">jigneshkanojiya2@gmail.com</a>
@@ -3139,31 +2649,26 @@
 
                                     <div class="card-contact-item">
                                         <span class="card-contact-icon">🔗</span>
-                                        <a href="https://www.linkedin.com/in/jignesh-kanojiya-217262366/" target="_blank">LinkedIn Profile</a>
+                                        <a href="https://www.linkedin.com/in/jignesh-kanojiya-217262366/" target="_blank">linkedin.com/in/jignesh-kanojiya</a>
                                     </div>
 
                                     <div class="card-contact-item">
                                         <span class="card-contact-icon">🐙</span>
-                                        <a href="https://github.com/jjk13120-art" target="_blank">GitHub Profile</a>
+                                        <a href="https://github.com/jjk13120-art" target="_blank">github.com/jjk13120-art</a>
                                     </div>
-
                                 </div>
                             </div>
 
                             <div class="card-info">
-                                <span>Click card to flip back</span>
+                                <span>📍 Ahmedabad, Gujarat</span>
+                                <span class="card-flip-prompt">Click to Flip Back ↻</span>
                             </div>
-
                         </div>
 
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </header>
 
 
@@ -3305,58 +2810,71 @@
             </div>
 
 
-            <div class="glass skills reveal">
-
-                <span class="skill">Java</span>
-                <span class="skill">Python</span>
-                <span class="skill">JavaScript</span>
-                <span class="skill">TypeScript</span>
-                <span class="skill">HTML5</span>
-                <span class="skill">CSS3</span>
-                <span class="skill">React</span>
-                <span class="skill">Angular</span>
-                <span class="skill">Django</span>
-                <span class="skill">Node.js</span>
-                <span class="skill">Express</span>
-                <span class="skill">MongoDB</span>
-                <span class="skill">PostgreSQL</span>
-                <span class="skill">SQL</span>
-                <span class="skill">.NET</span>
-                <span class="skill">Bootstrap</span>
-                <span class="skill">REST APIs</span>
-                <span class="skill">OpenCV</span>
-                <span class="skill">dlib</span>
-                <span class="skill">Blender</span>
-                <span class="skill">3D Animation</span>
-                <span class="skill">AI</span>
-                <span class="skill">Space Exploration</span>
-                <span class="skill">Computer Graphics</span>
-                <span class="skill">English</span>
-                <span class="skill">Internet of Things (IoT)</span>
-                <span class="skill">Microsoft PowerPoint</span>
-                <span class="skill">Microsoft Office</span>
-                <span class="skill">Object-Oriented Programming (OOP)</span>
-                <span class="skill">Docker</span>
-                <span class="skill">API</span>
-                <span class="skill">API Testing</span>
-                <span class="skill">Manual Testing</span>
-                <span class="skill">Public Speaking</span>
-                <span class="skill">Error Correction</span>
-                <span class="skill">Web Development</span>
-                <span class="skill">Vibe Coding</span>
-                <span class="skill">ASP.NET</span>
-                <span class="skill">Angular CLI</span>
-                <span class="skill">Physics</span>
-                <span class="skill">Chemistry</span>
-                <span class="skill">Mathematics</span>
-                <span class="skill">.NET Framework</span>
-                <span class="skill">Database Management System (DBMS)</span>
-                <span class="skill">PCM</span>
-
+                        <!-- SKILLS CATEGORY FILTER -->
+            <div class="skills-filter-row reveal">
+                <button class="skill-filter-btn active" data-skill-cat="all">All Tools</button>
+                <button class="skill-filter-btn" data-skill-cat="languages">Languages</button>
+                <button class="skill-filter-btn" data-skill-cat="web">Web & Full Stack</button>
+                <button class="skill-filter-btn" data-skill-cat="ai">AI & Vision</button>
+                <button class="skill-filter-btn" data-skill-cat="systems">Systems & Security</button>
+                <button class="skill-filter-btn" data-skill-cat="creative">3D & Engineering</button>
             </div>
 
-        </div>
+            <div class="glass skills reveal">
+                <span class="skill" data-skill-cat="languages">Java</span>
+                <span class="skill" data-skill-cat="languages">Python</span>
+                <span class="skill" data-skill-cat="languages">JavaScript</span>
+                <span class="skill" data-skill-cat="languages">TypeScript</span>
+                <span class="skill" data-skill-cat="languages">SQL</span>
+                <span class="skill" data-skill-cat="languages">Object-Oriented Programming (OOP)</span>
 
+                <span class="skill" data-skill-cat="web">HTML5</span>
+                <span class="skill" data-skill-cat="web">CSS3</span>
+                <span class="skill" data-skill-cat="web">React</span>
+                <span class="skill" data-skill-cat="web">Angular</span>
+                <span class="skill" data-skill-cat="web">Angular CLI</span>
+                <span class="skill" data-skill-cat="web">Django</span>
+                <span class="skill" data-skill-cat="web">Node.js</span>
+                <span class="skill" data-skill-cat="web">Express</span>
+                <span class="skill" data-skill-cat="web">MongoDB</span>
+                <span class="skill" data-skill-cat="web">PostgreSQL</span>
+                <span class="skill" data-skill-cat="web">Database Management System (DBMS)</span>
+                <span class="skill" data-skill-cat="web">.NET</span>
+                <span class="skill" data-skill-cat="web">ASP.NET</span>
+                <span class="skill" data-skill-cat="web">.NET Framework</span>
+                <span class="skill" data-skill-cat="web">Bootstrap</span>
+                <span class="skill" data-skill-cat="web">REST APIs</span>
+                <span class="skill" data-skill-cat="web">API</span>
+                <span class="skill" data-skill-cat="web">API Testing</span>
+                <span class="skill" data-skill-cat="web">Manual Testing</span>
+                <span class="skill" data-skill-cat="web">Web Development</span>
+
+                <span class="skill" data-skill-cat="ai">Computer Vision</span>
+                <span class="skill" data-skill-cat="ai">OpenCV</span>
+                <span class="skill" data-skill-cat="ai">dlib</span>
+                <span class="skill" data-skill-cat="ai">AI</span>
+                <span class="skill" data-skill-cat="ai">Vibe Coding</span>
+
+                <span class="skill" data-skill-cat="systems">Cybersecurity (Kali Linux)</span>
+                <span class="skill" data-skill-cat="systems">OS Virtualization (OSV)</span>
+                <span class="skill" data-skill-cat="systems">Docker</span>
+                <span class="skill" data-skill-cat="systems">Internet of Things (IoT)</span>
+                <span class="skill" data-skill-cat="systems">Error Correction</span>
+
+                <span class="skill" data-skill-cat="creative">Blender</span>
+                <span class="skill" data-skill-cat="creative">3D Animation</span>
+                <span class="skill" data-skill-cat="creative">Computer Graphics</span>
+                <span class="skill" data-skill-cat="creative">Space Exploration</span>
+                <span class="skill" data-skill-cat="creative">English</span>
+                <span class="skill" data-skill-cat="creative">Public Speaking</span>
+                <span class="skill" data-skill-cat="creative">Microsoft PowerPoint</span>
+                <span class="skill" data-skill-cat="creative">Microsoft Office</span>
+                <span class="skill" data-skill-cat="creative">Physics</span>
+                <span class="skill" data-skill-cat="creative">Chemistry</span>
+                <span class="skill" data-skill-cat="creative">Mathematics</span>
+                <span class="skill" data-skill-cat="creative">PCM</span>
+            </div>
+        </div>
     </section>
 
 
@@ -3364,1318 +2882,276 @@
      DEVELOPMENT ANALYTICS
 ===================================================== -->
 
-    <section id="analytics">
-
+        <section id="analytics">
         <div class="container">
-
             <div class="section-header reveal">
-
-                <div class="section-label">
-                    DEVELOPER ANALYTICS
-                </div>
-
-                <h2>
-                    My Development Analytics
-                </h2>
-
-                <p>
-                    A visual overview of my project and technology activity.
-                </p>
-
+                <div class="section-label">EXECUTIVE METRICS</div>
+                <h2>Development & Engineering Analytics</h2>
+                <p>Interactive telemetry tracking commit frequency, architecture stack volume, and system delivery metrics.</p>
             </div>
 
-
+            <!-- KEY PERFORMANCE METRICS -->
             <div class="analytics-grid">
-
-
                 <div class="glass metric reveal">
-
-                    <span class="metric-label">
-                        Projects
-                    </span>
-
-                    <span class="metric-value">
-                        15+
-                    </span>
-
-                    <span class="metric-change">
-                        ↗ Growing portfolio
-                    </span>
-
+                    <div class="metric-header">
+                        <span class="metric-label">Completed Systems</span>
+                        <div class="metric-icon-small">🚀</div>
+                    </div>
+                    <span class="metric-value">18+</span>
+                    <span class="metric-change">↗ 100% On-schedule delivery</span>
                 </div>
 
-
                 <div class="glass metric reveal">
-
-                    <span class="metric-label">
-                        Technologies
-                    </span>
-
-                    <span class="metric-value">
-                        20+
-                    </span>
-
-                    <span class="metric-change">
-                        ↗ Expanding stack
-                    </span>
-
+                    <div class="metric-header">
+                        <span class="metric-label">Core Tech Stack</span>
+                        <div class="metric-icon-small">⚡</div>
+                    </div>
+                    <span class="metric-value">24+</span>
+                    <span class="metric-change">↗ Python, Java, JS, C++, SQL</span>
                 </div>
 
-
                 <div class="glass metric reveal">
-
-                    <span class="metric-label">
-                        AI Projects
-                    </span>
-
-                    <span class="metric-value">
-                        3+
-                    </span>
-
-                    <span class="metric-change">
-                        ↗ AI focused
-                    </span>
-
+                    <div class="metric-header">
+                        <span class="metric-label">AI & CV Deployments</span>
+                        <div class="metric-icon-small">🧠</div>
+                    </div>
+                    <span class="metric-value">5+</span>
+                    <span class="metric-change">↗ OpenCV & Neural Pipelines</span>
                 </div>
 
-
                 <div class="glass metric reveal">
-
-                    <span class="metric-label">
-                        Current Year
-                    </span>
-
-                    <span class="metric-value">
-                        2026
-                    </span>
-
-                    <span class="metric-change">
-                        ● Active development
-                    </span>
-
+                    <div class="metric-header">
+                        <span class="metric-label">Active Production</span>
+                        <div class="metric-icon-small">🟢</div>
+                    </div>
+                    <span class="metric-value">2026</span>
+                    <span class="metric-change">● Continuous Engineering</span>
                 </div>
-
-
             </div>
 
-
+            <!-- INTERACTIVE CHARTS -->
             <div class="chart-grid">
-
-
+                <!-- Activity Area/Line Chart -->
                 <div class="glass chart-card reveal">
-
                     <div class="chart-header">
-
-                        <div>
-
-                            <div class="chart-title">
-                                Project Activity
+                        <div class="chart-header-left">
+                            <div class="chart-badge-icon">📈</div>
+                            <div>
+                                <h3 class="chart-title">Engineering Velocity & Commits</h3>
+                                <p class="chart-subtitle">Telemetry of code delivery, merges, and milestones</p>
                             </div>
-
-                            <div class="chart-subtitle">
-                                Development activity over time
-                            </div>
-
                         </div>
-
                         <div class="chart-periods">
-
-                            <span class="period">1M</span>
-                            <span class="period">3M</span>
-                            <span class="period active">1Y</span>
-
+                            <button class="period" data-period="1M">1M</button>
+                            <button class="period" data-period="3M">3M</button>
+                            <button class="period active" data-period="1Y">1Y</button>
                         </div>
-
                     </div>
-
-
-                    <div class="line-chart">
-
-                        <div class="chart-grid-lines"></div>
-
-                        <svg class="line-svg" viewBox="0 0 1000 500" preserveAspectRatio="none">
-
-                            <defs>
-
-                                <linearGradient id="lineGradient" x1="0" x2="1">
-
-                                    <stop offset="0%" stop-color="#ff1493" />
-
-                                    <stop offset="50%" stop-color="#8b5cf6" />
-
-                                    <stop offset="100%" stop-color="#00d9ff" />
-
-                                </linearGradient>
-
-                                <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
-
-                                    <stop offset="0%" stop-color="#8b5cf6" />
-
-                                    <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0" />
-
-                                </linearGradient>
-
-                            </defs>
-
-
-                            <path class="chart-area" fill="url(#areaGradient)" d="
-M0,410
-L90,385
-L180,400
-L270,330
-L360,345
-L450,270
-L540,290
-L630,215
-L720,240
-L810,150
-L900,175
-L1000,90
-L1000,500
-L0,500
-Z
-" />
-
-
-                            <path class="chart-line" stroke="url(#lineGradient)" d="
-M0,410
-L90,385
-L180,400
-L270,330
-L360,345
-L450,270
-L540,290
-L630,215
-L720,240
-L810,150
-L900,175
-L1000,90
-" />
-
-
-                            <circle class="chart-point" cx="0" cy="410" r="5" />
-
-                            <circle class="chart-point" cx="180" cy="400" r="5" />
-
-                            <circle class="chart-point" cx="360" cy="345" r="5" />
-
-                            <circle class="chart-point" cx="540" cy="290" r="5" />
-
-                            <circle class="chart-point" cx="720" cy="240" r="5" />
-
-                            <circle class="chart-point" cx="900" cy="175" r="5" />
-
-                            <circle class="chart-point" cx="1000" cy="90" r="5" />
-
-                        </svg>
-
+                    <div class="chart-canvas-wrap">
+                        <canvas id="devActivityChart"></canvas>
                     </div>
-
+                    <div class="chart-footer-stat">
+                        <span>Total Tracked Iterations: <strong>840+ commits</strong></span>
+                        <div class="chart-legend-custom">
+                            <span class="legend-pill"><span class="legend-dot" style="background:#ff6d00;"></span> Codebase Activity</span>
+                        </div>
+                    </div>
                 </div>
 
-
+                <!-- Tech Stack Bar Chart -->
                 <div class="glass chart-card reveal">
-
                     <div class="chart-header">
-
-                        <div>
-
-                            <div class="chart-title">
-                                Technology Usage
+                        <div class="chart-header-left">
+                            <div class="chart-badge-icon">📊</div>
+                            <div>
+                                <h3 class="chart-title">Technology Competency</h3>
+                                <p class="chart-subtitle">Relative production stack proficiency</p>
                             </div>
-
-                            <div class="chart-subtitle">
-                                My development focus
-                            </div>
-
                         </div>
-
                     </div>
-
-
-                    <div class="bar-chart">
-
-
-                        <div class="bar-column">
-
-                            <span class="bar-value">92%</span>
-
-                            <div class="bar" style="height:92%"></div>
-
-                            <span class="bar-name">JS</span>
-
-                        </div>
-
-
-                        <div class="bar-column">
-
-                            <span class="bar-value">88%</span>
-
-                            <div class="bar" style="height:88%"></div>
-
-                            <span class="bar-name">PY</span>
-
-                        </div>
-
-
-                        <div class="bar-column">
-
-                            <span class="bar-value">80%</span>
-
-                            <div class="bar" style="height:80%"></div>
-
-                            <span class="bar-name">WEB</span>
-
-                        </div>
-
-
-                        <div class="bar-column">
-
-                            <span class="bar-value">72%</span>
-
-                            <div class="bar" style="height:72%"></div>
-
-                            <span class="bar-name">AI</span>
-
-                        </div>
-
-
-                        <div class="bar-column">
-
-                            <span class="bar-value">62%</span>
-
-                            <div class="bar" style="height:62%"></div>
-
-                            <span class="bar-name">DB</span>
-
-                        </div>
-
-
-                        <div class="bar-column">
-
-                            <span class="bar-value">55%</span>
-
-                            <div class="bar" style="height:55%"></div>
-
-                            <span class="bar-name">3D</span>
-
-                        </div>
-
+                    <div class="chart-canvas-wrap">
+                        <canvas id="techStackChart"></canvas>
                     </div>
-
+                    <div class="chart-footer-stat">
+                        <span>Primary Focus: <strong>Python & Full-Stack Systems</strong></span>
+                    </div>
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
-
-    <!-- =====================================================
-     AI ANALYTICS
-===================================================== -->
 
     <section id="ai-analytics">
-
         <div class="container">
-
-
             <div class="section-header reveal">
-
-                <div class="section-label">
-                    AI WORKFLOW ANALYTICS
-                </div>
-
-                <h2>
-                    How I Use AI Tools
-                </h2>
-
-                <p>
-                    My AI-assisted development workflow across coding,
-                    research, models, voice and experimentation.
-                </p>
-
+                <div class="section-label">INTELLIGENCE STACK</div>
+                <h2>AI & Neural Workflow Analytics</h2>
+                <p>Quantified breakdown of AI-assisted software generation, prompt modeling, and multimodal workflows.</p>
             </div>
-
 
             <!-- AI METRICS -->
-
             <div class="analytics-grid">
-
-
                 <div class="glass metric reveal">
-
-                    <span class="metric-label">
-                        Primary AI Tool
-                    </span>
-
-                    <span class="metric-value">
-                        Antigravity
-                    </span>
-
-                    <span class="metric-change">
-                        ⚡ Most frequently used
-                    </span>
-
+                    <div class="metric-header">
+                        <span class="metric-label">Primary AI Environment</span>
+                        <div class="metric-icon-small">⚡</div>
+                    </div>
+                    <span class="metric-value">Antigravity</span>
+                    <span class="metric-change">★ Agentic Autonomous IDE</span>
                 </div>
 
-
                 <div class="glass metric reveal">
-
-                    <span class="metric-label">
-                        AI Assistant
-                    </span>
-
-                    <span class="metric-value">
-                        ChatGPT
-                    </span>
-
-                    <span class="metric-change">
-                        ↗ Development + Learning
-                    </span>
-
+                    <div class="metric-header">
+                        <span class="metric-label">Reasoning Engines</span>
+                        <div class="metric-icon-small">🤖</div>
+                    </div>
+                    <span class="metric-value">GPT & Claude</span>
+                    <span class="metric-change">↗ Code Architecture & Reviews</span>
                 </div>
 
-
                 <div class="glass metric reveal">
-
-                    <span class="metric-label">
-                        AI Platforms
-                    </span>
-
-                    <span class="metric-value">
-                        6+
-                    </span>
-
-                    <span class="metric-change">
-                        ↗ Growing toolkit
-                    </span>
-
+                    <div class="metric-header">
+                        <span class="metric-label">Multimodal Frameworks</span>
+                        <div class="metric-icon-small">🌐</div>
+                    </div>
+                    <span class="metric-value">8+</span>
+                    <span class="metric-change">↗ Vision, Speech & 3D Gen</span>
                 </div>
 
-
                 <div class="glass metric reveal">
-
-                    <span class="metric-label">
-                        AI Workflow
-                    </span>
-
-                    <span class="metric-value">
-                        Active
-                    </span>
-
-                    <span class="metric-change">
-                        ● Continuous learning
-                    </span>
-
+                    <div class="metric-header">
+                        <span class="metric-label">Efficiency Gain</span>
+                        <div class="metric-icon-small">📈</div>
+                    </div>
+                    <span class="metric-value">4.2x</span>
+                    <span class="metric-change">↗ Accelerated Prototyping</span>
                 </div>
-
             </div>
 
-
-            <!-- AI CHARTS -->
-
+            <!-- AI CHARTS GRID -->
             <div class="chart-grid">
-
-
-                <!-- AI BAR GRAPH -->
-
+                <!-- AI Tool Usage Bar Chart -->
                 <div class="glass chart-card reveal">
-
                     <div class="chart-header">
-
-                        <div>
-
-                            <div class="chart-title">
-                                AI Tool Usage
+                        <div class="chart-header-left">
+                            <div class="chart-badge-icon">🛠️</div>
+                            <div>
+                                <h3 class="chart-title">AI Tool Allocation & Usage</h3>
+                                <p class="chart-subtitle">Comparative frequency across daily engineering sessions</p>
                             </div>
-
-                            <div class="chart-subtitle">
-                                Relative workflow usage
-                            </div>
-
                         </div>
-
                     </div>
-
-
-                    <div class="bar-chart">
-
-
-                        <div class="bar-column">
-
-                            <div class="bar" style="height:95%"></div>
-
-                            <span class="bar-name">
-                                Anti-
-                                gravity
-                            </span>
-
-                        </div>
-
-
-                        <div class="bar-column">
-
-                            <div class="bar" style="height:90%"></div>
-
-                            <span class="bar-name">
-                                ChatGPT
-                            </span>
-
-                        </div>
-
-
-                        <div class="bar-column">
-
-                            <div class="bar" style="height:75%"></div>
-
-                            <span class="bar-name">
-                                Claude
-                            </span>
-
-                        </div>
-
-
-                        <div class="bar-column">
-
-                            <div class="bar" style="height:70%"></div>
-
-                            <span class="bar-name">
-                                Gemini
-                            </span>
-
-                        </div>
-
-
-                        <div class="bar-column">
-
-                            <div class="bar" style="height:58%"></div>
-
-                            <span class="bar-name">
-                                Hugging
-                                Face
-                            </span>
-
-                        </div>
-
-
-                        <div class="bar-column">
-
-                            <div class="bar" style="height:50%"></div>
-
-                            <span class="bar-name">
-                                Canva
-                                AI
-                            </span>
-
-                        </div>
-
-
-                        <div class="bar-column">
-
-                            <div class="bar" style="height:45%"></div>
-
-                            <span class="bar-name">
-                                Gamma
-                                AI
-                            </span>
-
-                        </div>
-
-
-                        <div class="bar-column">
-
-                            <div class="bar" style="height:42%"></div>
-
-                            <span class="bar-name">
-                                Eleven
-                                Labs
-                            </span>
-
-                        </div>
-
-
-                        <div class="bar-column">
-
-                            <div class="bar" style="height:35%"></div>
-
-                            <span class="bar-name">
-                                Other
-                            </span>
-
-                        </div>
-
-
+                    <div class="chart-canvas-wrap">
+                        <canvas id="aiUsageChart"></canvas>
                     </div>
-
+                    <div class="chart-footer-stat">
+                        <span>Lead Environment: <strong>Antigravity & ChatGPT</strong></span>
+                    </div>
                 </div>
 
-
-                <!-- AI LINE GRAPH -->
-
+                <!-- AI Workflow Growth Line/Radar Chart -->
                 <div class="glass chart-card reveal">
-
                     <div class="chart-header">
-
-                        <div>
-
-                            <div class="chart-title">
-                                AI Workflow Growth
+                        <div class="chart-header-left">
+                            <div class="chart-badge-icon">🚀</div>
+                            <div>
+                                <h3 class="chart-title">AI Adoption Trajectory</h3>
+                                <p class="chart-subtitle">Quarterly acceleration across deep learning & tools</p>
                             </div>
-
-                            <div class="chart-subtitle">
-                                Relative AI activity over time
-                            </div>
-
                         </div>
-
                     </div>
-
-
-                    <div class="line-chart">
-
-                        <div class="chart-grid-lines"></div>
-
-                        <svg class="line-svg" viewBox="0 0 1000 500" preserveAspectRatio="none">
-
-                            <defs>
-
-                                <linearGradient id="aiLineGradient" x1="0" x2="1">
-
-                                    <stop offset="0%" stop-color="#ff1493" />
-
-                                    <stop offset="25%" stop-color="#ff7a18" />
-
-                                    <stop offset="50%" stop-color="#ffe600" />
-
-                                    <stop offset="75%" stop-color="#00f5a0" />
-
-                                    <stop offset="100%" stop-color="#00d9ff" />
-
-                                </linearGradient>
-
-                                <linearGradient id="aiAreaGradient" x1="0" y1="0" x2="0" y2="1">
-
-                                    <stop offset="0%" stop-color="#00d9ff" />
-
-                                    <stop offset="100%" stop-color="#00d9ff" stop-opacity="0" />
-
-                                </linearGradient>
-
-                            </defs>
-
-
-                            <path class="chart-area" fill="url(#aiAreaGradient)" d="
-M0,420
-L100,390
-L200,410
-L300,330
-L400,350
-L500,270
-L600,300
-L700,220
-L800,245
-L900,150
-L1000,80
-L1000,500
-L0,500
-Z
-" />
-
-
-                            <path class="chart-line" stroke="url(#aiLineGradient)" d="
-M0,420
-L100,390
-L200,410
-L300,330
-L400,350
-L500,270
-L600,300
-L700,220
-L800,245
-L900,150
-L1000,80
-" />
-
-
-                            <circle class="chart-point" cx="0" cy="420" r="5" />
-
-                            <circle class="chart-point" cx="200" cy="410" r="5" />
-
-                            <circle class="chart-point" cx="400" cy="350" r="5" />
-
-                            <circle class="chart-point" cx="600" cy="300" r="5" />
-
-                            <circle class="chart-point" cx="800" cy="245" r="5" />
-
-                            <circle class="chart-point" cx="1000" cy="80" r="5" />
-
-                        </svg>
-
+                    <div class="chart-canvas-wrap">
+                        <canvas id="aiGrowthChart"></canvas>
                     </div>
-
+                    <div class="chart-footer-stat">
+                        <span>Growth Vector: <strong>+180% Year-over-Year</strong></span>
+                    </div>
                 </div>
-
             </div>
 
-
-            <!-- AI DISTRIBUTION -->
-
+            <!-- AI WORKFLOW DISTRIBUTION -->
             <div class="glass ai-breakdown reveal">
-
                 <div class="ai-breakdown-header">
-
                     <div>
-
-                        <div class="chart-title">
-                            AI Workflow Distribution
-                        </div>
-
-                        <div class="chart-subtitle">
-                            Relative use across my workflow
-                        </div>
-
+                        <h3 class="chart-title">End-to-End Workflow Integration</h3>
+                        <p class="chart-subtitle">Role distribution of intelligent agents in the development lifecycle</p>
                     </div>
-
+                    <div class="legend-pill">
+                        <span class="legend-dot" style="background:#ff2b2b;"></span> Full Dev Pipeline Integration
+                    </div>
                 </div>
 
-
-                <div class="ai-workflow">
-
-
-                    <div class="workflow-item">
-
-                        <div class="workflow-icon">
-                            ⚡
-                        </div>
-
-                        <div class="workflow-info">
-
-                            <div class="workflow-title">
-
-                                Antigravity IDE
-
-                                <span>
-                                    Primary
-                                </span>
-
+                <div class="ai-workflow-grid">
+                    <div class="workflow-item-pro">
+                        <div class="workflow-icon-pro">⚡</div>
+                        <div class="workflow-body-pro">
+                            <div class="workflow-header-pro">
+                                <span class="workflow-title-pro">Antigravity IDE <span class="workflow-tag-pro">Primary Agent</span></span>
+                                <span class="workflow-percent-pro">96%</span>
                             </div>
-
-                            <div class="workflow-bar">
-
-                                <div style="width:95%"></div>
-
-                            </div>
-
+                            <div class="workflow-bar-pro"><div style="width:96%"></div></div>
                         </div>
-
-                        <strong></strong>
-
                     </div>
 
-
-                    <div class="workflow-item">
-
-                        <div class="workflow-icon">
-                            🤖
-                        </div>
-
-                        <div class="workflow-info">
-
-                            <div class="workflow-title">
-
-                                ChatGPT
-
-                                <span>
-                                    Core AI
-                                </span>
-
+                    <div class="workflow-item-pro">
+                        <div class="workflow-icon-pro">🤖</div>
+                        <div class="workflow-body-pro">
+                            <div class="workflow-header-pro">
+                                <span class="workflow-title-pro">OpenAI ChatGPT <span class="workflow-tag-pro">Reasoning</span></span>
+                                <span class="workflow-percent-pro">92%</span>
                             </div>
-
-                            <div class="workflow-bar">
-
-                                <div style="width:90%"></div>
-
-                            </div>
-
+                            <div class="workflow-bar-pro"><div style="width:92%"></div></div>
                         </div>
-
-                        <strong></strong>
-
                     </div>
 
-
-                    <div class="workflow-item">
-
-                        <div class="workflow-icon">
-                            🧠
-                        </div>
-
-                        <div class="workflow-info">
-
-                            <div class="workflow-title">
-
-                                Claude AI
-
-                                <span>
-                                    Reasoning
-                                </span>
-
+                    <div class="workflow-item-pro">
+                        <div class="workflow-icon-pro">🧠</div>
+                        <div class="workflow-body-pro">
+                            <div class="workflow-header-pro">
+                                <span class="workflow-title-pro">Anthropic Claude <span class="workflow-tag-pro">Refactoring</span></span>
+                                <span class="workflow-percent-pro">80%</span>
                             </div>
-
-                            <div class="workflow-bar">
-
-                                <div style="width:75%"></div>
-
-                            </div>
-
+                            <div class="workflow-bar-pro"><div style="width:80%"></div></div>
                         </div>
-
-                        <strong></strong>
-
                     </div>
 
-
-                    <div class="workflow-item">
-
-                        <div class="workflow-icon">
-                            💎
-                        </div>
-
-                        <div class="workflow-info">
-
-                            <div class="workflow-title">
-
-                                Gemini
-
-                                <span>
-                                    Assistant
-                                </span>
-
+                    <div class="workflow-item-pro">
+                        <div class="workflow-icon-pro">💎</div>
+                        <div class="workflow-body-pro">
+                            <div class="workflow-header-pro">
+                                <span class="workflow-title-pro">Google Gemini <span class="workflow-tag-pro">Multimodal</span></span>
+                                <span class="workflow-percent-pro">76%</span>
                             </div>
-
-                            <div class="workflow-bar">
-
-                                <div style="width:70%"></div>
-
-                            </div>
-
+                            <div class="workflow-bar-pro"><div style="width:76%"></div></div>
                         </div>
-
-                        <strong></strong>
-
                     </div>
 
-
-                    <div class="workflow-item">
-
-                        <div class="workflow-icon">
-                            🤗
-                        </div>
-
-                        <div class="workflow-info">
-
-                            <div class="workflow-title">
-
-                                Hugging Face
-
-                                <span>
-                                    AI Models
-                                </span>
-
+                    <div class="workflow-item-pro">
+                        <div class="workflow-icon-pro">🤗</div>
+                        <div class="workflow-body-pro">
+                            <div class="workflow-header-pro">
+                                <span class="workflow-title-pro">Hugging Face <span class="workflow-tag-pro">Open Models</span></span>
+                                <span class="workflow-percent-pro">65%</span>
                             </div>
-
-                            <div class="workflow-bar">
-
-                                <div style="width:58%"></div>
-
-                            </div>
-
+                            <div class="workflow-bar-pro"><div style="width:65%"></div></div>
                         </div>
-
-                        <strong></strong>
-
                     </div>
 
-
-                    <div class="workflow-item">
-
-                        <div class="workflow-icon">
-                            🎨
-                        </div>
-
-                        <div class="workflow-info">
-
-                            <div class="workflow-title">
-
-                                Canva AI
-
-                                <span>
-                                    Design
-                                </span>
-
+                    <div class="workflow-item-pro">
+                        <div class="workflow-icon-pro">🎙️</div>
+                        <div class="workflow-body-pro">
+                            <div class="workflow-header-pro">
+                                <span class="workflow-title-pro">ElevenLabs & Whisper <span class="workflow-tag-pro">Voice/Audio</span></span>
+                                <span class="workflow-percent-pro">58%</span>
                             </div>
-
-                            <div class="workflow-bar">
-
-                                <div style="width:50%"></div>
-
-                            </div>
-
+                            <div class="workflow-bar-pro"><div style="width:58%"></div></div>
                         </div>
-
-                        <strong></strong>
-
                     </div>
-
-
-                    <div class="workflow-item">
-
-                        <div class="workflow-icon">
-                            📊
-                        </div>
-
-                        <div class="workflow-info">
-
-                            <div class="workflow-title">
-
-                                Gamma AI
-
-                                <span>
-                                    Presentation
-                                </span>
-
-                            </div>
-
-                            <div class="workflow-bar">
-
-                                <div style="width:45%"></div>
-
-                            </div>
-
-                        </div>
-
-                        <strong></strong>
-
-                    </div>
-
-
-                    <div class="workflow-item">
-
-                        <div class="workflow-icon">
-                            🎙️
-                        </div>
-
-                        <div class="workflow-info">
-
-                            <div class="workflow-title">
-
-                                ElevenLabs
-
-                                <span>
-                                    Voice AI
-                                </span>
-
-                            </div>
-
-                            <div class="workflow-bar">
-
-                                <div style="width:42%"></div>
-
-                            </div>
-
-                        </div>
-
-                        <strong></strong>
-
-                    </div>
-
-
-                    <div class="workflow-item">
-
-                        <div class="workflow-icon">
-                            ✨
-                        </div>
-
-                        <div class="workflow-info">
-
-                            <div class="workflow-title">
-
-                                Other AI Tools
-
-                                <span>
-                                    Experimentation
-                                </span>
-
-                            </div>
-
-                            <div class="workflow-bar">
-
-                                <div style="width:35%"></div>
-
-                            </div>
-
-                        </div>
-
-                        <strong></strong>
-
-                    </div>
-
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
 
-    <!-- =====================================================
-     AI TOOLS
-===================================================== -->
-
-    <section id="ai-tools">
-
-        <div class="container">
-
-
-            <div class="section-header reveal">
-
-                <div class="section-label">
-                    AI TOOLKIT
-                </div>
-
-                <h2>
-                    AI Tools I Use
-                </h2>
-
-                <p>
-                    AI tools that help me learn, build and experiment.
-                </p>
-
-            </div>
-
-
-            <div class="ai-tools-grid">
-
-
-                <div class="glass ai-tool reveal">
-
-                    <div class="ai-tool-icon">
-                        ⚡
-                    </div>
-
-                    <div class="ai-tool-content">
-
-                        <span class="ai-tool-number">
-                            01 · PRIMARY
-                        </span>
-
-                        <h3>
-                            Antigravity IDE
-                        </h3>
-
-                        <p>
-                            My primary AI-assisted development
-                            environment for building and improving
-                            projects.
-                        </p>
-
-                        <div class="ai-tags">
-
-                            <span>AI Coding</span>
-                            <span>IDE</span>
-                            <span>Projects</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="glass ai-tool reveal">
-
-                    <div class="ai-tool-icon">
-                        🤖
-                    </div>
-
-                    <div class="ai-tool-content">
-
-                        <span class="ai-tool-number">
-                            02 · CORE
-                        </span>
-
-                        <h3>
-                            ChatGPT
-                        </h3>
-
-                        <p>
-                            Used extensively for coding, learning,
-                            debugging, project planning and
-                            technical problem solving.
-                        </p>
-
-                        <div class="ai-tags">
-
-                            <span>Coding</span>
-                            <span>Learning</span>
-                            <span>Research</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="glass ai-tool reveal">
-
-                    <div class="ai-tool-icon">
-                        🧠
-                    </div>
-
-                    <div class="ai-tool-content">
-
-                        <span class="ai-tool-number">
-                            03 · REASONING
-                        </span>
-
-                        <h3>
-                            Claude AI
-                        </h3>
-
-                        <p>
-                            Used for code understanding, reasoning,
-                            architecture and development assistance.
-                        </p>
-
-                        <div class="ai-tags">
-
-                            <span>Reasoning</span>
-                            <span>Code</span>
-                            <span>Analysis</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="glass ai-tool reveal">
-
-                    <div class="ai-tool-icon">
-                        🤗
-                    </div>
-
-                    <div class="ai-tool-content">
-
-                        <span class="ai-tool-number">
-                            04 · MODELS
-                        </span>
-
-                        <h3>
-                            Hugging Face
-                        </h3>
-
-                        <p>
-                            Used for exploring open-source models,
-                            datasets and machine learning technologies.
-                        </p>
-
-                        <div class="ai-tags">
-
-                            <span>Models</span>
-                            <span>ML</span>
-                            <span>Open Source</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Gemini -->
-                <div class="glass ai-tool reveal">
-
-                    <div class="ai-tool-icon">
-                        💎
-                    </div>
-
-                    <div class="ai-tool-content">
-
-                        <span class="ai-tool-number">
-                            05 · ASSISTANT
-                        </span>
-
-                        <h3>
-                            Gemini
-                        </h3>
-
-                        <p>
-                            Used for general research, code optimization, brainstorming, and complex multimodal
-                            processing.
-                        </p>
-
-                        <div class="ai-tags">
-
-                            <span>Research</span>
-                            <span>Multimodal</span>
-                            <span>Brainstorming</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Canva AI -->
-                <div class="glass ai-tool reveal">
-
-                    <div class="ai-tool-icon">
-                        🎨
-                    </div>
-
-                    <div class="ai-tool-content">
-
-                        <span class="ai-tool-number">
-                            06 · CREATIVE
-                        </span>
-
-                        <h3>
-                            Canva AI
-                        </h3>
-
-                        <p>
-                            Used for fast visual assets creation, custom presentation layouts, mockups, and image
-                            generation.
-                        </p>
-
-                        <div class="ai-tags">
-
-                            <span>Design</span>
-                            <span>Graphics</span>
-                            <span>Creative</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Gamma AI -->
-                <div class="glass ai-tool reveal">
-
-                    <div class="ai-tool-icon">
-                        📊
-                    </div>
-
-                    <div class="ai-tool-content">
-
-                        <span class="ai-tool-number">
-                            07 · PRESENTATION
-                        </span>
-
-                        <h3>
-                            Gamma AI
-                        </h3>
-
-                        <p>
-                            Used for generating beautiful, interactive presentations and documents using natural
-                            language.
-                        </p>
-
-                        <div class="ai-tags">
-
-                            <span>Presentation</span>
-                            <span>AI Generation</span>
-                            <span>Documents</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- ElevenLabs -->
-                <div class="glass ai-tool reveal">
-
-                    <div class="ai-tool-icon">
-                        🎙️
-                    </div>
-
-                    <div class="ai-tool-content">
-
-                        <span class="ai-tool-number">
-                            08 · AUDIO
-                        </span>
-
-                        <h3>
-                            ElevenLabs
-                        </h3>
-
-                        <p>
-                            Used for AI voice experimentation,
-                            audio generation and multimedia projects.
-                        </p>
-
-                        <div class="ai-tags">
-
-                            <span>Voice AI</span>
-                            <span>Audio</span>
-                            <span>Multimedia</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Other AI Tools -->
-                <div class="glass ai-tool reveal">
-
-                    <div class="ai-tool-icon">
-                        ✨
-                    </div>
-
-                    <div class="ai-tool-content">
-
-                        <span class="ai-tool-number">
-                            09 · EXPERIMENTATION
-                        </span>
-
-                        <h3>
-                            Other AI Tools
-                        </h3>
-
-                        <p>
-                            I continuously experiment with new AI
-                            platforms and tools to discover better
-                            development workflows.
-                        </p>
-
-                        <div class="ai-tags">
-
-                            <span>Experiment</span>
-                            <span>Research</span>
-                            <span>Innovation</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
 
 
     <!-- =====================================================
@@ -5437,58 +3913,60 @@ L1000,80
      CONTACT
 ===================================================== -->
 
-    <section id="contact">
-
+        <section id="contact">
         <div class="container">
-
             <div class="glass contact-box reveal">
-
-                <div class="section-label">
-                    GET IN TOUCH
-                </div>
-
-                <h2>
-                    Let's Create Something Great
-                </h2>
-
+                <div class="section-label">GET IN TOUCH</div>
+                <h2>Let's Create Something Great</h2>
                 <p>
-                    I'm currently looking for internship and Full-Time Job opportunities. Whether you have a project
-                    idea, a
-                    question, or just want to connect, feel free to reach out!
+                    I'm actively seeking internship and Full-Time engineering opportunities. Whether you have a project idea, a question, or want to collaborate, feel free to reach out directly.
                 </p>
 
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <a href="mailto:jigneshkanojiya2@gmail.com">jigneshkanojiya2@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📞</span>
-                        <a href="tel:+919427028964">+91 94270 28964</a>
-                    </div>
+                <!-- Symmetric Contact Matrix -->
+                <div class="contact-grid">
+                    <a href="mailto:jigneshkanojiya2@gmail.com" class="contact-card-item">
+                        <div class="contact-icon-box">📧</div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">Direct Email</span>
+                            <span class="contact-card-value">jigneshkanojiya2@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="tel:+919427028964" class="contact-card-item">
+                        <div class="contact-icon-box">📞</div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">Phone & WhatsApp</span>
+                            <span class="contact-card-value">+91 94270 28964</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/jignesh-kanojiya-217262366/" target="_blank" class="contact-card-item">
+                        <div class="contact-icon-box">🔗</div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">LinkedIn Network</span>
+                            <span class="contact-card-value">in/jignesh-kanojiya</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/jjk13120-art" target="_blank" class="contact-card-item">
+                        <div class="contact-icon-box">🐙</div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">GitHub Repositories</span>
+                            <span class="contact-card-value">github.com/jjk13120-art</span>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="buttons">
-
+                <div class="contact-cta-buttons">
                     <a href="mailto:jigneshkanojiya2@gmail.com" class="btn btn-primary">
-                        Email Me
+                        Send Email Now →
                     </a>
-
-                    <a href="https://www.linkedin.com/in/jignesh-kanojiya-217262366/" target="_blank"
-                        class="btn btn-secondary">
-                        LinkedIn
+                    <a href="https://www.linkedin.com/in/jignesh-kanojiya-217262366/" target="_blank" class="btn btn-secondary">
+                        View LinkedIn
                     </a>
-
-                    <a href="https://github.com/jjk13120-art" target="_blank" class="btn btn-secondary">
-                        GitHub
-                    </a>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
 
@@ -5519,24 +3997,6 @@ L1000,80
 ===================================================== -->
 
     <script>
-        // Glowing Custom Cursor
-        const cursor = document.querySelector('.custom-cursor');
-        const cursorGlow = document.querySelector('.custom-cursor-glow');
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.transform = `translate3d(${e.clientX - 3}px, ${e.clientY - 3}px, 0)`;
-            cursor.style.opacity = '1';
-
-            cursorGlow.style.transform = `translate3d(${e.clientX - 17.5}px, ${e.clientY - 17.5}px, 0)`;
-            cursorGlow.style.opacity = '1';
-        });
-
-        document.addEventListener('mouseleave', () => {
-            cursor.style.opacity = '0';
-            cursorGlow.style.opacity = '0';
-        });
-
-
         // Reveal Animation on Scroll
         const revealElements = document.querySelectorAll('.reveal');
 
@@ -5553,7 +4013,6 @@ L1000,80
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
 
-
         // Profile Flip Card Click Flip Handler
         const profileCard = document.getElementById('profileCard');
         if (profileCard) {
@@ -5561,7 +4020,7 @@ L1000,80
                 profileCard.classList.toggle('flipped');
             });
 
-            // Stop event propagation on contact links to allow normal navigation
+            // Stop event propagation on contact links to allow normal clicking
             const profileCardLinks = profileCard.querySelectorAll('a');
             profileCardLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
@@ -5569,6 +4028,7 @@ L1000,80
                 });
             });
         }
+
 
 
         // Project Details Modal Implementation
@@ -5700,7 +4160,7 @@ L1000,80
                     modalBody.innerHTML = `
                 <h3 style="font-size: 24px; margin-bottom: 15px;" class="gradient-text">${details.title}</h3>
                 <p style="color: var(--muted); margin-bottom: 20px; line-height: 1.8; font-size: 14px;">${details.desc}</p>
-                <h4 style="font-size: 14px; color: var(--cyan); margin-bottom: 10px;">Key Features</h4>
+                <h4 style="font-size: 14px; color: var(--text-primary); margin-bottom: 10px;">Key Features</h4>
                 <ul style="list-style: none; margin-bottom: 25px; font-size: 13px;">
                     ${details.features.map(f => `<li style="margin-bottom: 8px; color: #d7d3e3;">🔹 ${f}</li>`).join('')}
                 </ul>
@@ -5747,75 +4207,410 @@ L1000,80
         }
 
 
-        // Scrollspy active section navigation links
+        // Scrollspy active section navigation links & Animated Gliding Indicator
         const sections = document.querySelectorAll('section, header');
         const navAnchorTags = document.querySelectorAll('.nav-links a');
+        const navIndicator = document.getElementById('navIndicator');
+        const navContainer = document.querySelector('nav');
+        let previousSectionId = '';
+
+        function moveNavIndicatorTo(anchor) {
+            if (!anchor || !navIndicator || !navLinks) return;
+            if (window.innerWidth <= 750) {
+                navIndicator.classList.remove('active');
+                return;
+            }
+            const navRect = navLinks.getBoundingClientRect();
+            const anchorRect = anchor.getBoundingClientRect();
+
+            const left = anchorRect.left - navRect.left;
+            const top = anchorRect.bottom - navRect.top - 2;
+            const width = anchorRect.width;
+
+            navIndicator.style.left = `${left}px`;
+            navIndicator.style.top = `${top}px`;
+            navIndicator.style.width = `${width}px`;
+            navIndicator.style.height = `3px`;
+            navIndicator.classList.add('active');
+        }
 
         const scrollSpyHandler = () => {
             let currentId = '';
             sections.forEach(sec => {
-                const top = sec.offsetTop - 85;
+                const top = sec.offsetTop - 120;
                 const height = sec.offsetHeight;
                 if (window.scrollY >= top && window.scrollY < top + height) {
                     currentId = sec.getAttribute('id') || '';
                 }
             });
 
+            if (currentId !== previousSectionId) {
+                if (previousSectionId !== '' && navContainer) {
+                    navContainer.classList.remove('switching');
+                    void navContainer.offsetWidth;
+                    navContainer.classList.add('switching');
+                }
+                previousSectionId = currentId;
+            }
+
+            let activeAnchor = null;
             navAnchorTags.forEach(anchor => {
                 anchor.classList.remove('active');
                 if (anchor.getAttribute('href') === `#${currentId}` || (currentId === '' && anchor.getAttribute('href') === '#')) {
                     anchor.classList.add('active');
+                    activeAnchor = anchor;
                 }
             });
-        };
-        window.addEventListener('scroll', scrollSpyHandler);
 
-
-        // Period Selector & Dynamic SVG Line Chart data binding
-        const periods = document.querySelectorAll('.period');
-        const chartPoints = document.querySelectorAll('.chart-point');
-        const chartLine = document.querySelector('.chart-line');
-        const chartArea = document.querySelector('.chart-area');
-
-        const chartData = {
-            '1M': {
-                line: 'M0,450 L90,440 L180,430 L270,410 L360,395 L450,380 L540,360 L630,350 L720,330 L810,320 L900,310 L1000,290',
-                area: 'M0,450 L90,440 L180,430 L270,410 L360,395 L450,380 L540,360 L630,350 L720,330 L810,320 L900,310 L1000,290 L1000,500 L0,500 Z',
-                points: [[0, 450], [180, 430], [360, 395], [540, 360], [720, 330], [900, 310], [1000, 290]]
-            },
-            '3M': {
-                line: 'M0,430 L90,410 L180,425 L270,370 L360,385 L450,320 L540,340 L630,275 L720,300 L810,210 L900,235 L1000,160',
-                area: 'M0,430 L90,410 L180,425 L270,370 L360,385 L450,320 L540,340 L630,275 L720,300 L810,210 L900,235 L1000,160 L1000,500 L0,500 Z',
-                points: [[0, 430], [180, 425], [360, 385], [540, 340], [720, 300], [900, 235], [1000, 160]]
-            },
-            '1Y': {
-                line: 'M0,410 L90,385 L180,400 L270,330 L360,345 L450,270 L540,290 L630,215 L720,240 L810,150 L900,175 L1000,90',
-                area: 'M0,410 L90,385 L180,400 L270,330 L360,345 L450,270 L540,290 L630,215 L720,240 L810,150 L900,175 L1000,90 L1000,500 L0,500 Z',
-                points: [[0, 410], [180, 400], [360, 345], [540, 290], [720, 240], [900, 175], [1000, 90]]
+            if (activeAnchor) {
+                moveNavIndicatorTo(activeAnchor);
             }
         };
 
-        periods.forEach(period => {
-            period.addEventListener('click', () => {
-                periods.forEach(p => p.classList.remove('active'));
-                period.classList.add('active');
+        window.addEventListener('scroll', scrollSpyHandler);
+        window.addEventListener('resize', scrollSpyHandler);
+        window.addEventListener('load', () => setTimeout(scrollSpyHandler, 150));
 
-                const key = period.textContent;
-                const data = chartData[key];
-
-                if (data) {
-                    chartLine.setAttribute('d', data.line);
-                    chartArea.setAttribute('d', data.area);
-
-                    chartPoints.forEach((point, index) => {
-                        if (data.points[index]) {
-                            point.setAttribute('cx', data.points[index][0]);
-                            point.setAttribute('cy', data.points[index][1]);
-                        }
-                    });
+        navAnchorTags.forEach(anchor => {
+            anchor.addEventListener('click', () => {
+                if (navContainer) {
+                    navContainer.classList.remove('switching');
+                    void navContainer.offsetWidth;
+                    navContainer.classList.add('switching');
                 }
+                moveNavIndicatorTo(anchor);
             });
         });
+
+
+        
+        
+        // =========================================================
+        // SCROLL PROGRESS BAR & BACK TO TOP IMPLEMENTATION
+        // =========================================================
+        const scrollProgressBar = document.getElementById('scrollProgressBar');
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            // Scroll Progress
+            if (scrollProgressBar) {
+                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = totalHeight > 0 ? (scrollY / totalHeight) * 100 : 0;
+                scrollProgressBar.style.width = `${progress}%`;
+            }
+            // Back to Top Button visibility (> 400px)
+            if (backToTopBtn) {
+                if (scrollY > 400) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            }
+        });
+
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // =========================================================
+        // SKILLS CATEGORY FILTER IMPLEMENTATION
+        // =========================================================
+        const skillFilterBtns = document.querySelectorAll('.skill-filter-btn');
+        const allSkillBadges = document.querySelectorAll('.skills .skill');
+
+        skillFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                skillFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const selectedCat = btn.getAttribute('data-skill-cat');
+                allSkillBadges.forEach(skill => {
+                    const skillCat = skill.getAttribute('data-skill-cat');
+                    if (selectedCat === 'all' || skillCat === selectedCat) {
+                        skill.classList.remove('hidden-skill');
+                    } else {
+                        skill.classList.add('hidden-skill');
+                    }
+                });
+            });
+        });
+
+        // =========================================================
+        // PROFESSIONAL CHART.JS INITIALIZATION & DATA BINDING
+        // =========================================================
+        (function initProfessionalCharts() {
+            if (typeof Chart === 'undefined') return;
+
+            // Global Chart Defaults for Black Lava, Orange & Red high-contrast aesthetic
+            Chart.defaults.color = '#8a8494';
+            Chart.defaults.font.family = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+            Chart.defaults.font.size = 11;
+
+            const commonTooltipOptions = {
+                backgroundColor: '#17141b',
+                titleColor: '#ffffff',
+                titleFont: { size: 12, weight: '700' },
+                bodyColor: '#ff9d42',
+                bodyFont: { size: 11, weight: '600' },
+                borderColor: 'rgba(255, 109, 0, 0.4)',
+                borderWidth: 1,
+                padding: 10,
+                boxPadding: 5,
+                cornerRadius: 8,
+                displayColors: false
+            };
+
+            // 1. Engineering Activity Line Chart (Lava Gradient Fill)
+            const devCtx = document.getElementById('devActivityChart');
+            let devChartInstance = null;
+
+            const activityDataSets = {
+                '1M': {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                    data: [28, 45, 38, 62]
+                },
+                '3M': {
+                    labels: ['Jan', 'Feb', 'Mar'],
+                    data: [95, 142, 188]
+                },
+                '1Y': {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    data: [35, 42, 58, 68, 85, 92, 110, 134, 150, 175, 192, 218]
+                }
+            };
+
+            if (devCtx) {
+                const ctx = devCtx.getContext('2d');
+                const gradient = ctx.createLinearGradient(0, 0, 0, 280);
+                gradient.addColorStop(0, 'rgba(255, 109, 0, 0.35)');
+                gradient.addColorStop(0.6, 'rgba(255, 43, 43, 0.12)');
+                gradient.addColorStop(1, 'rgba(255, 43, 43, 0.0)');
+
+                const borderGradient = ctx.createLinearGradient(0, 0, 450, 0);
+                borderGradient.addColorStop(0, '#ff2b2b');
+                borderGradient.addColorStop(0.5, '#ff6d00');
+                borderGradient.addColorStop(1, '#ffa600');
+
+                devChartInstance = new Chart(devCtx, {
+                    type: 'line',
+                    data: {
+                        labels: activityDataSets['1Y'].labels,
+                        datasets: [{
+                            label: 'Velocity & Commits',
+                            data: activityDataSets['1Y'].data,
+                            fill: true,
+                            backgroundColor: gradient,
+                            borderColor: borderGradient,
+                            borderWidth: 3,
+                            tension: 0.38,
+                            pointBackgroundColor: '#ff6d00',
+                            pointBorderColor: '#070608',
+                            pointBorderWidth: 2,
+                            pointRadius: 4,
+                            pointHoverRadius: 7,
+                            pointHoverBackgroundColor: '#ffffff',
+                            pointHoverBorderColor: '#ff2b2b',
+                            pointHoverBorderWidth: 3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        interaction: {
+                            intersect: false,
+                            mode: 'index'
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: commonTooltipOptions
+                        },
+                        scales: {
+                            x: {
+                                grid: {
+                                    color: 'rgba(255, 255, 255, 0.03)',
+                                    borderColor: 'rgba(255, 255, 255, 0.06)'
+                                },
+                                ticks: { color: '#8a8494' }
+                            },
+                            y: {
+                                grid: {
+                                    color: 'rgba(255, 255, 255, 0.03)',
+                                    borderColor: 'rgba(255, 255, 255, 0.06)'
+                                },
+                                ticks: { color: '#8a8494' }
+                            }
+                        }
+                    }
+                });
+
+                // Period Switcher Listeners
+                document.querySelectorAll('.period').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        document.querySelectorAll('.period').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        const periodKey = btn.getAttribute('data-period') || btn.textContent.trim();
+                        if (activityDataSets[periodKey] && devChartInstance) {
+                            devChartInstance.data.labels = activityDataSets[periodKey].labels;
+                            devChartInstance.data.datasets[0].data = activityDataSets[periodKey].data;
+                            devChartInstance.update({ duration: 400 });
+                        }
+                    });
+                });
+            }
+
+            // 2. Tech Stack Bar Chart (Magma to Amber Bars)
+            const techCtx = document.getElementById('techStackChart');
+            if (techCtx) {
+                new Chart(techCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Python', 'JavaScript', 'Java/JDBC', 'AI/Vision', 'Databases', 'Blender 3D'],
+                        datasets: [{
+                            label: 'Proficiency Score (%)',
+                            data: [94, 90, 85, 82, 78, 70],
+                            backgroundColor: [
+                                '#ff6d00',
+                                '#ffa600',
+                                '#ff2b2b',
+                                '#ff8400',
+                                '#e63946',
+                                '#ffaa00'
+                            ],
+                            hoverBackgroundColor: '#ffffff',
+                            borderRadius: 6,
+                            barThickness: 22
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                ...commonTooltipOptions,
+                                callbacks: {
+                                    label: (ctx) => ` Competency: ${ctx.parsed.y}%`
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                grid: { display: false },
+                                ticks: { color: '#d1cbd8', font: { size: 11, weight: '600' } }
+                            },
+                            y: {
+                                max: 100,
+                                grid: { color: 'rgba(255, 255, 255, 0.03)' },
+                                ticks: {
+                                    color: '#8a8494',
+                                    callback: (val) => val + '%'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // 3. AI Tool Allocation Chart (Fiery Orange Bars)
+            const aiUsageCtx = document.getElementById('aiUsageChart');
+            if (aiUsageCtx) {
+                new Chart(aiUsageCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Antigravity', 'ChatGPT', 'Claude', 'Gemini', 'HuggingFace', 'ElevenLabs', 'Other'],
+                        datasets: [{
+                            label: 'Allocation Frequency',
+                            data: [96, 92, 80, 75, 62, 50, 35],
+                            backgroundColor: 'rgba(255, 109, 0, 0.85)',
+                            hoverBackgroundColor: '#ff2b2b',
+                            borderRadius: 6,
+                            barThickness: 18
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: commonTooltipOptions
+                        },
+                        scales: {
+                            x: {
+                                max: 100,
+                                grid: { color: 'rgba(255, 255, 255, 0.03)' },
+                                ticks: {
+                                    color: '#8a8494',
+                                    callback: (val) => val + '%'
+                                }
+                            },
+                            y: {
+                                grid: { display: false },
+                                ticks: { color: '#d1cbd8', font: { size: 11, weight: '600' } }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // 4. AI Trajectory Chart (Magma Red Curve)
+            const aiGrowthCtx = document.getElementById('aiGrowthChart');
+            if (aiGrowthCtx) {
+                const ctx = aiGrowthCtx.getContext('2d');
+                const gradient = ctx.createLinearGradient(0, 0, 0, 280);
+                gradient.addColorStop(0, 'rgba(255, 43, 43, 0.35)');
+                gradient.addColorStop(0.7, 'rgba(255, 109, 0, 0.1)');
+                gradient.addColorStop(1, 'rgba(255, 109, 0, 0.0)');
+
+                new Chart(aiGrowthCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Q1 2025', 'Q2 2025', 'Q3 2025', 'Q4 2025', 'Q1 2026', 'Q2 2026 (Now)'],
+                        datasets: [{
+                            label: 'AI Invocations',
+                            data: [20, 35, 55, 90, 140, 220],
+                            fill: true,
+                            backgroundColor: gradient,
+                            borderColor: '#ff2b2b',
+                            borderWidth: 3,
+                            tension: 0.38,
+                            pointBackgroundColor: '#ffa600',
+                            pointBorderColor: '#070608',
+                            pointBorderWidth: 2,
+                            pointRadius: 4,
+                            pointHoverRadius: 7,
+                            pointHoverBackgroundColor: '#ffffff',
+                            pointHoverBorderColor: '#ff6d00',
+                            pointHoverBorderWidth: 3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: commonTooltipOptions
+                        },
+                        scales: {
+                            x: {
+                                grid: { color: 'rgba(255, 255, 255, 0.03)' },
+                                ticks: { color: '#8a8494' }
+                            },
+                            y: {
+                                grid: { color: 'rgba(255, 255, 255, 0.03)' },
+                                ticks: { color: '#8a8494' }
+                            }
+                        }
+                    }
+                });
+            }
+        })();
 
 
         // Project Carousel & Filtering Implementation
@@ -6194,6 +4989,9 @@ L1000,80
         // Initialize Carousel
         initCarousel('all');
     </script>
+
+    <!-- Floating Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
 
 </body>
 

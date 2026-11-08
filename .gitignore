@@ -1,8 +1,10 @@
-# Ignore everything except index.html, .gitignore, .gitattributes and video files
+# Ignore everything except index.html, .gitignore, .gitattributes, .github and media files
 *
 !index.html
 !.gitignore
 !.gitattributes
+!.github
+!.github/**
 !*.mp4
 !*.png
 Space exploration.png
