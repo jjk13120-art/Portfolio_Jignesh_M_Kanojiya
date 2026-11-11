@@ -208,58 +208,35 @@
 
 
         /* =========================================================
-   NAVIGATION
+   NAVIGATION & EXTERNAL ARC REACTOR BAR
 ========================================================= */
 
-        nav {
+        .header-container {
             position: fixed;
             top: 15px;
             left: 50%;
             transform: translateX(-50%);
-            width: min(1150px, 94%);
-            height: 64px;
-            z-index: 1000;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 18px;
-            background: rgba(10, 8, 14, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-
-        .navbar {
-
-            height: 100%;
-
-            padding: 0 20px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-        }
-
-        .nav-brand-group {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* ── Arc Reactor — Integrated inside Navbar Brand ── */
-        .arc-reactor-wrap {
-            position: relative;
-            width: 44px;
-            height: 44px;
-            flex-shrink: 0;
-            pointer-events: none;
+            width: min(1240px, 96%);
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: visible;      /* Stardust particles scatter freely beyond boundary */
+            gap: 16px;
+            z-index: 1000;
+            pointer-events: none; /* allows clicking page beneath side gaps */
+        }
+
+        /* ── Arc Reactor — Outside and Left of Navbar ── */
+        .arc-reactor-wrap {
+            position: relative;
+            width: 52px;
+            height: 52px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
             border-radius: 50%;
+            overflow: visible;      /* Stardust particles freely revolve around */
         }
 
         #arcReactorCanvas {
@@ -267,11 +244,32 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            width: 130px;
-            height: 130px;
+            width: 150px;
+            height: 150px;
             display: block;
             pointer-events: none;
-            filter: drop-shadow(0 0 8px #ff1e1e) drop-shadow(0 0 20px rgba(255, 30, 30, 0.55));
+            filter: drop-shadow(0 0 10px #ff1e1e) drop-shadow(0 0 24px rgba(255, 30, 30, 0.6));
+        }
+
+        nav {
+            flex: 1;
+            max-width: 1150px;
+            height: 64px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            background: rgba(10, 8, 14, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            pointer-events: auto;
+        }
+
+        .navbar {
+            height: 100%;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
@@ -2486,17 +2484,17 @@
 
         /* --- Tablet & Medium Screens (<= 1024px) --- */
         @media (max-width: 1024px) {
-            /* Arc reactor brand adjustment */
-            .nav-brand-group {
-                gap: 10px;
+            .header-container {
+                width: 96%;
+                gap: 12px;
             }
             .arc-reactor-wrap {
-                width: 40px;
-                height: 40px;
+                width: 44px;
+                height: 44px;
             }
             #arcReactorCanvas {
-                width: 115px;
-                height: 115px;
+                width: 125px;
+                height: 125px;
             }
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -2570,25 +2568,25 @@
                 margin-top: 6px;
             }
 
-            /* Mobile Navigation Drawer */
-            nav {
+            /* Mobile Navigation Header & Drawer */
+            .header-container {
                 top: 8px;
-                height: 56px;
-                padding: 0 16px;
+                width: 96%;
+                gap: 10px;
             }
 
-            /* Arc reactor brand adjustment */
-            .nav-brand-group {
-                gap: 8px;
+            nav {
+                height: 52px;
+                padding: 0 14px;
             }
 
             .arc-reactor-wrap {
-                width: 36px;
-                height: 36px;
+                width: 40px;
+                height: 40px;
             }
             #arcReactorCanvas {
-                width: 100px;
-                height: 100px;
+                width: 105px;
+                height: 105px;
             }
 
             /* Marquee — reduce spacing on tablet */
@@ -3131,18 +3129,32 @@
                 padding: 78px 3vw 24px;
             }
 
-            /* Arc reactor on small phone (e.g. Realme 13 5G, iPhone, Galaxy) */
-            .nav-brand-group {
+            /* Compact mobile header (Realme 13 5G, iPhone, Galaxy, etc.) */
+            .header-container {
+                top: 8px;
+                width: 95%;
+                gap: 8px;
+            }
+
+            nav {
+                height: 48px;
+                padding: 0 12px;
+                border-radius: 14px;
+            }
+
+            .logo {
+                font-size: 14px;
                 gap: 6px;
             }
 
             .arc-reactor-wrap {
-                width: 32px;
-                height: 32px;
+                width: 36px;
+                height: 36px;
             }
+
             #arcReactorCanvas {
-                width: 86px;
-                height: 86px;
+                width: 92px;
+                height: 92px;
             }
 
             /* Marquee — tightest on small phones */
@@ -3441,36 +3453,35 @@
 
 
     <!-- =====================================================
-     NAVBAR
+     NAVBAR & EXTERNAL ARC REACTOR
 ===================================================== -->
 
-    <nav>
+    <div class="header-container">
+        <!-- Floating Arc Reactor outside the navbar capsule -->
+        <div class="arc-reactor-wrap" title="Arc Reactor · Jignesh M. Kanojiya">
+            <canvas id="arcReactorCanvas" width="320" height="320"></canvas>
+        </div>
 
-        <div class="navbar">
+        <nav>
 
-            <div class="nav-brand-group">
-                <!-- Arc Reactor inside brand container — never overlaps or misaligns -->
-                <div class="arc-reactor-wrap" title="Arc Reactor · Jignesh M. Kanojiya">
-                    <canvas id="arcReactorCanvas" width="320" height="320"></canvas>
-                </div>
+            <div class="navbar">
 
                 <a href="#" class="logo">
                     JIGNESH
                 </a>
-            </div>
 
-            <button class="mobile-nav-toggle" aria-label="Toggle navigation" id="mobileNavToggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation" id="mobileNavToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
 
-            <ul class="nav-links" id="navLinks">
-                <div class="nav-indicator" id="navIndicator"></div>
+                <ul class="nav-links" id="navLinks">
+                    <div class="nav-indicator" id="navIndicator"></div>
 
-                <li>
-                    <a href="#about">About</a>
-                </li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
 
                 <li>
                     <a href="#skills">Skills</a>
@@ -3513,6 +3524,7 @@
         </div>
 
     </nav>
+    </div>
 
 
     <!-- =====================================================
