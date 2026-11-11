@@ -10,24 +10,29 @@
     <title>Jignesh Kanojiya | Developer Portfolio</title>
 
     <!-- Custom SVG Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a080d'/%3E%3Ctext x='15' y='23' font-family='sans-serif' font-size='19' font-weight='900' fill='%23ffffff' text-anchor='middle'%3EJ%3C/text%3E%3Ccircle cx='23' cy='9' r='3.5' fill='%23ff1e1e'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a080d'/%3E%3Ctext x='15' y='23' font-family='sans-serif' font-size='19' font-weight='900' fill='%23ffffff' text-anchor='middle'%3EJ%3C/text%3E%3Ccircle cx='23' cy='9' r='3.5' fill='%23ff1e1e'/%3E%3C/svg%3E">
 
     <!-- Open Graph / LinkedIn / WhatsApp / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Jignesh Kanojiya | Developer Portfolio">
-    <meta property="og:description" content="Full Stack Developer, Artificial Intelligence & Computer Vision Specialist, and Blender 3D Creator.">
+    <meta property="og:description"
+        content="Full Stack Developer, Artificial Intelligence & Computer Vision Specialist, and Blender 3D Creator.">
     <meta property="og:image" content="profile.webp">
     <meta property="og:url" content="https://jigneshkanojiya.github.io/">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Jignesh Kanojiya | Developer Portfolio">
-    <meta name="twitter:description" content="Full Stack Developer, Artificial Intelligence & Computer Vision Specialist, and Blender 3D Creator.">
+    <meta name="twitter:description"
+        content="Full Stack Developer, Artificial Intelligence & Computer Vision Specialist, and Blender 3D Creator.">
     <meta name="twitter:image" content="profile.webp">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
 
 
@@ -57,7 +62,20 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        code, pre, .mono, .card-spec-badge, .status, .metric-label, .metric-change, .card-label, .section-label, .chart-periods button, .tags span, .project-number, .timeline-year, .contact-card-label {
+        code,
+        pre,
+        .mono,
+        .card-spec-badge,
+        .status,
+        .metric-label,
+        .metric-change,
+        .card-label,
+        .section-label,
+        .chart-periods button,
+        .tags span,
+        .project-number,
+        .timeline-year,
+        .contact-card-label {
             font-family: 'JetBrains Mono', monospace;
         }
 
@@ -146,7 +164,7 @@
         .grid-radial-glow {
             position: absolute;
             inset: 0;
-            background: 
+            background:
                 radial-gradient(circle 1100px at 50% -120px, rgba(255, 255, 255, 0.09), transparent 70%),
                 radial-gradient(circle 900px at 80% 30%, rgba(255, 255, 255, 0.05), transparent 65%),
                 radial-gradient(circle 900px at 20% 70%, rgba(255, 255, 255, 0.04), transparent 65%),
@@ -186,7 +204,7 @@
             font-weight: 800;
         }
 
-        
+
 
 
         /* =========================================================
@@ -220,6 +238,30 @@
             align-items: center;
 
             justify-content: space-between;
+        }
+
+        /* ── Arc Reactor — sits to the LEFT of the navbar pill ── */
+        .arc-reactor-wrap {
+            position: fixed;
+            top: 15px;
+            left: calc(50% - min(1150px, 94%) / 2 - 92px);
+            width: 64px;
+            height: 64px;
+            z-index: 1001;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;      /* particles extend beyond the box */
+            border-radius: 50%;     /* round container shape */
+        }
+
+        #arcReactorCanvas {
+            width: 160px;
+            height: 160px;
+            display: block;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 8px #ff1e1e) drop-shadow(0 0 22px rgba(255, 30, 30, 0.6));
         }
 
         .logo {
@@ -307,10 +349,12 @@
                 border-color: rgba(255, 255, 255, 0.12);
                 box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             }
+
             45% {
                 border-color: rgba(230, 0, 18, 0.85);
                 box-shadow: 0 15px 45px rgba(0, 0, 0, 0.8), 0 0 32px rgba(230, 0, 18, 0.65), 0 0 60px rgba(255, 94, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.5);
             }
+
             100% {
                 border-color: rgba(255, 255, 255, 0.12);
                 box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -421,8 +465,17 @@
         }
 
         @keyframes magmaGlow {
-            0% { transform: scale(0.9); opacity: 0.75; box-shadow: 0 0 6px #ff6d00; }
-            100% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 14px #ff2b2b, 0 0 24px #ff6d00; }
+            0% {
+                transform: scale(0.9);
+                opacity: 0.75;
+                box-shadow: 0 0 6px #ff6d00;
+            }
+
+            100% {
+                transform: scale(1.15);
+                opacity: 1;
+                box-shadow: 0 0 14px #ff2b2b, 0 0 24px #ff6d00;
+            }
         }
 
         .hero-left h1 {
@@ -574,8 +627,13 @@
         }
 
         @keyframes lavaGlowMove {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 300% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 300% 50%;
+            }
         }
 
         .profile-card:hover {
@@ -1251,7 +1309,7 @@
             overflow: hidden;
         }
 
-        .workflow-bar-pro > div {
+        .workflow-bar-pro>div {
             height: 100%;
             border-radius: 99px;
             background: linear-gradient(90deg, #ff2b2b, #ff6d00, #ffa600);
@@ -1632,7 +1690,12 @@
             }
         }
 
-        .project-number { color: var(--solar-amber); font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; }
+        .project-number {
+            color: var(--solar-amber);
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
 
         .project-icon {
             width: 100%;
@@ -1665,7 +1728,11 @@
             font-size: 20px;
         }
 
-        .project p { color: var(--text-secondary); line-height: 1.65; font-size: 13.5px; }
+        .project p {
+            color: var(--text-secondary);
+            line-height: 1.65;
+            font-size: 13.5px;
+        }
 
         .tags {
 
@@ -1678,9 +1745,26 @@
             margin-top: 18px;
         }
 
-        .tags span { padding: 5px 11px; border-radius: 6px; background: rgba(255, 183, 3, 0.08); border: 1px solid rgba(255, 183, 3, 0.22); color: #ffd166; font-size: 11.5px; font-weight: 600; }
+        .tags span {
+            padding: 5px 11px;
+            border-radius: 6px;
+            background: rgba(255, 183, 3, 0.08);
+            border: 1px solid rgba(255, 183, 3, 0.22);
+            color: #ffd166;
+            font-size: 11.5px;
+            font-weight: 600;
+        }
 
-        .project-footer { margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.08); color: var(--text-muted); font-size: 12px; font-weight: 600; display: flex; justify-content: space-between; }
+        .project-footer {
+            margin-top: auto;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+        }
 
 
         /* =========================================================
@@ -1920,6 +2004,7 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+
             .contact-box {
                 padding: 40px 20px;
             }
@@ -2148,7 +2233,8 @@
 
         .video-card:hover .video-overlay::before {
             transform: scale(1.15);
-            background: #ffffff; color: #09090b;
+            background: #ffffff;
+            color: #09090b;
             opacity: 1;
             box-shadow: 0 0 20px rgba(255, 94, 0, 0.8);
         }
@@ -2161,12 +2247,245 @@
             font-weight: 600;
         }
 
+        /* =====================================================
+           CINEMATIC TEXT REVEAL & RED LIGHT SWEEP
+        ===================================================== */
+        .cinematic-badge-container {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        .cinematic-name-wrap {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 18px;
+            border-radius: 12px;
+            background: rgba(14, 10, 18, 0.88);
+            border: 1px solid rgba(255, 30, 30, 0.35);
+            box-shadow: 0 0 25px rgba(255, 30, 30, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            overflow: hidden;
+            width: fit-content;
+        }
+
+        .cinematic-label-prefix {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+            color: #ff5e00;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .cinematic-name-text {
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'JetBrains Mono', monospace;
+            background: linear-gradient(90deg, #ffffff 0%, #ffffff 35%, #ff1e1e 50%, #ffffff 65%, #ffffff 100%);
+            background-size: 260% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: redLaserSweep 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes redLaserSweep {
+            0% {
+                background-position: 130% 0%;
+            }
+
+            100% {
+                background-position: -130% 0%;
+            }
+        }
+
+        /* Luminous Red Light Sweep Beam overlay */
+        .laser-shimmer-sweep {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 45px;
+            background: linear-gradient(90deg, transparent, rgba(255, 30, 30, 0.6), rgba(255, 255, 255, 0.9), rgba(255, 30, 30, 0.6), transparent);
+            filter: blur(4px);
+            transform: skewX(-25deg);
+            animation: beamPass 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            pointer-events: none;
+        }
+
+        @keyframes beamPass {
+            0% {
+                left: -70px;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                left: calc(100% + 70px);
+                opacity: 0;
+            }
+        }
+
+        .cinematic-title-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13.5px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-secondary);
+            padding-left: 4px;
+        }
+
+        .terminal-caret {
+            color: #ff1e1e;
+            font-weight: 900;
+            font-size: 14px;
+        }
+
+        .cinematic-dynamic-role {
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .blinking-cursor {
+            color: #ff1e1e;
+            font-weight: 900;
+            animation: cursorBlink 0.9s infinite;
+        }
+
+        @keyframes cursorBlink {
+
+            0%,
+            49% {
+                opacity: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* =====================================================
+           CONTINUOUS DUAL TECH MARQUEE RAILS
+        ===================================================== */
+        .tech-marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            padding: 16px 0;
+            background: rgba(8, 6, 12, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+        }
+
+        .tech-marquee-track {
+            display: flex;
+            width: max-content;
+            will-change: transform;
+        }
+
+        .marquee-left {
+            animation: marqueeScrollLeft 32s linear infinite;
+        }
+
+        .marquee-right {
+            animation: marqueeScrollRight 34s linear infinite;
+        }
+
+        .tech-marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes marqueeScrollLeft {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes marqueeScrollRight {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .marquee-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-right: 14px;
+        }
+
+        .marquee-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 16px;
+            border-radius: 9999px;
+            background: rgba(18, 14, 24, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 12px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            color: #ffffff;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            transition: all 0.25s ease;
+        }
+
+        .marquee-item:hover {
+            border-color: #ff1e1e;
+            box-shadow: 0 0 16px rgba(255, 30, 30, 0.4);
+            transform: translateY(-2px);
+            color: #ff5e00;
+        }
+
+        .m-icon {
+            font-size: 13px;
+        }
+
+
         /* =========================================================
            RESPONSIVE DESIGN (MOBILE & TABLET OPTIMIZED)
         ========================================================= */
 
         /* --- Tablet & Medium Screens (<= 1024px) --- */
         @media (max-width: 1024px) {
+            /* Arc reactor — slightly smaller, repositioned for narrower nav */
+            .arc-reactor-wrap {
+                left: 10px;
+                width: 56px;
+                height: 56px;
+            }
+            #arcReactorCanvas {
+                width: 130px;
+                height: 130px;
+            }
             .hero-grid {
                 grid-template-columns: 1fr;
                 gap: 36px;
@@ -2196,10 +2515,27 @@
             .analytics-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .cyber-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .globe-card {
+                grid-column: auto;
+                grid-row: auto;
+                min-height: 460px;
+            }
+
+            .radar-card,
+            .terminal-card {
+                grid-column: auto;
+                grid-row: auto;
+            }
         }
 
         /* --- Mobile & Small Tablets (<= 768px) --- */
         @media (max-width: 768px) {
+
             /* Compact section padding & typography to prevent overly long scrolling */
             section {
                 padding: 48px 0;
@@ -2227,6 +2563,29 @@
                 top: 8px;
                 height: 56px;
                 padding: 0 16px;
+            }
+
+            /* Arc reactor — compact for 768px, anchored fixed left edge */
+            .arc-reactor-wrap {
+                left: 8px;
+                top: 8px;
+                width: 48px;
+                height: 48px;
+            }
+            #arcReactorCanvas {
+                width: 110px;
+                height: 110px;
+            }
+
+            /* Marquee — reduce spacing on tablet */
+            .marquee-item {
+                padding: 5px 12px;
+                font-size: 11px;
+                gap: 6px;
+            }
+            .marquee-track {
+                gap: 10px;
+                padding-right: 10px;
             }
 
             .mobile-nav-toggle {
@@ -2745,6 +3104,7 @@
                 right: 16px;
                 font-size: 24px;
             }
+
         }
 
         /* --- Small Mobile Phones (<= 480px) --- */
@@ -2755,6 +3115,32 @@
 
             .hero {
                 padding: 78px 3vw 24px;
+            }
+
+            /* Arc reactor — smallest on phone, stay out of the way */
+            .arc-reactor-wrap {
+                left: 6px;
+                top: 8px;
+                width: 40px;
+                height: 40px;
+            }
+            #arcReactorCanvas {
+                width: 90px;
+                height: 90px;
+            }
+
+            /* Marquee — tightest on small phones */
+            .marquee-item {
+                padding: 4px 10px;
+                font-size: 10.5px;
+                gap: 5px;
+            }
+            .marquee-track {
+                gap: 8px;
+                padding-right: 8px;
+            }
+            .marquee-section {
+                padding: 10px 0;
             }
 
             .hero-left h1 {
@@ -3011,9 +3397,10 @@
                 padding: 24px 14px;
                 font-size: 12px;
             }
+
         }
     </style>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 
@@ -3023,8 +3410,8 @@
     <div class="scroll-progress-bar" id="scrollProgressBar"></div>
 
     <!-- Glowing cursor overlays -->
-    
-    
+
+
 
     <!-- =====================================================
      BACKGROUND
@@ -3040,6 +3427,11 @@
     <!-- =====================================================
      NAVBAR
 ===================================================== -->
+
+    <!-- Arc Reactor — fixed left of navbar -->
+    <div class="arc-reactor-wrap" title="Arc Reactor · Jignesh M. Kanojiya">
+        <canvas id="arcReactorCanvas" width="320" height="320"></canvas>
+    </div>
 
     <nav>
 
@@ -3109,7 +3501,7 @@
      HERO
 ===================================================== -->
 
-            <header class="hero">
+    <header class="hero">
         <div class="hero-grid">
             <div class="hero-left">
                 <div class="status">
@@ -3117,12 +3509,29 @@
                     Available for Internship and Full-Time Job Opportunities
                 </div>
 
+                <!-- Cinematic Text Reveal with Continuous Red Light Sweep -->
+                <div class="cinematic-badge-container">
+                    <div class="cinematic-name-wrap">
+                        <span class="cinematic-label-prefix">DEVELOPER:</span>
+                        <span class="cinematic-name-text" id="cinematicName">JIGNESH M. KANOJIYA</span>
+                        <span class="laser-shimmer-sweep"></span>
+                    </div>
+                    <div class="cinematic-title-row">
+                        <span class="terminal-caret">❯</span>
+                        <span class="cinematic-dynamic-role" id="cinematicRole">Full-Stack Developer · B.E. IT LJ
+                            University</span>
+                        <span class="blinking-cursor">_</span>
+                    </div>
+                </div>
+
                 <h1>
                     <span class="blood-red-title">I Build<br>Digital Experiences.</span>
                 </h1>
 
                 <p>
-                    I'm <strong>Jignesh.M.Kanojiya</strong>, a fourth-year Information Technology student at LJ University passionate about full-stack development, artificial intelligence, computer vision, and Blender 3D animation.
+                    I'm <strong>Jignesh.M.Kanojiya</strong>, a fourth-year Information Technology student at LJ
+                    University passionate about full-stack development, artificial intelligence, computer vision, and
+                    Blender 3D animation.
                 </p>
 
                 <div class="hero-buttons">
@@ -3153,7 +3562,9 @@
                                 </h2>
 
                                 <p>
-                                    I love transforming ideas into responsive, scalable, and interactive applications. I engineer modern software using Java, Python, web architectures, neural vision, and procedural 3D graphics.
+                                    I love transforming ideas into responsive, scalable, and interactive applications. I
+                                    engineer modern software using Java, Python, web architectures, neural vision, and
+                                    procedural 3D graphics.
                                 </p>
 
                                 <div class="card-specs-row">
@@ -3194,12 +3605,14 @@
 
                                     <div class="card-contact-item">
                                         <span class="card-contact-icon">🔗</span>
-                                        <a href="https://www.linkedin.com/in/jignesh-kanojiya-217262366/" target="_blank">linkedin.com/in/jignesh-kanojiya</a>
+                                        <a href="https://www.linkedin.com/in/jignesh-kanojiya-217262366/"
+                                            target="_blank">linkedin.com/in/jignesh-kanojiya</a>
                                     </div>
 
                                     <div class="card-contact-item">
                                         <span class="card-contact-icon">🐙</span>
-                                        <a href="https://github.com/jjk13120-art" target="_blank">github.com/jjk13120-art</a>
+                                        <a href="https://github.com/jjk13120-art"
+                                            target="_blank">github.com/jjk13120-art</a>
                                     </div>
                                 </div>
                             </div>
@@ -3215,6 +3628,59 @@
             </div>
         </div>
     </header>
+
+
+    <!-- =====================================================
+     CONTINUOUS DUAL TECH MARQUEE RAILS
+    ===================================================== -->
+    <div class="tech-marquee-wrapper" id="techRails">
+        <div class="tech-marquee-track marquee-left">
+            <div class="marquee-content">
+                <span class="marquee-item"><span class="m-icon">🛡️</span> KALI LINUX & CYBERSECURITY</span>
+                <span class="marquee-item"><span class="m-icon">🧠</span> COMPUTER VISION (OPENCV)</span>
+                <span class="marquee-item"><span class="m-icon">🐧</span> OS VIRTUALIZATION & KVM</span>
+                <span class="marquee-item"><span class="m-icon">☕</span> JAVA FULL-STACK</span>
+                <span class="marquee-item"><span class="m-icon">🐍</span> PYTHON ARCHITECTURES</span>
+                <span class="marquee-item"><span class="m-icon">🌐</span> MODERN REACT & ANGULAR</span>
+                <span class="marquee-item"><span class="m-icon">🔥</span> BLENDER 3D PROCEDURAL</span>
+                <span class="marquee-item"><span class="m-icon">⚡</span> HIGH-CONCURRENCY NETWORKING</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span class="marquee-item"><span class="m-icon">🛡️</span> KALI LINUX & CYBERSECURITY</span>
+                <span class="marquee-item"><span class="m-icon">🧠</span> COMPUTER VISION (OPENCV)</span>
+                <span class="marquee-item"><span class="m-icon">🐧</span> OS VIRTUALIZATION & KVM</span>
+                <span class="marquee-item"><span class="m-icon">☕</span> JAVA FULL-STACK</span>
+                <span class="marquee-item"><span class="m-icon">🐍</span> PYTHON ARCHITECTURES</span>
+                <span class="marquee-item"><span class="m-icon">🌐</span> MODERN REACT & ANGULAR</span>
+                <span class="marquee-item"><span class="m-icon">🔥</span> BLENDER 3D PROCEDURAL</span>
+                <span class="marquee-item"><span class="m-icon">⚡</span> HIGH-CONCURRENCY NETWORKING</span>
+            </div>
+        </div>
+        <div class="tech-marquee-track marquee-right">
+            <div class="marquee-content">
+                <span class="marquee-item"><span class="m-icon">🚀</span> RESTFUL & GRAPHQL APIS</span>
+                <span class="marquee-item"><span class="m-icon">📊</span> REAL-TIME TELEMETRY SYSTEMS</span>
+                <span class="marquee-item"><span class="m-icon">📦</span> DOCKER & CONTAINERIZATION</span>
+                <span class="marquee-item"><span class="m-icon">🔒</span> NETWORK PACKET ANALYSIS</span>
+                <span class="marquee-item"><span class="m-icon">🗄️</span> POSTGRESQL & MONGODB</span>
+                <span class="marquee-item"><span class="m-icon">🎯</span> NEURAL OBJECT DETECTION</span>
+                <span class="marquee-item"><span class="m-icon">⚙️</span> LINUX KERNEL OPTIMIZATION</span>
+                <span class="marquee-item"><span class="m-icon">💻</span> TYPESCRIPT & NODE.JS</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span class="marquee-item"><span class="m-icon">🚀</span> RESTFUL & GRAPHQL APIS</span>
+                <span class="marquee-item"><span class="m-icon">📊</span> REAL-TIME TELEMETRY SYSTEMS</span>
+                <span class="marquee-item"><span class="m-icon">📦</span> DOCKER & CONTAINERIZATION</span>
+                <span class="marquee-item"><span class="m-icon">🔒</span> NETWORK PACKET ANALYSIS</span>
+                <span class="marquee-item"><span class="m-icon">🗄️</span> POSTGRESQL & MONGODB</span>
+                <span class="marquee-item"><span class="m-icon">🎯</span> NEURAL OBJECT DETECTION</span>
+                <span class="marquee-item"><span class="m-icon">⚙️</span> LINUX KERNEL OPTIMIZATION</span>
+                <span class="marquee-item"><span class="m-icon">💻</span> TYPESCRIPT & NODE.JS</span>
+            </div>
+        </div>
+    </div>
+
+
 
 
     <!-- =====================================================
@@ -3355,7 +3821,7 @@
             </div>
 
 
-                        <!-- SKILLS CATEGORY FILTER -->
+            <!-- SKILLS CATEGORY FILTER -->
             <div class="skills-filter-row reveal">
                 <button class="skill-filter-btn active" data-skill-cat="all">All Tools</button>
                 <button class="skill-filter-btn" data-skill-cat="languages">Languages</button>
@@ -3427,12 +3893,13 @@
      DEVELOPMENT ANALYTICS
 ===================================================== -->
 
-        <section id="analytics">
+    <section id="analytics">
         <div class="container">
             <div class="section-header reveal">
                 <div class="section-label">EXECUTIVE METRICS</div>
                 <h2>Development & Engineering Analytics</h2>
-                <p>Interactive telemetry tracking commit frequency, architecture stack volume, and system delivery metrics.</p>
+                <p>Interactive telemetry tracking commit frequency, architecture stack volume, and system delivery
+                    metrics.</p>
             </div>
 
             <!-- KEY PERFORMANCE METRICS -->
@@ -3498,7 +3965,8 @@
                     <div class="chart-footer-stat">
                         <span>Total Tracked Iterations: <strong>840+ commits</strong></span>
                         <div class="chart-legend-custom">
-                            <span class="legend-pill"><span class="legend-dot" style="background:#ff6d00;"></span> Codebase Activity</span>
+                            <span class="legend-pill"><span class="legend-dot" style="background:#ff6d00;"></span>
+                                Codebase Activity</span>
                         </div>
                     </div>
                 </div>
@@ -3530,7 +3998,8 @@
             <div class="section-header reveal">
                 <div class="section-label">INTELLIGENCE STACK</div>
                 <h2>AI & Neural Workflow Analytics</h2>
-                <p>Quantified breakdown of AI-assisted software generation, prompt modeling, and multimodal workflows.</p>
+                <p>Quantified breakdown of AI-assisted software generation, prompt modeling, and multimodal workflows.
+                </p>
             </div>
 
             <!-- AI METRICS -->
@@ -3618,7 +4087,8 @@
                 <div class="ai-breakdown-header">
                     <div>
                         <h3 class="chart-title">End-to-End Workflow Integration</h3>
-                        <p class="chart-subtitle">Role distribution of intelligent agents in the development lifecycle</p>
+                        <p class="chart-subtitle">Role distribution of intelligent agents in the development lifecycle
+                        </p>
                     </div>
                     <div class="legend-pill">
                         <span class="legend-dot" style="background:#ff2b2b;"></span> Full Dev Pipeline Integration
@@ -3630,10 +4100,13 @@
                         <div class="workflow-icon-pro">⚡</div>
                         <div class="workflow-body-pro">
                             <div class="workflow-header-pro">
-                                <span class="workflow-title-pro">Antigravity IDE <span class="workflow-tag-pro">Primary Agent</span></span>
+                                <span class="workflow-title-pro">Antigravity IDE <span class="workflow-tag-pro">Primary
+                                        Agent</span></span>
                                 <span class="workflow-percent-pro">96%</span>
                             </div>
-                            <div class="workflow-bar-pro"><div style="width:96%"></div></div>
+                            <div class="workflow-bar-pro">
+                                <div style="width:96%"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -3641,10 +4114,13 @@
                         <div class="workflow-icon-pro">🤖</div>
                         <div class="workflow-body-pro">
                             <div class="workflow-header-pro">
-                                <span class="workflow-title-pro">OpenAI ChatGPT <span class="workflow-tag-pro">Reasoning</span></span>
+                                <span class="workflow-title-pro">OpenAI ChatGPT <span
+                                        class="workflow-tag-pro">Reasoning</span></span>
                                 <span class="workflow-percent-pro">92%</span>
                             </div>
-                            <div class="workflow-bar-pro"><div style="width:92%"></div></div>
+                            <div class="workflow-bar-pro">
+                                <div style="width:92%"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -3652,10 +4128,13 @@
                         <div class="workflow-icon-pro">🧠</div>
                         <div class="workflow-body-pro">
                             <div class="workflow-header-pro">
-                                <span class="workflow-title-pro">Anthropic Claude <span class="workflow-tag-pro">Refactoring</span></span>
+                                <span class="workflow-title-pro">Anthropic Claude <span
+                                        class="workflow-tag-pro">Refactoring</span></span>
                                 <span class="workflow-percent-pro">80%</span>
                             </div>
-                            <div class="workflow-bar-pro"><div style="width:80%"></div></div>
+                            <div class="workflow-bar-pro">
+                                <div style="width:80%"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -3663,10 +4142,13 @@
                         <div class="workflow-icon-pro">💎</div>
                         <div class="workflow-body-pro">
                             <div class="workflow-header-pro">
-                                <span class="workflow-title-pro">Google Gemini <span class="workflow-tag-pro">Multimodal</span></span>
+                                <span class="workflow-title-pro">Google Gemini <span
+                                        class="workflow-tag-pro">Multimodal</span></span>
                                 <span class="workflow-percent-pro">76%</span>
                             </div>
-                            <div class="workflow-bar-pro"><div style="width:76%"></div></div>
+                            <div class="workflow-bar-pro">
+                                <div style="width:76%"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -3674,10 +4156,13 @@
                         <div class="workflow-icon-pro">🤗</div>
                         <div class="workflow-body-pro">
                             <div class="workflow-header-pro">
-                                <span class="workflow-title-pro">Hugging Face <span class="workflow-tag-pro">Open Models</span></span>
+                                <span class="workflow-title-pro">Hugging Face <span class="workflow-tag-pro">Open
+                                        Models</span></span>
                                 <span class="workflow-percent-pro">65%</span>
                             </div>
-                            <div class="workflow-bar-pro"><div style="width:65%"></div></div>
+                            <div class="workflow-bar-pro">
+                                <div style="width:65%"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -3685,10 +4170,13 @@
                         <div class="workflow-icon-pro">🎙️</div>
                         <div class="workflow-body-pro">
                             <div class="workflow-header-pro">
-                                <span class="workflow-title-pro">ElevenLabs & Whisper <span class="workflow-tag-pro">Voice/Audio</span></span>
+                                <span class="workflow-title-pro">ElevenLabs & Whisper <span
+                                        class="workflow-tag-pro">Voice/Audio</span></span>
                                 <span class="workflow-percent-pro">58%</span>
                             </div>
-                            <div class="workflow-bar-pro"><div style="width:58%"></div></div>
+                            <div class="workflow-bar-pro">
+                                <div style="width:58%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -4458,13 +4946,14 @@
      CONTACT
 ===================================================== -->
 
-        <section id="contact">
+    <section id="contact">
         <div class="container">
             <div class="glass contact-box reveal">
                 <div class="section-label">GET IN TOUCH</div>
                 <h2>Let's Create Something Great</h2>
                 <p>
-                    I'm actively seeking internship and Full-Time engineering opportunities. Whether you have a project idea, a question, or want to collaborate, feel free to reach out directly.
+                    I'm actively seeking internship and Full-Time engineering opportunities. Whether you have a project
+                    idea, a question, or want to collaborate, feel free to reach out directly.
                 </p>
 
                 <!-- Symmetric Contact Matrix -->
@@ -4485,7 +4974,8 @@
                         </div>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/jignesh-kanojiya-217262366/" target="_blank" class="contact-card-item">
+                    <a href="https://www.linkedin.com/in/jignesh-kanojiya-217262366/" target="_blank"
+                        class="contact-card-item">
                         <div class="contact-icon-box">🔗</div>
                         <div class="contact-card-info">
                             <span class="contact-card-label">LinkedIn Network</span>
@@ -4506,7 +4996,8 @@
                     <a href="mailto:jigneshkanojiya2@gmail.com" class="btn btn-primary">
                         Send Email Now →
                     </a>
-                    <a href="https://www.linkedin.com/in/jignesh-kanojiya-217262366/" target="_blank" class="btn btn-secondary">
+                    <a href="https://www.linkedin.com/in/jignesh-kanojiya-217262366/" target="_blank"
+                        class="btn btn-secondary">
                         View LinkedIn
                     </a>
                 </div>
@@ -4828,8 +5319,8 @@
         });
 
 
-        
-        
+
+
         // =========================================================
         // SCROLL PROGRESS BAR & BACK TO TOP IMPLEMENTATION
         // =========================================================
@@ -5531,8 +6022,281 @@
             }
         });
 
+        // =====================================================
+        // 1. CINEMATIC TEXT DECRYPT & ROLE REVEAL
+        // =====================================================
+        const cinematicNameEl = document.getElementById('cinematicName');
+        if (cinematicNameEl) {
+            const targetName = 'JIGNESH M. KANOJIYA';
+            const glyphs = '!#01$%&X_<>*+~';
+            let iter = 0;
+            const decryptInterval = setInterval(() => {
+                cinematicNameEl.innerText = targetName
+                    .split('')
+                    .map((char, index) => {
+                        if (index < iter) return targetName[index];
+                        if (char === ' ' || char === '.') return char;
+                        return glyphs[Math.floor(Math.random() * glyphs.length)];
+                    })
+                    .join('');
+
+                if (iter >= targetName.length) {
+                    clearInterval(decryptInterval);
+                    cinematicNameEl.innerText = targetName;
+                }
+                iter += 1 / 2;
+            }, 35);
+        }
+
+        // Cycling Dynamic Role Subtitle
+        const cinematicRoleEl = document.getElementById('cinematicRole');
+        if (cinematicRoleEl) {
+            const roles = [
+                'Full-Stack Developer & Systems Architect',
+                'Cybersecurity Analyst & Kali Linux Specialist',
+                'Computer Vision & Neural Networks (OpenCV)',
+                'OS Virtualization (KVM/QEMU) & Linux Kernel',
+                'Blender 3D Procedural Engine Artist'
+            ];
+            let roleIdx = 0;
+            let charIdx = 0;
+            let isDeleting = false;
+
+            const typeRole = () => {
+                const currentRole = roles[roleIdx];
+                if (isDeleting) {
+                    cinematicRoleEl.textContent = currentRole.substring(0, charIdx - 1);
+                    charIdx--;
+                } else {
+                    cinematicRoleEl.textContent = currentRole.substring(0, charIdx + 1);
+                    charIdx++;
+                }
+
+                let speed = isDeleting ? 28 : 60;
+
+                if (!isDeleting && charIdx === currentRole.length) {
+                    speed = 2200; // Pause at end of phrase
+                    isDeleting = true;
+                } else if (isDeleting && charIdx === 0) {
+                    isDeleting = false;
+                    roleIdx = (roleIdx + 1) % roles.length;
+                    speed = 400; // Pause before typing next
+                }
+
+                setTimeout(typeRole, speed);
+            };
+            setTimeout(typeRole, 1000);
+        }
+
+
         // Initialize Carousel
         initCarousel('all');
+        // =====================================================
+        // ARC REACTOR — Tony Stark | Left of Navbar
+        // =====================================================
+        (function () {
+            const canvas = document.getElementById('arcReactorCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const DPR = Math.min(window.devicePixelRatio || 1, 2);
+            const SIZE = 320 * DPR;
+            canvas.width = canvas.height = SIZE;
+            const cx = SIZE / 2, cy = SIZE / 2;
+
+            const BLUE = '#56d0ff';
+            const BLUE2 = '#8be8ff';
+            const RED = '#ff1e1e';
+            const WHITE = 'rgba(255,255,255,0.92)';
+
+            let angle = 0;
+
+            // Tiny particles — 3 orbital rings, counter-rotating
+            const PARTICLES = [
+                // { count, orbitFraction, radius, color, speed }
+                { count: 8, orbit: 0.56, r: 1.4, color: RED, speed: -1.6 },
+                { count: 12, orbit: 0.66, r: 1.0, color: BLUE2, speed: -2.2 },
+                { count: 6, orbit: 0.75, r: 1.8, color: 'rgba(255,255,255,0.8)', speed: -1.1 },
+            ];
+            // ── Gravity-attracted dust field ──
+            // Particles randomly scattered at different distances,
+            // each with its own wobble so they look gravitationally attracted — not locked in rings
+            var DUST = (function () {
+                var d = [];
+                var total = 70;
+                for (var i = 0; i < total; i++) {
+                    var zone = Math.random();
+                    var baseOrbit, spd, sz;
+
+                    if (zone < 0.30) {
+                        // tight inner halo — just outside reactor edge, small
+                        baseOrbit = 0.44 + Math.random() * 0.09;
+                        spd       = -(0.5 + Math.random() * 0.9);
+                        sz        = (0.5 + Math.random() * 0.9) * DPR;
+                    } else if (zone < 0.60) {
+                        // mid scatter — floating particles
+                        baseOrbit = 0.56 + Math.random() * 0.16;
+                        spd       = -(0.25 + Math.random() * 0.5);
+                        sz        = (0.4 + Math.random() * 0.8) * DPR;
+                    } else if (zone < 0.82) {
+                        // wide field — drifting further out
+                        baseOrbit = 0.74 + Math.random() * 0.22;
+                        spd       = -(0.1 + Math.random() * 0.3);
+                        sz        = (0.3 + Math.random() * 0.7) * DPR;
+                    } else {
+                        // far outliers — barely moving, very faint, like distant stars
+                        baseOrbit = 0.98 + Math.random() * 0.28;
+                        spd       = -(0.05 + Math.random() * 0.18);
+                        sz        = (0.3 + Math.random() * 0.5) * DPR;
+                    }
+
+                    d.push({
+                        angle:      Math.random() * Math.PI * 2,
+                        baseOrbit:  baseOrbit,
+                        wobbleAmp:  0.03 + Math.random() * 0.12,
+                        wobbleFreq: 0.3  + Math.random() * 1.4,
+                        wobbleOff:  Math.random() * Math.PI * 2,
+                        r:          sz,
+                        speed:      spd * (0.6 + Math.random() * 0.8),
+                        alpha:      0.35 + Math.random() * 0.65,
+                        pulse:      Math.random() * Math.PI * 2,
+                    });
+                }
+                return d;
+            })();
+
+            function glow(color, blur) { ctx.shadowColor = color; ctx.shadowBlur = blur * DPR; }
+            function noGlow() { ctx.shadowBlur = 0; }
+
+            function draw() {
+                ctx.clearRect(0, 0, SIZE, SIZE);
+                var R = SIZE * 0.19;
+                var now = Date.now() / 1000;
+
+                // ── Gravity dust field (drawn BEHIND reactor body) ──
+                DUST.forEach(function(p) {
+                    p.angle += p.speed * 0.013;
+                    // Wobble orbit radius — particles drift in/out like gravity pull
+                    var orbitR = R * (p.baseOrbit + Math.sin(now * p.wobbleFreq + p.wobbleOff) * p.wobbleAmp);
+                    var px = cx + Math.cos(p.angle) * orbitR;
+                    var py = cy + Math.sin(p.angle) * orbitR;
+                    // Pulse brightness
+                    var a = p.alpha * (0.7 + 0.3 * Math.sin(now * 1.8 + p.pulse));
+                    ctx.beginPath();
+                    ctx.arc(px, py, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = RED;
+                    ctx.globalAlpha = a;
+                    glow(RED, p.r * 1.5);
+                    ctx.fill();
+                    noGlow();
+                    ctx.globalAlpha = 1;
+                });
+
+                // ── 1. Base disc ──
+                ctx.beginPath();
+                ctx.arc(cx, cy, R, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(4,10,20,0.95)';
+                ctx.fill();
+                glow(RED, 16);
+                ctx.strokeStyle = RED;
+                ctx.lineWidth = DPR * 2.0;
+                ctx.stroke();
+                noGlow();
+
+                // ── 2. Outer segmented ring (12 arcs, clockwise RED) ──
+                for (var s = 0; s < 12; s++) {
+                    var a0 = (s / 12) * Math.PI * 2 + angle * 0.6;
+                    var a1 = ((s + 0.72) / 12) * Math.PI * 2 + angle * 0.6;
+                    ctx.beginPath();
+                    ctx.arc(cx, cy, R * 0.90, a0, a1);
+                    ctx.arc(cx, cy, R * 0.80, a1, a0, true);
+                    ctx.closePath();
+                    ctx.fillStyle = s % 2 === 0 ? 'rgba(255,30,30,0.72)' : 'rgba(255,30,30,0.18)';
+                    if (s % 2 === 0) { glow(RED, 9); }
+                    ctx.fill();
+                    noGlow();
+                }
+
+                // ── 3. Middle guide ring ──
+                ctx.beginPath();
+                ctx.arc(cx, cy, R * 0.75, 0, Math.PI * 2);
+                ctx.strokeStyle = 'rgba(255,30,30,0.22)';
+                ctx.lineWidth = DPR * 0.8;
+                ctx.stroke();
+
+                // ── 4. Triangle ring (3 equilateral, clockwise BLUE) ──
+                var triR = R * 0.60;
+                for (var t = 0; t < 3; t++) {
+                    ctx.save();
+                    ctx.translate(cx, cy);
+                    ctx.rotate(angle + (t / 3) * Math.PI * 2);
+                    ctx.beginPath();
+                    for (var v = 0; v < 3; v++) {
+                        var va = (v / 3) * Math.PI * 2 - Math.PI / 2;
+                        if (v === 0) ctx.moveTo(Math.cos(va) * triR, Math.sin(va) * triR);
+                        else         ctx.lineTo(Math.cos(va) * triR, Math.sin(va) * triR);
+                    }
+                    ctx.closePath();
+                    glow(BLUE2, 9);
+                    ctx.strokeStyle = BLUE2;
+                    ctx.lineWidth = DPR * 1.2;
+                    ctx.globalAlpha = 0.72;
+                    ctx.stroke();
+                    ctx.globalAlpha = 1;
+                    noGlow();
+                    ctx.restore();
+                }
+
+                // ── 5. Inner hex (counter-clockwise BLUE) ──
+                var hexR = R * 0.42;
+                for (var h = 0; h < 6; h++) {
+                    var ha0 = (h / 6) * Math.PI * 2 - angle * 1.5;
+                    var ha1 = ((h + 0.65) / 6) * Math.PI * 2 - angle * 1.5;
+                    ctx.beginPath();
+                    ctx.arc(cx, cy, hexR,        ha0, ha1);
+                    ctx.arc(cx, cy, hexR * 0.78, ha1, ha0, true);
+                    ctx.closePath();
+                    ctx.fillStyle = h % 2 === 0 ? 'rgba(86,208,255,0.62)' : 'rgba(139,232,255,0.20)';
+                    if (h % 2 === 0) { glow(BLUE, 7); }
+                    ctx.fill();
+                    noGlow();
+                }
+
+                // ── 6. Inner boundary ring ──
+                ctx.beginPath();
+                ctx.arc(cx, cy, R * 0.30, 0, Math.PI * 2);
+                ctx.strokeStyle = 'rgba(255,255,255,0.22)';
+                ctx.lineWidth = DPR * 0.7;
+                ctx.stroke();
+
+                // ── 7. Pulsing core ──
+                var pulse = 0.75 + 0.25 * Math.sin(Date.now() / 300);
+                var cg = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 0.28);
+                cg.addColorStop(0,   'rgba(255,255,255,' + (0.98 * pulse) + ')');
+                cg.addColorStop(0.3, 'rgba(140,230,255,' + (0.88 * pulse) + ')');
+                cg.addColorStop(0.7, 'rgba(86,208,255,'  + (0.52 * pulse) + ')');
+                cg.addColorStop(1,   'rgba(86,208,255,0)');
+                ctx.beginPath();
+                ctx.arc(cx, cy, R * 0.28, 0, Math.PI * 2);
+                glow(WHITE, 20);
+                ctx.fillStyle = cg;
+                ctx.fill();
+                noGlow();
+
+                // ── 8. Center pinpoint ──
+                ctx.beginPath();
+                ctx.arc(cx, cy, DPR * 2.6, 0, Math.PI * 2);
+                ctx.fillStyle = WHITE;
+                glow(WHITE, 14);
+                ctx.fill();
+                noGlow();
+
+                angle += 0.013;
+                requestAnimationFrame(draw);
+            }
+
+            draw();
+        })();
+
     </script>
 
     <!-- Floating Back to Top Button -->
